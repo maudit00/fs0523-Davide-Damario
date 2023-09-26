@@ -4,8 +4,7 @@ header {
 }
 nav {
     border-radius: 24px;
-    background: #e9788e;
-    padding-left: 0;
+    background: #ff2751;
 }
 
 a {
@@ -28,7 +27,7 @@ a:visited {
 
 nav {
     height: 2em;
-    border: 1px solid #006d6d;
+    border: 1px solid #12ffff77;
     width: 100%;
 }
 body {
@@ -37,16 +36,18 @@ body {
 }
 
 h1, h2, h3 ,h4, h6 {  
-    color: #e2294e;
+    
+    color:#d43558f1
 }
 
 
 
 #tabella {
     color: antiquewhite;
-    background-color: #006d6d;
+    background-image: linear-gradient(to right, rgb(7, 131, 94), rgb(0, 78, 97));
     display: flex;
     justify-content: center;
+    padding: 1em;
 }
 
 .video {
@@ -59,6 +60,7 @@ h1, h2, h3 ,h4, h6 {
 .newsl {
     text-align: center;
     margin: 2em;
+    padding: 2em;
 }
 #email {
     padding-top: 3px;
@@ -66,7 +68,7 @@ h1, h2, h3 ,h4, h6 {
 
 #articolo1 {
     background-color: #01a7a7;
-    text-align: center;
+    padding-left: 2em;
 }
 
 .acorrelati {
@@ -78,4 +80,9 @@ h1, h2, h3 ,h4, h6 {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
+}
+
+#newsletter {
+    border: 2px dotted #ff2751;
+
 }
