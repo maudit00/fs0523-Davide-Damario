@@ -8,10 +8,10 @@
     margin-right: 18rem;
 }
 .subtitle {
-    border-top: 0.1em solid #ffd877
-    ;
+    border-top: 0.1em solid #ffd877;
     background-color: #fdfbf1;
     padding-bottom: 0.2em;
+    color: #004d4c;
 }
 
 a {
@@ -34,10 +34,9 @@ h3{
 /*corpo principale*/
 
 .corpo{  
+    
     margin-left: 18rem;
     margin-right: 18rem;
-    width: 60%;
-    height: 70%;
     line-height: 2.4rem;
 }
 
@@ -48,17 +47,20 @@ h3{
 /* Video/Foto */ 
 
 #video {
-    padding-left: 0;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px;
     border: 2px transparent black;
     box-shadow: 8px 8px 20px grey ;
+    text-align: center;
 }
 
 #copyright {
     text-align: center;
     color: grey;
+    font-size: 0.9rem;
 }
 
 
@@ -70,5 +72,5 @@ h3{
 }
 
 #home{
-    text-align: center;
+    margin: 0 18rem;
 }
