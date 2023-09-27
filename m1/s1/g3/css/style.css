@@ -53,13 +53,12 @@ h3{
 #video {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: auto;
     border-radius: 10px 10px;
     border: 2px transparent black;
     box-shadow: 8px 8px 20px grey ;
     text-align: center;
 }
+
 
 #copyright {
     text-align: center;
