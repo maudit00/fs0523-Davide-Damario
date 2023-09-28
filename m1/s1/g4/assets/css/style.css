@@ -95,6 +95,11 @@
     margin-left: 10px;
  }
 
+ .main-article li{
+    margin: 5px 0;
+    padding: 5px 0;
+ }
+
  .main-article ul{
     list-style-type: disc;
  }
@@ -102,7 +107,11 @@
  /*riquadri codici*/
 
  .html-tags {
-
+    background-color: lightgray;
+    border: 0.5px solid black;
+    margin: 0;
+    border-radius: 15px;
+    padding: 3px;
  }
 
   .author {
