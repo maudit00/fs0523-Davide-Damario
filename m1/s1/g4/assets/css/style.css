@@ -1,121 +1,158 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Prata&display=swap');
+/*settings generali*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/*impostazioni generali*/
-  .uppercase {
-    text-transform: uppercase;
-  }
-    *   { 
-           box-sizing: border-box;
-           font-family: 'Poppins';
-    }
-    h1{
-        font-size: 1.7rem;
-        font-weight: 600;
-        text-align: center;
-        margin: 15px 0;
-        padding: 15px 0;
-      }
-
-    h3 {
-        margin: 20px 0;
-
-    }
-    b{
-        font-weight: 700;
-    }
-
-
-
- /*header*/ 
-  .header {
-    text-align: center;
-    background: rgb(0,119,136);
-    background: linear-gradient(117deg, rgba(0,119,136,1) 0%, rgba(0,102,136,1) 86%); 
-    font-weight: 600;
-    padding: 20px;
-    box-shadow: 5px 5px 30px black;
-    margin: 20px 0;
-  }
-  
-  .header>p {
-    color: white;
-    font-size: 1.3rem;
-  }
-
-  .logo {
-    width: 280px;
-    margin: 20px 0;
-  }
-
-  .menu {
-    color: white;
-    font-size: 1.4rem;
-    margin: 20px 0;
-  }
-
-  .menu a{
-    color: white;
-    text-decoration: none;
+#header, #footer {
+  text-align: center;
+  color: white;
 }
-  .menu li:after{
-    content: "⇐";
-    padding-left: 3px;
-    
+
+.uppercase {
+  text-transform: uppercase;
 }
-.menu li:before{
-    content: "⇒";
-    padding-right: 3px;
+:root {
+  --azzurro-chiaro: rgb(0, 160, 198);
+  --azzurro-scuro: rgba(3, 109, 134, 1);
+  --azzurro-tabella: #3567e9;
+}
 
-  }  
-  /*main*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
 
-  body{
-    padding: 15px;
-    font-family: 'poppins';
-    background-image: url(../img/sfondo.png);
-  }
-  .container {
-    background-color: white;
-    box-shadow: 5px 5px 30px black;
-    padding: 20px;
-  }
-  .main-article {
-    line-height: 1.2rem;
-  }
+h1{
+font-size: 2.5rem;
+font-weight: 600;
+line-height: 3rem;
+margin-bottom: 20px; 
+}
+h2{
+font-size: 1.4rem;  
+}
+h3{
+font-size: 1.3rem;  
+}
 
-  .main-article p{
-    margin: 10px 0;
-  }
- .main-article b{
-    color: #aa2072;
- }
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  background-image: url(../img/sfondo.png);
+  padding: 20px;
+}
 
- .main-article ul,ol,li{
-    padding: 0;
-    margin-left: 10px;
- }
 
- .main-article li{
-    margin: 5px 0;
-    padding: 5px 0;
- }
+/*header*/
 
- .main-article ul{
-    list-style-type: disc;
- }
- 
- /*riquadri codici*/
+#header {
+  background-image: linear-gradient(180deg, var(--azzurro-chiaro), var(--azzurro-scuro));
+  padding: 40px 18px;
+  margin-bottom: 30px;
+  box-shadow: 8px 8px 30px black;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
 
- .html-tags {
-    background-color: lightgray;
-    border: 0.5px solid black;
-    margin: 0;
-    border-radius: 15px;
-    padding: 3px;
- }
+#header p{
+  padding: 20px 0;
+}
 
-  .author {
-    color: grey;
-    margin: 15px 0;
+#menu{
+  line-height: 2.2rem;
+}
 
-  }
+#menu a{
+  color: white;
+  text-decoration: none;
+}
+
+#menu li::before{
+  content: "⇒";
+  padding-right: 3px;
+}
+
+#menu li::after{
+  content: "⇐";
+  padding-left: 3px;
+}
+
+/*main*/
+strong {
+  color: #aa2072;
+  font-weight: 600;
+}
+
+ul:not(#menu){
+  list-style: disc;
+  list-style-position: inside;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+ol:not(#menu){
+  list-style-type: decimal;
+  list-style-position: inside;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 8px 8px 30px black;
+  box-sizing: border-box;
+}
+
+code{
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 1px solid darkgrey;
+  padding: 0 2px;
+  margin: 0 2px;
+}
+/*post.meta*/
+
+.container p{
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.post-meta{
+  color: #a3a3a3;
+  margin-bottom: 10px;
+}
+
+/*tabella*/
+
+table{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--azzurro-tabella);
+}
+
+table caption{
+  font-weight: bold;
+}
+table thead tr{
+  color: white;
+  background-color: var(--azzurro-tabella);
+  padding: 23px;
+}
+table thead th{
+  font-size: 1.1rem;
+  padding: 25px;
+  border: 1px solid var(--azzurro-chiaro);
+}
+table tr:nth-of-type(even){
+  background-color: #eeeeee;
+  border-top: 1px solid #ddddde;
+  border-bottom: 1px solid #ddddde;
+}
+
+.video{
+  border-radius: 40px;
+  overflow: hidden;
+  width: 100%;
+  height: 315px;
+}
