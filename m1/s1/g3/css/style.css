@@ -24,8 +24,6 @@ a {
 }
 
 h1 {
-    margin-left: 18rem;
-    margin-right: 18rem;
     padding-top: 2rem;
     text-align: center;   
 }
@@ -38,9 +36,8 @@ h3{
 /*corpo principale*/
 
 .corpo{  
-    
-    margin-left: 18rem;
-    margin-right: 18rem;
+    width: 800px;
+    margin: 0 auto;
     line-height: 2.4rem;
 }
 
@@ -53,7 +50,7 @@ h3{
 #video {
     display: flex;
     justify-content: center;
-    border-radius: 10px 10px;
+    border-radius: 20px;
     border: 2px transparent black;
     box-shadow: 8px 8px 20px grey ;
     text-align: center;
