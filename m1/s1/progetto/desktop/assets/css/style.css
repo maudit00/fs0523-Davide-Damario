@@ -148,24 +148,25 @@ h4 {
 
 .related-articles {
     display: flex;
+    margin: 120px 0;
+}
+div.post.tab{
+    display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 180px 0;
+    align-items: flex-start;
+    padding: 0;
+    align-content: stretch;
+    flex-wrap: wrap;
 }
 
 .post-img {
-        height: 100%;
-        max-width: 100%;
-       }
-
-
-div.post.tab{
-    padding: 0;
+    height: 50%;
+    width: 100%;
 }
 
 .bot-split{
-    height:50vh;
-    background-color: red;
+    height:50%;
+    padding-top: 20px;
 }
 
 /*footer*/
