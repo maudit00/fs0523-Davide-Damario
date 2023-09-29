@@ -47,10 +47,6 @@ h4 {
     color: #c8e7f0;
 }
 
-#header {
-    background-color: black;
-    text-align: center;
-}
 
 #partiamo {
     background-color: var(--arancio-wow) ;
@@ -69,8 +65,8 @@ h4 {
 }
 
 .container {
-   background-color: white;
-   text-align: center;
+    background-color: white;
+    text-align: center;
 }
 
 .post{
@@ -83,27 +79,38 @@ h4 {
 }
 
 .post p{
-    padding: 10px 0;
+    padding: 20px 0;
 }
 /*header*/
 
+#header {
+    background-color: black;
+    text-align: left
+}
+
 #header img {
-    width: 600px;
-    height: 180px;
+    width: 300px;
+    height: 100px;
     padding: 20px 40px;
 }
 
 .top {
     background-image: url(../images/banner.jpg);
     background-size:cover;
-    padding: 40px 20px;
+    padding: 200px 300px;
     margin-bottom: 50px;
 }
 
 /*main*/
 
-.central-img {
-   margin: 50px 100px
+.menu-split {
+    display: flex;
+}
+.main-left{
+   width:50vw;
+}
+.main-right{
+    width: 50vw;
 }
 .round-image {
     border-radius: 100%;
@@ -139,24 +146,26 @@ h4 {
 }
 /*articoli correlati*/
 
-.post-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    margin-bottom: 20px;
-}
-
-div.post.tab {
+.related-articles {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin: 300px;
+    margin: 180px 0;
 }
 
-.post.tab p{
-    padding: 20px;
-    margin-bottom: 30px;
+.post-img {
+        height: 100%;
+        max-width: 100%;
+       }
+
+
+div.post.tab{
+    padding: 0;
+}
+
+.bot-split{
+    height:50vh;
+    background-color: red;
 }
 
 /*footer*/
