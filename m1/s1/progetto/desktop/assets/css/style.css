@@ -1,0 +1,181 @@
+/*settings generali*/
+:root{
+    --arancio-wow : #f04c2f;
+    --azzurro-twitter : #25a2c3;
+
+}
+body {
+    color: #393d41;
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.65;
+}
+
+h1, h2, h3, h4 { 
+    color: var(--azzurro-twitter);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.8rem;
+    padding-bottom: 15px;
+}
+h4 {
+    font-size: 3rem;
+}
+.feedback h2, h3{
+    color: white;
+}
+
+#footer {
+    background-color: var(--azzurro-twitter);
+    text-align: center;
+    color: white;
+}
+
+#footer h2{
+    color: white;
+    padding-top: 40px;
+}
+
+#footer a{
+    color: #c8e7f0;
+}
+
+#header {
+    background-color: black;
+    text-align: center;
+}
+
+#partiamo {
+    background-color: var(--arancio-wow) ;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    padding: 30px 140px;
+    border-radius: 8px;
+    margin: 10px 10px;
+}
+
+.tab {
+    border: 1px solid  #dee1e3;
+    margin: 0 40px;
+}
+
+.container {
+   background-color: white;
+   text-align: center;
+}
+
+.post{
+    line-height: 1.5;
+    padding: 20px 10px;
+}
+
+.post a{
+    text-decoration: none;
+}
+
+.post p{
+    padding: 10px 0;
+}
+/*header*/
+
+#header img {
+    width: 600px;
+    height: 180px;
+    padding: 20px 40px;
+}
+
+.top {
+    background-image: url(../images/banner.jpg);
+    background-size:cover;
+    padding: 40px 20px;
+    margin-bottom: 50px;
+}
+
+/*main*/
+
+.central-img {
+   margin: 50px 100px
+}
+.round-image {
+    border-radius: 100%;
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.feedback {
+    background-color: var(--arancio-wow);
+    margin: 50px 0;
+    color: white;
+    padding: 100px 5px 70px 5px;
+}
+
+.feedback h2{
+    font-size: 4rem;
+}
+
+.feedback h3{
+    padding-bottom: 6px;
+    font-size: 2.5rem;
+}
+
+.feedback p:first-of-type {
+    font-style: italic;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.feedback p{
+    font-size: 1.6rem;
+}
+/*articoli correlati*/
+
+.post-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+div.post.tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 300px;
+}
+
+.post.tab p{
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/*footer*/
+
+#contacts {
+    padding-bottom: 40px;
+}
+
+#copy {
+    padding: 20px 10px 60px 10px;
+    font-size: 1.4rem;
+}
+
+.white-line {
+    border-bottom: 1px solid white;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+i{
+    padding-right: 4px;
+}
