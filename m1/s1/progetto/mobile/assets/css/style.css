@@ -94,13 +94,13 @@ h2 {
     background-image: url(../images/banner.jpg);
     background-size:cover;
     padding: 40px 20px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 /*main*/
 
 .central-img {
-    margin: 50px 0;
+    margin: 20px 50px;
 }
 .round-image {
     border-radius: 100%;
@@ -113,7 +113,15 @@ h2 {
     background-color: var(--arancio-wow);
     margin: 50px 0;
     color: white;
-    padding: 50px 5px 20px 5px;
+    padding: 50px 5px 25px 5px;
+}
+
+.feedback h2{
+    font-size: 2rem;
+}
+
+.feedback h3{
+    padding-bottom: 6px;
 }
 
 .feedback p:first-of-type {
@@ -159,4 +167,8 @@ h2 {
     border-bottom: 1px solid white;
     width: 200px;
     margin: 0 auto;
+}
+
+i{
+    padding-right: 4px;
 }
