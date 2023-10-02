@@ -83,3 +83,10 @@ let name1 = 'john'
 let name2 = 'John'
 console.log(name1 == name2)
 console.log(name1 == 'john')
+
+//o potremmo verificare che non siano uguali in quest'altra maniera
+
+console.log(name1 != name2)
+console.log(name1 != 'john')
+
+//ovviamente il risultato booleano si invertirà cambiando l'operatore logico == ( uguale) con != (non-uguale)
