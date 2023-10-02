@@ -82,11 +82,11 @@ console.log(4 - x)
 let name1 = 'john'
 let name2 = 'John'
 console.log(name1 == name2)
-console.log(name1 == 'john')
+console.log(name1.toLocaleLowerCase== name2.toLocaleLowerCase)
 
 //o potremmo verificare che non siano uguali in quest'altra maniera
 
 console.log(name1 != name2)
-console.log(name1 != 'john')
+console.log(name1.toLocaleLowerCase != name2.toLocaleLowerCase)
 
 //ovviamente il risultato booleano si invertirà cambiando l'operatore logico == ( uguale) con != (non-uguale)
