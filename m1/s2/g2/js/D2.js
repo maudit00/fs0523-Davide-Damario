@@ -15,7 +15,7 @@ console.log(Math.max(a, b));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 let c = 5
-if (c != 10){
+if (c != 5){
   console.log('not equal');
 }
 
