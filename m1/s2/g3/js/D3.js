@@ -140,7 +140,7 @@ let eyeColor = {
   yellow:[],
   brown: [],
   red: [],
-  blueGray: []
+  "blue-gray": []
 }
 
 /* ESERCIZIO 5
@@ -163,7 +163,7 @@ starWarsCharacters.forEach(function(el){
       eyeColor.red.push(el);
       break;
     case 'blue-gray':
-      eyeColor.blueGray.push(el);
+      eyeColor["blue-gray"].push(el);
       break;
   }
 })
@@ -232,6 +232,7 @@ let femaleCharactersName =[]
 femaleCharacters.forEach(function(el){
   femaleCharactersName.push(el.name)
 })
+
 
 characters = characters.filter(val => !femaleCharactersName.includes(val));
 
