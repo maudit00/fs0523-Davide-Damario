@@ -228,22 +228,20 @@ console.log(starWarsCharacters);
 */
 console.log(characters.length);
 let femaleCharactersName =[]
-console.log(femaleCharactersName);
 
 femaleCharacters.forEach(function(el){
   femaleCharactersName.push(el.name)
 })
 
-characters = characters.filter(function(nome){
-  femaleCharactersName.find(function(nome2){
-    return nome != nome2
-  })
-})
+characters = characters.filter(val => !femaleCharactersName.includes(val));
 
 console.log(characters.length);
 
 
 //let maleCharacters = characters.filter((nome)=> femaleCharacters.find((el) => { return el.name})
+
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+let randomChar = starWarsCharacters[Math.floor(Math.random() * starWarsCharacters.length)]
+console.log(randomChar);
