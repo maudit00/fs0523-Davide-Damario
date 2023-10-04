@@ -227,13 +227,23 @@ console.log(starWarsCharacters);
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
 console.log(characters.length);
+let femaleCharactersName =[]
+console.log(femaleCharactersName);
 
-let maleCharacters = characters.filter((nome)=> femaleCharacters.find((el) => { return el.name})
-)
+femaleCharacters.forEach(function(el){
+  femaleCharactersName.push(el.name)
+})
 
-console.log(maleCharacters.length);
+characters = characters.filter(function(nome){
+  femaleCharactersName.find(function(nome2){
+    return nome != nome2
+  })
+})
+
+console.log(characters.length);
 
 
+//let maleCharacters = characters.filter((nome)=> femaleCharacters.find((el) => { return el.name})
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
