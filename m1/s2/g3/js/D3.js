@@ -165,6 +165,8 @@ starWarsCharacters.forEach(function(el){
     case 'blue-gray':
       eyeColor["blue-gray"].push(el);
       break;
+      default:
+        console.error("Colore non esistente")
   }
 })
 
