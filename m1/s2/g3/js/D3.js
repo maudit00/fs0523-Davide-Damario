@@ -214,12 +214,25 @@ if (crewMass > 1000){
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
 
+starWarsCharacters.forEach(function(el){
+  if (el.gender == 'n/a'){
+    el.gender = 'robot'
+  }
+})
+console.log(starWarsCharacters);
 
 
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
+console.log(characters.length);
+
+let maleCharacters = characters.filter((nome)=> femaleCharacters.find((el) => { return el.name})
+)
+
+console.log(maleCharacters.length);
+
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
