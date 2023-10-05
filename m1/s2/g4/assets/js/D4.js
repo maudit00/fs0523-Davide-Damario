@@ -3,7 +3,7 @@
 */
 
 function area (l1, l2){
-    return ((l1 * l2)/2)
+    return (l1 * l2)
 }
 let areaRettangolo = area (5, 10);
 console.log('L\'Area del rettangolo è ' + areaRettangolo );
@@ -88,20 +88,21 @@ console.log(epify('epicode'));
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 
+/* SCRIVI QUI LA TUA RISPOSTA */
+
 let check3and7 = n => {
     if (n>0){
         if (!(n%3)) {return true}
         if (!(n%7)) {return true}
     }
-    return false
+    return console.error('Numero non positvo');
 }
-
-console.log(check3and7(6));
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log(check3and7(-5));
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -119,8 +120,12 @@ console.log(check3and7(6));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+let cutString = stringa =>
+
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+let giveMeRandom = (n) => [...Array(n)].map(() => Math.round(Math.random() * 10));
+console.log(giveMeRandom(40));
