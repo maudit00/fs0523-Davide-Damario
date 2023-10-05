@@ -73,15 +73,14 @@ console.log(boundary(400));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let epiConcat = 'EPICODE '
-let epify = str => {
-    let regex = '/epicode/i'
-    if (!(typeof str == 'string')) {return console.error('Non è una stringa');}
-    if (str.includes(regex)) {return str}
-    else {return epiConcat.concat(str)}
+let epify = stringa => {
+    if (stringa.startsWith('EPICODE')) {
+        return stringa
+    } else {
+        return ('EPICODE ' + stringa)
+    }
 }
-
-console.log(epify('epicode'));
+console.log(epify('EPICODE'));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -113,7 +112,7 @@ let reverseString = string1 => {
     return reverseString 
 }
 
-console.log(reverseString('ma porco lui che viene'));
+console.log(reverseString('questa è una frase prova'));
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
@@ -132,7 +131,6 @@ function upperFirst (string){
         console.log(arr);
     }
     return string.charAt(0).toUpperCase() + string.slice(1)
-    console.log(string);
 }
 
 console.log(upperFirst('dio'));
