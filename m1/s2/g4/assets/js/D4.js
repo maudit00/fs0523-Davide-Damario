@@ -74,10 +74,10 @@ console.log(boundary(400));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 let epiConcat = 'EPICODE '
-let regex = '/epicode/i'
 let epify = str => {
-    if (!(typeof str == 'string')) {console.error('Non è una stringa');}
-    if (str.includes(regex, 0)) {return str}
+    let regex = '/epicode/i'
+    if (!(typeof str == 'string')) {return console.error('Non è una stringa');}
+    if (str.includes(regex)) {return str}
     else {return epiConcat.concat(str)}
 }
 
@@ -97,7 +97,7 @@ let check3and7 = n => {
     }
     return console.error('Numero non positvo');
 }
-console.log(check3and7(-5));
+console.log(check3and7(6));
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
@@ -106,12 +106,36 @@ console.log(check3and7(-5));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+let reverseString = string1 => {
+    let arr1 = string1.split ('')
+    let reverseArr = arr1.reverse()
+    let reverseString = reverseArr.join('')
+    return reverseString 
+}
+
+console.log(reverseString('ma porco lui che viene'));
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function upperFirst (string){
+    if (string.indexOf(' ') >= 0){
+        let arr = string.split(' ')
+    
+     // non capisco come mai no vada -->   arr.forEach((u) => u = u.charAt(0).toUpperCase() + u.slice(1))
+        for (let u = 0; u < arr.length ; u++){
+            arr[u] = arr[u].charAt(0).toUpperCase() + arr[u].slice(1)
+        }
+        console.log(arr);
+    }
+    return string.charAt(0).toUpperCase() + string.slice(1)
+    console.log(string);
+}
+
+console.log(upperFirst('dio'));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -120,7 +144,13 @@ console.log(check3and7(-5));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-let cutString = stringa =>
+let cutString = stringa => {
+    if (typeof stringa == 'string'){
+    return stringa.slice(1, stringa.length-1)
+    }
+    return console.error('Non è una stringa');
+}
+console.log(cutString('cacchiarello bello   '));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
