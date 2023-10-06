@@ -1,1 +1,21 @@
 /* Your styles here */
+
+:root{
+    --grigio-banner :#222f3f;
+    --grigio-chiaro :#364759;
+    }
+.banner {
+    background-image:url(../images/bg-image.png);
+}
+
+
+
+.grey-banner {
+    background-color: var(--grigio-banner);
+}
+
+.grey-banner img {
+    width: 200px;
+    height: 60px;
+    padding: 10px 0 10px 20px;
+}
