@@ -64,15 +64,14 @@ let addLicensePlate = c => {
   switch (c[i].brand){
     case  'Ford':
     c[i].licensePLate = 'XC456LF'
-    break
+    break;
     case  'Peugeot':
     c[i].licensePLate = 'AB897TR'
-    break
+    break;
     case  'Volkswagen':
     c[i].licensePLate = 'FG007GL'
-    break
+    break;  
   }
-  return cars
   }
 }
 
@@ -92,7 +91,7 @@ cars.push (obj)
 
 console.log(cars);
 
-cars.forEach((el) => delete el.trims[0])
+cars.forEach((t) => t.trims.pop())
 
 console.log(cars);
 
@@ -112,8 +111,8 @@ console.log(justTrims);
 */
 
 cars.forEach((el) =>{
-  if (el.color.charAt(0) == 'b'){console.log(Fizz);}
-  else {console.log(Buzz);}
+  if (el.color.charAt(0) == 'b'){console.log('Fizz');}
+  else {console.log('Buzz');}
 })
 
 /* ESERCIZIO 9
@@ -123,9 +122,31 @@ const numeriiray = [
   6, 90, 45, 75, 84, 98, 35, 74, 31, 2, 8, 23, 100, 32, 66, 313, 321, 105,
 ]
 
+let x = 0
+while (x != numeriiray.indexOf(32)){
+  console.log(numeriiray[x]);
+  x++
+}
 /* ESERCIZIO 10
-    Partendo dall'array fornito e utilizzando un costrutto switch, genera un nuovo array composto dalle posizioni di ogni iattere all'interno
+    Partendo dall'array fornito e utilizzando un costrutto switch, genera un nuovo array composto dalle posizioni di ogni carattere all'interno
     dell'alfabeto italiano.
     es. [f, b, e] --> [6, 2, 5]
 */
 const charactersArray = ['g', 'n', 'u', 'z', 'd']
+const newArray = []
+charactersArray.forEach((el) => {
+  switch (el) {
+    case 'g': newArray.splice(el, 0, 6)
+    break;
+    case 'n': newArray.splice(el, 0, 12)
+    break;
+    case 'u': newArray.splice(el, 0, 19)
+    break;
+    case 'z': newArray.splice(el, 0, 21)
+    break;
+    case 'd': newArray.splice(el, 0, 4)
+    break;
+  }
+})
+
+console.log(newArray);
