@@ -63,13 +63,13 @@ let addLicensePlate = c => {
   for (let i = 0; i < c.length ; i++){
   switch (c[i].brand){
     case  'Ford':
-    c[i].licensePLate = 'XC456LF'
+    c[i].licensePlate = 'XC456LF'
     break;
     case  'Peugeot':
-    c[i].licensePLate = 'AB897TR'
+    c[i].licensePlate = 'AB897TR'
     break;
     case  'Volkswagen':
-    c[i].licensePLate = 'FG007GL'
+    c[i].licensePlate = 'FG007GL'
     break;  
   }
   }
@@ -85,7 +85,8 @@ const obj = {
   brand: 'Fiat',
   model: '1100',
   color: 'white',
-  trims: ['life', 'family', 'vintage']
+  trims: ['life', 'family', 'vintage'],
+  licensePlate: 'AA000BB'
 }
 cars.push (obj)
 
