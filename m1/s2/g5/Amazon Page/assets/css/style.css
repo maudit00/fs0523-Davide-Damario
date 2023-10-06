@@ -28,8 +28,8 @@ h3 {
 
 h2 {
     display: inline;
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: 550;
+    font-size: 1.4rem;
 }
 
 /*header*/
@@ -71,13 +71,14 @@ main {
     background-color: var(--grigio-sfondo);
 }
 
-main a{
+.blue-a {
     text-decoration: none;
     color: var(--a-color);
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0 15px;
 }
+
 
 main>h2{
     background-color: var(--arancio-amazon);
@@ -110,12 +111,17 @@ main>h2{
     padding: 20px 40px;
 }
 
+.gift-div a{
+    display: flex;
+    width: 30%;
+}
+
 .gifts {
   padding: 0;
   border-radius: 60px;
-  width: 80%;
+  width: 100%;
   box-shadow: 4px 5px 20px #acacac;
-  margin: 20px 10px;
+  margin: 0 20px;
 }
 
 .top-div .div-description {
