@@ -4,7 +4,8 @@
 */
 
 let concatenazione = (n, m) => {
-  return n.slice(0, 2).concat(m.slice(m.length-3))
+  let stringa = n.slice(0, 2).concat(m.slice(m.length-3))
+  return stringa.toUpperCase()
 }
 
 console.log(concatenazione(`ciao`, `belli`));
@@ -232,12 +233,20 @@ console.log(millenialMovie());
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-let moviesYears = []
-movies.forEach( n => {
-  moviesYears.push(parseInt(n.Year))
-})
-let yearsSum = moviesYears.reduce((c,p) => c + p)
-console.log(yearsSum);
+// let moviesYears = []
+// movies.forEach( n => {
+//   moviesYears.push(parseInt(n.Year))
+// })
+// let yearsSum = moviesYears.reduce((c,p) => c + p)
+// console.log(yearsSum);
+
+function yearSum (arr) {
+  let x = 0
+  arr.reduce((c,p) => c + parseInt(p.Years))
+  return x
+}
+console.log(yearSum(movies));
+
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
