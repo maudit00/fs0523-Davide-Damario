@@ -71,11 +71,18 @@ console.log(contaChar('ciao', 'bello', 'come', 'andrebbe'));
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-const k = 100
-let oddNumbers = n => [...Array(n)].map(() => {
-  if (n%2) return num
-})
-console.log(oddNumbers(k));
+
+let oddMaker = arr => {
+  for (let i = 0; i < 100 ; i++){
+    if (i%2 == 1) {
+      arr.push(i)
+    }
+  }
+  return arr
+}
+
+let numeriDispari = []
+console.log(oddMaker(numeriDispari));
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -225,9 +232,13 @@ console.log(millenialMovie());
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+let moviesYears = []
+movies.forEach( n => {
+  moviesYears.push(parseInt(n.Year))
+})
+let yearsSum = moviesYears.reduce((c,p) => c + p)
+console.log(yearsSum);
 
-let yearsSum = n => n.Year.reduce((c,p) => c+ p)
-console.log(yearsSum(movies));
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
