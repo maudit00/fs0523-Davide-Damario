@@ -84,16 +84,17 @@ console.log(contaChar(['ciao', 'bello', 'come', 'andrebbe']));
 */
 
 let oddMaker = arr => {
+  let arrTempo = [];
+
   for (let i = 0; i < 100 ; i++){
     if (i%2 == 1) {
-      arr.push(i)
+      arrTempo.push(i)
     }
   }
-  return arr
+  return arrTempo
 }
 
-let numeriDispari = []
-console.log(oddMaker(numeriDispari));
+console.log(oddMaker());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -243,17 +244,9 @@ console.log(millenialMovie());
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-// let moviesYears = []
-// movies.forEach( n => {
-//   moviesYears.push(parseInt(n.Year))
-// })
-// let yearsSum = moviesYears.reduce((c,p) => c + p)
-// console.log(yearsSum);
 
-function yearSum (arr) {
-  let x = 0
-  arr.reduce((c,p) => c + parseInt(p.Years))
-  return x
+function yearSum (array) {
+  return array.reduce((c,p) => c + parseInt(p.Year), 0)
 }
 console.log(yearSum(movies));
 
@@ -261,13 +254,12 @@ console.log(yearSum(movies));
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
-let id = "tt4154796"
-console.log(movies.find(m => m.imdbID === id))
+let getMovieByID = (array, id) => array.find(el => el.imdbID === id)
+console.log(getMovieByID(movies, "tt2395427"));
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
 
-let year = '1963'
-let movieOfYear = movies.findIndex ( n => n.Year == year)
-console.log(movieOfYear);
+let getMovieByYear = (array, year) => array.find(el => el.Year == year)
+console.log(getMovieByYear(movies, "1963"));
