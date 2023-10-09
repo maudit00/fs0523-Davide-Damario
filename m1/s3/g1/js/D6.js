@@ -3,10 +3,15 @@
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
 
+// let concatenazione = (n, m) => {
+//   let stringa = n.slice(0, 2).concat(m.slice(m.length-3))
+//   return stringa.toUpperCase()
+// }
+
 let concatenazione = (n, m) => {
-  let stringa = n.slice(0, 2).concat(m.slice(m.length-3))
-  return stringa.toUpperCase()
+  return  (n.slice(0, 2).concat(m.slice(m.length-3))).toUpperCase()
 }
+
 
 console.log(concatenazione(`ciao`, `belli`));
 
