@@ -10,6 +10,7 @@
 
 let concatenazione = (n, m) => {
   return  (n.slice(0, 2).concat(m.slice(m.length-3))).toUpperCase()
+
 }
 
 
@@ -25,45 +26,49 @@ const nElementi = 10;
 let arrayRandom = n => [...Array(n)].map(() => Math.round(Math.random() * 100))
 console.log(arrayRandom(nElementi));*/
 
-let randomArray = []
-for ( let i = 0 ; i < 10 ; i++) {
-  randomArray[i] =  Math.round(Math.random() * 100)
+function randomArray (){
+  let arr = []
+  for ( let i = 0 ; i < 10 ; i++) {
+    arr.push( Math.floor(Math.random() * 101))
+  }
+  return arr
 }
-console.log(randomArray);
+console.log(randomArray());
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
-let filtraPari = (...numeri) => numeri.filter( n => !(n%2))
-console.log(filtraPari(1,2,3,54,34,77));
+let filtraPari = (arr) => arr.filter( n => !(n%2))
+console.log(filtraPari([1,2,3,54,34,77]));
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+
 let risultato = 0;
-function sommaNum (...numeri) {
-  numeri.forEach(num => risultato += num)  
+let sommaNum = (arr) => {
+  arr.forEach(num => risultato += num)
   return risultato
 }
-console.log(sommaNum(1,2,3,4,5));
+console.log(sommaNum([1,2,3,4,5]));
 
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-let sommaNum2 = (...n) => n.reduce ((c,p) => c + p)
-console.log(sommaNum2 (54, 3, 6, 18));
+let sommaNum2 = (arr) => arr.reduce ((c,p) => c + p)
+console.log(sommaNum2 ([54, 3, 6, 18]));
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 
-let nDoppia = (n, ...numeri) => {
-  return numeri.map(num => num * n)
+let nDoppia = (arr, n) => {
+  return arr.map(num => num + n)
 }
-console.log(nDoppia(2, 2, 4, 6, 8));
+console.log(nDoppia([2, 2, 4, 6, 8], 2));
 
 
 /* ESERCIZIO 7 (map)
@@ -71,8 +76,8 @@ console.log(nDoppia(2, 2, 4, 6, 8));
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 
-let contaChar = (...words) => words.map(c => c.length)
-console.log(contaChar('ciao', 'bello', 'come', 'andrebbe'));
+let contaChar = (arr) => arr.map(c => c.length)
+console.log(contaChar(['ciao', 'bello', 'come', 'andrebbe']));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
