@@ -155,5 +155,5 @@ console.log(cutString('cacchiarello bello   '));
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-let giveMeRandom = (n) => [...Array(n)].map(() => Math.round(Math.random() * 10));
+let giveMeRandom = n => [...Array(n)].map(() => Math.round(Math.random() * 10));
 console.log(giveMeRandom(40));
