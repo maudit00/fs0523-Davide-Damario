@@ -219,17 +219,33 @@
         let thead = document.createElement('tr')
         table.appendChild(thead)
 
+        // for (let t = 0; t < 4; t++){
+        //   let theadrow = document.createElement('th')
+        //   if (t==0){
+        //     theadrow.innerText = 'immagine'
+        //   }else if (t == 1){
+        //     theadrow.innerText = 'nome prodotto'
+        //   }else if (t == 2){
+        //     theadrow.innerText = 'quantità'
+        //   }else theadrow.innerText ='prezzo'
+        //   table.appendChild(theadrow)
+        // }
+
         for (let t = 0; t < 4; t++){
           let theadrow = document.createElement('th')
-          if (t==0){
-            theadrow.innerText = 'immagine'
-          }else if (t == 1){
-            theadrow.innerText = 'nome prodotto'
-          }else if (t == 2){
-            theadrow.innerText = 'quantità'
-          }else theadrow.innerText ='prezzo'
-          table.appendChild(theadrow)
+          switch (t) {
+            case 0: theadrow.innerText = 'immagine';
+            break;
+            case 1: theadrow.innerText = 'nome prodotto';
+            break;
+            case 2: theadrow.innerText = 'quantità';
+            break;
+            case 3: theadrow.innerText = 'prezzo';
+            break;
+          }
+          thead.append(theadrow)
         }
+
         let tablebdy = document.createElement('tbody')
         table.appendChild(tablebdy)
         for (let i = 0; i < 5; i++){
