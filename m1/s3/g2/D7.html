@@ -88,7 +88,7 @@
 
       const changeTitle = function () {
         let titolo = document.querySelector('h1')
-        titolo.innerText = ('Nuovo titolo')
+        titolo.innerText = 'Nuovo titolo'
       }
 
       changeTitle()
@@ -99,7 +99,8 @@
 
       const addClassToTitle = function () {
         let titolo = document.querySelector('h1')
-        titolo.classList.add('titolo-principale')
+        titolo.classList.remove('myClass')
+        titolo.classList.add('myHeading')
       }
 
       addClassToTitle()
@@ -133,9 +134,9 @@
     */
 
       const addToTheSecond = function () {
+        let target = document.getElementById('secondList')
         let newLi = document.createElement('li')
         newLi.innerText= '4th'
-        let target = document.getElementById('secondList')
         target.append(newLi)
 
       }
@@ -210,13 +211,13 @@
     */
 
       const generateTable = function () {
-        let target = document.getElementById('tableArea')
+        let tableArea = document.getElementById('tableArea')
         let table = document.createElement('table')
 
         table.style.border = '1px solid black'
         table.style.width = '100%'
 
-        let thead = document.createElement('tr')
+        let thead = document.createElement('thead')
         table.appendChild(thead)
 
         // for (let t = 0; t < 4; t++){
@@ -256,7 +257,7 @@
           trow.appendChild(tcol)
           }
         }
-        target.appendChild(table)
+        tableArea.appendChild(table)
       }
 
       
@@ -307,7 +308,17 @@
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
 
-      const deleteVowels = function () {}
+      const deleteVowels = function () {
+        let text = document.querySelectorAll('body *')
+        console.dir(text)
+        let vowels = [ 'a', 'e', 'i', 'o', 'u']
+        text.forEach(testo => {
+        vowels.forEach (vocale => testo.textContent.replace(vocale)) 
+        })
+
+      }
+
+      deleteVowels()
     </script>
   </body>
 </html>
