@@ -4,8 +4,8 @@ const todo = document.getElementById('todo')
 const done = document.getElementById('done')
 const todoDiv = document.querySelector('.todo')
 const doneDiv = document.querySelector('.done')
-let todoTitle = document.createElement('h3')
-let doneTitle = document.createElement('h3')
+const todoTitle = document.createElement('h3')
+const doneTitle = document.createElement('h3')
 
 // todo.childNodes.classList.add('itemToDo')
 // done.childNodes.classList.add('done')
@@ -18,6 +18,11 @@ makeDoneTitle()
 saveButton.addEventListener('click', function () {
     if (!input.value) {
         input.classList.add('empty')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Non hai messo il testo',
+          })
         return
     }
     todoTitle.style.display = 'block'
@@ -47,13 +52,13 @@ function pushItemDone(e) {
 
     e.classList.add('itemDone')
     e.classList.remove('itemToDo')
-    done.append(e)
+    done.prepend(e)
 }
 
 function pushItemToDo(e) {
     e.classList.add('itemToDo')
     e.classList.remove('itemDone')
-    todo.append(e)
+    todo.prepend(e)
 }
 
 function makeToDoTitle (){
@@ -70,6 +75,8 @@ doneDiv.prepend(doneTitle)
 doneTitle.style.display = 'none'
 }
 
+
+
    // for (let item of itemToDo) {
     //     item.addEventListener('click', function () {
     //         pushItemDone(item)
@@ -81,3 +88,6 @@ doneTitle.style.display = 'none'
     //         }
     //     })
     // }
+
+let timeStamp = Date.getTime()
+console.log(timeStamp);
