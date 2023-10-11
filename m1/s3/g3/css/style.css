@@ -1,0 +1,119 @@
+
+/*general settings*/
+
+a {
+    text-decoration: none;
+    color: #570e0e;
+}
+
+h1 h2 h3 p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+/* header*/
+
+
+#header {
+    padding: 30px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+h1{
+    font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+
+/*main*/
+
+main {
+    background-image: url('../img/paper-background.jpg');
+    height: 80vh;
+}
+
+#input {
+    text-align: center;
+    padding: 50px;
+}
+
+#input p {
+    padding: 20px;
+    font-style: italic;
+    font-weight: 500;
+    color: #570e0e;
+    font-size: larger;
+}
+
+#save{
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 2px solid burlywood;
+}
+
+#task {
+    width:40vw;
+    height: 30px;
+    border-radius: 50px;
+}
+
+#task::placeholder{
+    text-align: center;
+}
+
+.empty {
+    border: 3px solid red;
+}
+
+.container {
+    padding: 50px 80px;
+    display: flex;
+    justify-content: space-around;
+    background-color: antiquewhite;
+}
+
+
+.todoTitle {
+    font-size: 1.6rem;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.doneTitle {
+    font-size: 1.6rem;
+    padding: 20px;
+    text-align: center;
+    text-decoration: line-through;
+    color: red;
+}
+
+.itemToDo {
+    color: #088a39;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.itemDone {
+    color: darkred;
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-decoration: line-through;
+}
+
+
+
+#footer{
+    background-color: antiquewhite;
+    height: 30px;
+}
