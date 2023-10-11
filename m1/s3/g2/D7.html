@@ -181,27 +181,52 @@
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
+      // const makeItClickable = function () {
+      //   let target = document.querySelector('h1')
+      //   target.textContent = target.textContent.slice(0, -1)
+      // }
+
+      // let title = document.querySelector('h1')
+      // title.addEventListener('click', makeItClickable)
+
       const makeItClickable = function () {
-        let target = document.querySelector('h1')
-        target.textContent = target.textContent.slice(0, -1)
+        const titolo = document.querySelector('h1')
+        const titoloBuffer = titolo.textContent;
+        titolo.addEventListener('click', function () {
+          titolo.textContent = titolo.textContent.slice(0, -1)
+          if (!titolo.textContent){
+          titolo.textContent = titoloBuffer
+        }
+        })
       }
 
-      let title = document.querySelector('h1')
-      title.addEventListener('click', makeItClickable)
+      makeItClickable()
 
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
-      const revealFooterLink = function () {
-        let target = document.querySelector('footer')
-        let link = document.querySelector('footer a')
-        alert (link.href)
-        console.dir(link)
+      // const revealFooterLink = function () {
+      //   let target = document.querySelector('footer')
+      //   let link = document.querySelector('footer a')
+      //   alert (link.href)
+      //   console.dir(link)
+      // }
+
+      // let footer = document.querySelector('footer')
+      // footer.addEventListener('click', revealFooterLink)
+
+
+      const revealFooterLink = () => {
+        const footer = document.querySelector('footer')
+        const footerA = document.querySelector('footer a')
+        const link = footerA.href
+        footer.addEventListener('click', () => {
+        alert (link)
+        })
       }
 
-      let footer = document.querySelector('footer')
-      footer.addEventListener('click', revealFooterLink)
+      revealFooterLink()
 
       
 
