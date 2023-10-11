@@ -111,6 +111,11 @@ main {
     text-decoration: line-through;
 }
 
+.eraseButton {
+    margin: 10px;
+    padding: 10px;
+}
+
 
 
 #footer{
