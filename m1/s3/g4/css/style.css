@@ -1,0 +1,54 @@
+/**************************************************
+SETTINGS GENERALI
+*/
+
+
+/********************************************************
+** SORT AREA***
+*/
+
+
+.titoloPrincipale {
+    font-weight: 600;
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 20px;
+}
+
+.description {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.sortArea {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.head {
+    background: rgb(209,124,161);
+    background: radial-gradient(circle, rgba(209,124,161,1) 0%, rgba(148,187,233,1) 100%); 
+}
+
+.btn {
+    text-align: center;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 30px;
+}
+
+.btn:hover{
+    border: 1px solid white;
+    background-color: blanchedalmond;
+    text-decoration: underline;
+}
+
+.sortedNumberDisplay {
+    background-color: antiquewhite;
+    padding: 40px 40px;
+    font-size: 3rem;
+    border: 2px solid black;
+}
+
