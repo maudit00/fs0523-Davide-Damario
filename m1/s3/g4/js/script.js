@@ -1,7 +1,7 @@
 const tableArea = document.getElementById('container')
 const testa = tableArea.querySelector('.head')
 const numbersArea = tableArea.querySelector('.numbersContainer')
-
+let savedNumber = []
 
 mainTitle()
 sortArea()
@@ -37,6 +37,7 @@ function sortArea() {
         let randNum = randomNumber(76)
         display.innerText = randNum
         numCheck(randNum)
+        console.log(savedNumber, randNum);
     })
 }
 
@@ -57,8 +58,8 @@ function mainTitle() {
 }
 
 
+
 function randomNumber(maxNum) {
-    let savedNumber = []
     let x = Math.floor(Math.random() * maxNum + 1)
     if (!savedNumber.includes(x)){
         savedNumber.push(x)
@@ -67,8 +68,8 @@ function randomNumber(maxNum) {
         if (savedNumber.length < maxNum){
             return randomNumber(maxNum)
         }else {
-            display.innerText = 'Numeri finiti'
-            return false
+
+            return 'TOMBOLA'
         }
     }
 }
@@ -77,7 +78,6 @@ function randomNumber(maxNum) {
 
 
 function numCheck(e) {
-    // const src = tableArea.querySelector('.sortedNumberDisplay').innerText
     const tabs = tableArea.querySelectorAll('.numTab')
     for (let num of tabs) {
         if (num.innerText == e) {
