@@ -2,15 +2,11 @@ const tableArea = document.getElementById('container')
 const testa = tableArea.querySelector('.head')
 const numbersArea = tableArea.querySelector('.numbersContainer')
 let savedNumber = []
+let description = document.createElement('p')
 
 mainTitle()
 sortArea()
 numbersTable()
-
-
-
-
-
 
 
 function sortArea() {
@@ -18,7 +14,7 @@ function sortArea() {
     const sortArea = document.createElement('div')
     const display = document.createElement('div')
     const sortBtn = document.createElement('button')
-    let description = document.createElement('p')
+    let contatore = 0
     //do una classe
     sortArea.classList.add('sortArea')
     display.classList.add('sortedNumberDisplay')
@@ -31,13 +27,14 @@ function sortArea() {
     testa.append(description)
     testa.append(sortArea)
     sortArea.append(display, sortBtn)
-
     //eventlistener
     sortBtn.addEventListener('click', function () {
+        
         let randNum = randomNumber(76)
         display.innerText = randNum
         numCheck(randNum)
-        console.log(savedNumber, randNum);
+        contatore++
+        cambiaDescrizione(contatore)
     })
 }
 
@@ -58,7 +55,6 @@ function mainTitle() {
 }
 
 
-
 function randomNumber(maxNum) {
     let x = Math.floor(Math.random() * maxNum + 1)
     if (!savedNumber.includes(x)){
@@ -75,8 +71,6 @@ function randomNumber(maxNum) {
 }
 
 
-
-
 function numCheck(e) {
     const tabs = tableArea.querySelectorAll('.numTab')
     for (let num of tabs) {
@@ -87,5 +81,8 @@ function numCheck(e) {
     console.dir(tabs);
 }
 
+function cambiaDescrizione (n){
+    description.innerText = `Siamo alla ${n}° estrazione`
+}
 
 
