@@ -13,7 +13,7 @@ numbersTable()
 
 
 
-function sortArea () {
+function sortArea() {
     //creo elementi
     const sortArea = document.createElement('div')
     const display = document.createElement('div')
@@ -33,15 +33,15 @@ function sortArea () {
     sortArea.append(display, sortBtn)
 
     //eventlistener
-    sortBtn.addEventListener('click', function (){
-      let randNum = randomNumber()
-      display.innerText =  randNum
-      numCheck()
+    sortBtn.addEventListener('click', function () {
+        let randNum = randomNumber(76)
+        display.innerText = randNum
+        numCheck(randNum)
     })
 }
 
-function numbersTable (){
-    for (let i = 1; i <= 76; i++){
+function numbersTable() {
+    for (let i = 1; i <= 76; i++) {
         let tab = document.createElement('div')
         tab.innerText = i
         tab.classList.add('numTab')
@@ -49,7 +49,7 @@ function numbersTable (){
     }
 }
 
-function mainTitle (){
+function mainTitle() {
     const titolo = document.createElement('h3')
     titolo.classList.add('titoloPrincipale')
     titolo.innerText = 'Tombola'
@@ -57,18 +57,30 @@ function mainTitle (){
 }
 
 
-function randomNumber (){
-    let x = Math.floor(Math.random()*77)
-    console.log(x);
-    return x
+function randomNumber(maxNum) {
+    let savedNumber = []
+    let x = Math.floor(Math.random() * maxNum + 1)
+    if (!savedNumber.includes(x)){
+        savedNumber.push(x)
+        return x
+    } else {
+        if (savedNumber.length < maxNum){
+            return randomNumber(maxNum)
+        }else {
+            display.innerText = 'Numeri finiti'
+            return false
+        }
+    }
 }
 
-function numCheck(){
-    const src = tableArea.querySelector('.sortedNumberDisplay').innerText
-    //const nums = Array.from(tableArea.querySelectorAll('.numTab'), e=> e.innerText)
+
+
+
+function numCheck(e) {
+    // const src = tableArea.querySelector('.sortedNumberDisplay').innerText
     const tabs = tableArea.querySelectorAll('.numTab')
-    for (let num of tabs){
-        if (num.innerText == src){
+    for (let num of tabs) {
+        if (num.innerText == e) {
             num.classList.add('extracted')
         }
     }
