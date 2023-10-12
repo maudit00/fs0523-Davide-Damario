@@ -65,12 +65,21 @@ function randomNumber(maxNum) {
             return randomNumber(maxNum)
         }else {
 
-            return 'TOMBOLA'
+            return tombola()
         }
     }
 }
 
-
+function tombola (){
+        Swal.fire({
+        title: 'TOMBOLAAAAA!',
+        text: 'Avremo finito i numeri da estrarre',
+        imageUrl: 'img/tombola.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Tombola',
+      })
+}
 function numCheck(e) {
     const tabs = tableArea.querySelectorAll('.numTab')
     for (let num of tabs) {
