@@ -52,3 +52,27 @@ SETTINGS GENERALI
     border: 2px solid black;
 }
 
+/****************************************************************************
+**** TAVOLA DEI NUMERI **********************
+****/
+
+
+.numbersContainer {
+    background-color: antiquewhite;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 10px
+}
+
+.numTab {
+    flex: 0 1 10%;
+    padding: 5px 2px;
+    border: 5px solid wheat;
+    text-align: center;
+}
+
+.extracted {
+    background-color: red;
+}

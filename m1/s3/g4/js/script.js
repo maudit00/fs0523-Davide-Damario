@@ -1,11 +1,16 @@
 const tableArea = document.getElementById('container')
 const testa = tableArea.querySelector('.head')
-const numbersArea = tableArea.querySelector('.numbersTable')
+const numbersArea = tableArea.querySelector('.numbersContainer')
 
 
 mainTitle()
 sortArea()
 numbersTable()
+
+
+
+
+
 
 
 function sortArea () {
@@ -31,14 +36,17 @@ function sortArea () {
     sortBtn.addEventListener('click', function (){
       let randNum = randomNumber()
       display.innerText =  randNum
+      numCheck()
     })
 }
 
 function numbersTable (){
-    let table = document.createElement('div')
-    table.classList.add('numbersTable')
-    table.innerText = 'CIAOOO'
-    numbersArea.append(table)
+    for (let i = 1; i <= 76; i++){
+        let tab = document.createElement('div')
+        tab.innerText = i
+        tab.classList.add('numTab')
+        numbersArea.append(tab)
+    }
 }
 
 function mainTitle (){
@@ -54,3 +62,18 @@ function randomNumber (){
     console.log(x);
     return x
 }
+
+function numCheck(){
+    const src = tableArea.querySelector('.sortedNumberDisplay').innerText
+    //const nums = Array.from(tableArea.querySelectorAll('.numTab'), e=> e.innerText)
+    const tabs = tableArea.querySelectorAll('.numTab')
+    for (let num of tabs){
+        if (num.innerText == src){
+            num.classList.add('extracted')
+        }
+    }
+    console.dir(tabs);
+}
+
+
+
