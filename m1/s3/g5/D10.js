@@ -173,34 +173,46 @@ console.log(whatDayIsIt());
 */
 
 const rollTheDices = n => {
-//   let obj = {
-//     sum: 0,
-//     values: []
-//   }
-//   for (let i = 0; i < n; i++){
-//   obj.values[i] = dice()
-//   obj.sum = obj.sum + obj.values[i]
-//   }
-//   return obj
-//
-
-
-
+  let obj = {
+    sum: 0,
+    values: []
+  }
+  for (let i = 0; i < n; i++){
+  obj.values[i] = dice()
+  obj.sum = obj.sum + obj.values[i]
+  }
+  return obj
 }
 
+/*** SOLTANTO UNA PROVA */
+// const rollDices = n => {
+//   let obj = {}
+//   for (let i = 0; i < n; i++){
+//     obj.values = dice()
+//     obj.sum = obj.values
+//   }
+//   return obj
+// }
+
+
+console.log(rollTheDices(5));
 // rollTheDices(4)
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
-// const howManyDays = setDate => {
-//   let now = new Date()
-//   let askedDate = new Date(setDate)
-//   return now.getTime - askedDate.getTime
-// }
+function howManyDays(data){
+  let now = new Date()
 
-// howManyDays(data)
+  let dateToCheck = new Date(data)
+  
+  let diff = now.getTime() - dateToCheck.getTime()
+  return parseInt(diff/ (1000 * 3600 * 24))
+}
+
+console.log(howManyDays('10/01/2023'))
+
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
