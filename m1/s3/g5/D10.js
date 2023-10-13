@@ -218,6 +218,16 @@ console.log(howManyDays('10/01/2023'))
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 
+function isTodayMyBirthday(){
+  let now = new Date()
+  let birthday = new Date(11, 19, 1993)
+  if (now.getTime==birthday.getTime){
+    return true
+  }
+
+}
+
+
 // Arrays & Oggetti
 
 const movies = [
