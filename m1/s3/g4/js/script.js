@@ -71,6 +71,7 @@ function randomNumber(maxNum) {
 }
 
 function tombola (){
+        
         Swal.fire({
         title: 'TOMBOLAAAAA!',
         text: 'Avremo finito i numeri da estrarre',
@@ -87,7 +88,6 @@ function numCheck(e) {
             num.classList.add('extracted')
         }
     }
-    console.dir(tabs);
 }
 
 function cambiaDescrizione (n){
