@@ -1,0 +1,58 @@
+@media screen and (min-width: 320px){
+
+    nav li{
+        display: inline-block;
+        padding: 0 3px;
+    }   
+
+    #newsletter h2{
+        background-color: #a3a3a3;
+        text-transform: capitalize;
+    }
+    
+    #inputField {
+       display: flex;
+       justify-content: start;
+    }
+
+    input {
+        margin: 0 3px;
+        padding: 0;
+    }
+
+    input::placeholder{
+        text-indent: 3px;
+    }
+    button {
+        padding: 4px 5px;
+    }
+
+    p, address, ul, ol, dl, blockquote {
+        margin-bottom: 1.4em;
+    }
+
+    table {
+        border-bottom: 2px solid #466bd0;
+        padding-right: 30px;
+    }
+
+    aside h2 {
+       font-size: 2.3rem;
+       margin: 30px 0;
+    }
+}
+
+@media screen and (min-width: 576px) {
+
+   
+
+    table {
+        margin: 100px auto;
+    }
+    input {
+        padding: 8px 80px;
+    }
+    input::placeholder{
+        text-indent: 0px;
+    }
+}

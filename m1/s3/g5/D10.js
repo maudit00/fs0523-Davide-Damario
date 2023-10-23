@@ -220,13 +220,15 @@ console.log(howManyDays('10/01/2023'))
 
 function isTodayMyBirthday(){
   let now = new Date()
-  let birthday = new Date(11, 19, 1993)
-  if (now.getTime==birthday.getTime){
+  let birthday = new Date(1993, 10, 19)
+  console.log(now.getTime(), birthday.getTime());
+  if (now.getTime === birthday.getTime){
     return true
   }
-
+  return false
 }
 
+console.log(isTodayMyBirthday());
 
 // Arrays & Oggetti
 
