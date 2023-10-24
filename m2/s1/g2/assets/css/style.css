@@ -136,10 +136,14 @@ h1 {
   z-index: 1;
 }
 
+.news-title{
+  text-transform: uppercase;
+}
 @media screen and (min-width:769px) {
   .main-title{
     display: inline-block;
   }
+
   .main-title img {
     position: relative;
     bottom: 30px;
@@ -148,6 +152,39 @@ h1 {
     width: 55%;
     z-index: 1;
   }
+
+  .author {
+    color: #969494;
+  }
+
+  .iframe-news{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .iframe {
+    flex: 0 1 50%
+  }
+
+  .news {
+    border-radius: 30px;
+    flex: 0 1 50%;
+    position: static;
+    vertical-align: center;
+  }
+
+  .news-title {
+    position: relative;
+    width: 30%;
+    padding: 5px 0;
+    top: -40px;
+    left: 20px;
+  }
+
+  .validation-test{
+    margin-bottom: 4rem;
+  }
+  
 
   
 }
