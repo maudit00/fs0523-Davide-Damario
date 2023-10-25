@@ -8,6 +8,10 @@
 #menu {
     display: flex;
     list-style: none;
+    align-items: center;
+    flex-wrap:wrap-reverse;
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
 
@@ -30,6 +34,7 @@
     column-gap: 30px;
     align-items: center;
     padding: 20px;
+    flex-grow: 2;
 }
 
 .shop-button img {
