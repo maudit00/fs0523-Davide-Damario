@@ -1,6 +1,6 @@
 :root {
     --dark-brown : #612406;
-    --my-yellow : #f3df85;
+    --my-yellow : #fcdf7f;
 }
 .bold {
     font-weight: bold;
@@ -86,6 +86,7 @@
 #main {
     display: flex;
     flex-direction: column ;
+    align-items: center;
     row-gap: 30px;
 }
 
@@ -97,6 +98,7 @@
     text-transform: capitalize;
     font-weight: 700;
     font-size: 2.8rem;
+    text-align: center;
 }
 
 
@@ -154,3 +156,35 @@
 .price {
     font-size: 1.2rem;
 }
+
+/*********** aside ******/
+
+.news-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-brown);
+    font-size: 2rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.article-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #fbf7e3;
+    color: #612406;
+    row-gap: 30px;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 20px
+    
+}
+
+.article-title {
+    font-size : 2rem;
+    font-weight: bold;
+}
+
