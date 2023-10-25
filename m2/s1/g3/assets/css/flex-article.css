@@ -1,0 +1,18 @@
+.article-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #fbf7e3;
+    color: #612406;
+    row-gap: 30px;
+    box-sizing: border-box;
+    padding: 30px;
+    margin: 50px;
+    border-radius: 20px
+    
+}
+
+.article-title {
+    font-size : 2rem
+}
+
