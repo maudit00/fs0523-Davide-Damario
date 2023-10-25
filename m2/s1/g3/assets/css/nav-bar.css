@@ -1,11 +1,12 @@
 .nav-wrapper {
     background-color: #fbf7e3;
     border-radius: 30px;
+    margin: 30px;
+    padding: 10px;
 }
 
 #menu {
     display: flex;
-    justify-content: space-around;
     list-style: none;
 }
 
@@ -14,18 +15,22 @@
     padding-bottom: 20px;
     background-color: #f3df85;
     padding: 15px 35px;
-    margin-bottom: 15px;
+    flex-grow: 1;
     border-radius: 30px;
     font-weight: 500;
     vertical-align: middle;
     margin: auto;
+    text-align: center;
 }
 
 .shop-button {
-    font-size: 2em;
+    font-size: 1.7em;
     font-weight: 550;
     display: flex;
+    column-gap: 30px;
+    align-items: center;
     padding: 20px;
+    
 }
 
 .shop-button img {

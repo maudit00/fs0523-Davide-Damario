@@ -1,3 +1,26 @@
-#nav-wrapper {
-    flex-wrap: wrap;
+/** nav bar mobile fixing */
+
+#menu {
+    flex-wrap:wrap-reverse;
+    row-gap: 20px;
+}
+
+#shop{
+    order: 5;
+}
+
+#our-honey{
+    order: 4;
+}
+
+#trace-honey{
+    order: 3;
+}
+
+#facilities {
+    order: 2
+}
+
+#contacts {
+    order: 1
 }
