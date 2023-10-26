@@ -1,10 +1,20 @@
+/********* general settings ******/
+
+
 :root {
     --dark-brown : #612406;
     --my-yellow : #fcdf7f;
+    --yellow-tab-bg: #fbf7e3;
 }
 .bold {
     font-weight: bold;
 }
+
+a {
+    color: var(--dark-brown);
+    text-decoration: none;
+}
+
 /** nav bar mobile fixing */
 
 .nav-wrapper {
@@ -48,10 +58,8 @@
     max-width: 40px;
 }
 
-#menu a {
-    color: var(--dark-brown);
-    text-decoration: none;
-}
+
+/******* ordine dei linkn nel nav *****/* 
 
 #shop{
     order: 5;
@@ -111,7 +119,7 @@
     justify-content: start;
     align-items: center;
     overflow: hidden;
-    background-color: #fbf7e3;
+    background-color:var(--yellow-tab-bg);
     row-gap: 30px;
     margin: 20px 0;
 }
@@ -150,7 +158,7 @@
 
 .button-add-to-cart a{
     text-decoration: none;
-    color: #612406;
+    color: var(--dark-brown);
 }
 
 .price {
@@ -174,8 +182,8 @@ img {
     display: flex;
     flex-direction: column;
     align-items: start;
-    background-color: #fbf7e3;
-    color: #612406;
+    background-color:var(--yellow-tab-bg);
+    color: var(--dark-brown);
     row-gap: 30px;
     box-sizing: border-box;
     padding: 30px;

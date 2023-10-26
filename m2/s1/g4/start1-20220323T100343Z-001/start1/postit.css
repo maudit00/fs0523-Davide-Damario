@@ -1,0 +1,66 @@
+:root {
+    --giallo: #fefece;
+    --verde: #ccfece;
+    --viola: #cacafa;
+    --grigio: #666666;
+}
+
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--grigio);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    row-gap: 45px;
+    column-gap: 30px;
+    box-sizing: border-box;
+}
+
+.postit {
+    font-family: 'Indie Flower', cursive;
+    width: 270px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    box-shadow: 4px 4px 20px 0.5px;
+}
+
+.postit:hover{
+    transform: scale(1.3);
+    z-index: 1;
+    
+}
+
+.postit-title {
+    font-size: 3.2rem;
+    font-weight: bolder;
+}
+
+.postit-content {
+    font-size: 1.6rem;
+    position: relative;
+    right: 45px;
+}
+
+.yellow {
+    background-image: linear-gradient(var(--giallo) 0%, var(--giallo) 75%, #bdbda3 90%, #bdbda3 100%);
+    transform: rotateZ(-4deg)
+}
+
+.green {
+    background-image: linear-gradient(var(--verde) 0%, var(--verde) 75%, #a1b8a1 90%, #a1b8a1 100%);
+    transform: rotateZ(4deg)
+}
+
+.green:nth-child(2) {}
+
+.purple {
+    background-image: linear-gradient(var(--viola) 0%, var(--viola) 75%, #8b8c9b 90%, #8b8c9b 100%);
+    transform: rotateZ(-6deg);
+}
