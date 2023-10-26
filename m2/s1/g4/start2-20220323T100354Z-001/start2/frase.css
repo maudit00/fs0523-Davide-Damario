@@ -23,41 +23,18 @@
 
 .parole {
     color: #6a889c;
-    position: relative;
+    position: absolute;
+    opacity: 1;
+    /* animation-name: fadeIn;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s; */
 }
 
-#p1{
-    opacity: 0;
-    animation-name: fadeIn, fadeOut;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-duration: 3s, 3s;
-    animation-delay: 0s, 3s ;
-    position: absolute;
-    color: red;
+.parole:nth-child(2){
+   opacity: 0;
 }
 
-#p2{
-    opacity: 0;
-    animation-name: fadeIn, fadeOut;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-duration: 3s, 3s;
-    animation-delay: 6s, 9s ;
-    position: absolute;
-    color: blue;
-}
-
-#p3{
-    opacity: 0;
-    animation-name: fadeIn, fadeOut;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-duration: 3s, 3s;
-    animation-delay: 12s, 15s ;
-    position: absolute;
-    color: yellow;
-}
 
 @keyframes fadeIn {
     0% {opacity: 0; bottom: 100%;}
