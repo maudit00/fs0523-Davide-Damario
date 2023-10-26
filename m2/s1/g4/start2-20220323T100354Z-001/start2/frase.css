@@ -32,7 +32,7 @@
     animation-duration: 6s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    transition: ease-in-out;
+    /* transition: ease-in-out; */
 }
 
 .parole i:nth-child(2){
@@ -43,8 +43,8 @@
 }
 
 @keyframes fade {
-    0% {opacity: 0; transform: translateY(-100px);}
+    0% {opacity: 0; transform: translateY(-50%);}
     33% {opacity: 1;transform: translateY(0px);}
-    66% {opacity: 0;transform: translateY(100px);}
-    100% {opacity: 0;transform: translateY(-100px);}
+    66% {opacity: 0;transform: translateY(50%);}
+    100% {opacity: 0;transform: translateY(-50%);}
 }
