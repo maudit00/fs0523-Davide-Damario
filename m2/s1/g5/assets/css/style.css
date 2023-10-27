@@ -211,18 +211,15 @@ h6 {
 
 .bottom-content {
     height: 100vh;
-    flex-basis: 70%;
+    flex-basis: 60%;
 }
 
-.articles {
-    margin-left: 50px;
-}
 
 .articles img {
     vertical-align: middle;
 }
 
-book .articles-time-related {
+.articles-time-related {
     column-gap: 5px
 }
 
@@ -230,6 +227,12 @@ book .articles-time-related {
     position: relative;
     left: 110%;
     top: 10%;
+}
+
+.thumbnail{
+    position: relative;
+    left: 280px;
+    bottom: 150px;
 }
 
 .topic {
@@ -244,11 +247,34 @@ book .articles-time-related {
 /******** discover *******/
 
 .right-nav {
-    flex-grow: 1;
+    width: 30%;
 }
 
 .right-nav h4 {
     text-transform: uppercase;
     font-size: 13px;
     line-height: 20px;
+}
+
+.topics {
+    flex-wrap: wrap;
+    gap: 3px;
+    padding: 15px;
+    border-bottom: 1px solid var(--trending-numbers);
+}
+
+.topics p {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+aside {
+    min-height: 30px;
+    position: sticky;
+    top: 110px;
+}
+
+#footer {
+    padding: 15px 0;
+    gap: 5px
 }
