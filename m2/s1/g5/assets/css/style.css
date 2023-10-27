@@ -31,6 +31,13 @@ body{
     color:var(--other-text)
 }
 
+.circle-border {
+    border-radius: 50%;
+}
+
+.square-border {
+    border-radius: 4px;
+}
 /****** nav *******/
 
 #header {
@@ -98,9 +105,14 @@ body{
     gap: 10px;
 }
 
+.articles-titles{
+    overflow: hidden;
+}
+
 #top-trending img{
-    border-radius: 100%;
     vertical-align: middle;
+    width: 20px;
+    height: 20px;
 }
 
 
