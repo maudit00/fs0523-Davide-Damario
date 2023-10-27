@@ -1,5 +1,12 @@
 /******** Main settings *****/ 
 
+:root {
+--hero-yellow : #ffc017;
+--trending-numbers: #e6e7e7;
+--black-default-text : #292929;
+--other-text: #757575;
+
+}
 a{
     text-decoration: none;
 }
@@ -8,12 +15,20 @@ ul {
     list-style: none;
 }
 
+body{
+    color: var(--black-default-text);
+}
+
 
 /******* utility class *****/ 
 
 .container {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 15%;
+    padding-left: 15%;
+}
+
+.grey-text {
+    color:var(--other-text)
 }
 
 /****** nav *******/
@@ -59,6 +74,29 @@ ul {
     column-gap: 4px;
     align-items: center;
     justify-content: start;
+    align-items: center;
+}
+
+.top-trending-article{
+    display: flex;
+    column-gap: 3px;
+}
+
+.trending-position{
+    text-align: center;
+}
+
+#top-trending img{
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.articles-content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+
 }
 
 
