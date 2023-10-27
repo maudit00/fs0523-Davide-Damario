@@ -1,14 +1,14 @@
-/******** Main settings *****/ 
+/******** Main settings *****/
 
 :root {
---hero-yellow : #ffc017;
---trending-numbers: #e6e7e7;
---black-default-text : #292929;
---other-text: #757575;
+    --hero-yellow: #ffc017;
+    --trending-numbers: #e6e7e7;
+    --black-default-text: #292929;
+    --other-text: #757575;
 
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--black-default-text);
 }
@@ -17,16 +17,26 @@ ul {
     list-style: none;
 }
 
-body{
+body {
     color: var(--black-default-text);
+    font-family: 'Roboto', sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 
-/******* utility class *****/ 
+    font-weight: 700;
+}
+
+/******* utility class *****/
 
 
 .grey-text {
-    color:var(--other-text)
+    color: var(--other-text)
 }
 
 .circle-border {
@@ -36,6 +46,19 @@ body{
 .square-border {
     border-radius: 4px;
 }
+
+.black-btn {
+    color: white;
+    line-height: 20px;
+    background-color: rgba(25, 25, 25, 1);
+    border-radius: 99em;
+    border: 1px solid rgba(25, 25, 25, 1);
+    padding: 7px 16px 9px;
+    transition: all 0.3s;
+    font-weight: 400;
+}
+
+/********** flex utility class **/
 
 .flex {
     display: flex;
@@ -70,32 +93,52 @@ body{
 
 
 
-.nav-wrapper{
-
-    column-gap: 20%;
-    gap: 40px;
+.nav-wrapper {
+    background-color: var(--hero-yellow);
+    gap: 40%;
     height: 50px;
     padding: 25px 0;
     border-bottom: 1px solid var(--black-default-text);
 }
-    
 
-#menu{
+
+#menu {
     display: flex;
     gap: 10px;
 }
 
 
 /******* hero******/
-.hero{
-    display: flex;
-    align-items: center;
-    row-gap: 25px;
+
+.hero {
+    background-color: var(--hero-yellow);
+    justify-content: center;
+    margin-right: auto;
+    border-bottom: 1px solid var(--black-default-text);
 }
 
 
 
-/********** Top Trending Section ********/ 
+.hero h1 {
+    font-family: 'Spectral', serif;
+    font-size: 80px;
+}
+
+.hero-content-wrapper {
+    padding: 100px 0;
+    gap: 40px;
+}
+
+#start-reading {
+    margin-top: 1.5rem;
+    font-size: 20px;
+    padding: 0.5em 2.5em;
+    width: fit-content;
+}
+
+
+
+/********** Top Trending Section ********/
 
 #top-trending {
     padding-top: 40px;
@@ -103,10 +146,10 @@ body{
 }
 
 .top-trending-title {
-    gap:10px;
+    gap: 10px;
 }
 
-.top-trending-title{
+.top-trending-title {
     vertical-align: middle;
 }
 
@@ -116,7 +159,7 @@ body{
     padding-inline: 3rem;
 }
 
-.top-trending-article{
+.top-trending-article {
     display: flex;
     column-gap: 3px;
     flex-basis: 33%;
@@ -126,18 +169,18 @@ body{
     row-gap: 20px;
 }
 
-.articles-content{
+.articles-content {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 10px;
 }
 
-.articles-titles{
+.articles-titles {
     overflow: hidden;
 }
 
-#top-trending img{
+#top-trending img {
     vertical-align: middle;
     width: 20px;
     height: 20px;
@@ -159,8 +202,6 @@ body{
 
 
 
-.right-nav{
+.right-nav {
     flex-basis: 100%;
 }
-
-
