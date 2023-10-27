@@ -89,23 +89,37 @@ h6 {
     flex-direction: row;
 }
 
+.auto-padding {
+    padding: 0 64px;
+}
+
 /****** nav *******/
 
+#nav {
+    border-bottom: 1px solid var(--black-default-text);
+}
 
-
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
 
 .nav-wrapper {
     background-color: var(--hero-yellow);
-    gap: 40%;
+    gap: 45%;
     height: 50px;
     padding: 25px 0;
-    border-bottom: 1px solid var(--black-default-text);
 }
+
 
 
 #menu {
     display: flex;
     gap: 10px;
+    position: absolute;
+    right: 12rem;
 }
 
 
@@ -113,12 +127,14 @@ h6 {
 
 .hero {
     background-color: var(--hero-yellow);
-    justify-content: center;
-    margin-right: auto;
     border-bottom: 1px solid var(--black-default-text);
+    padding: 100px 0;
 }
 
-
+#matrix-animation {
+    position: absolute;
+    right: 12rem;
+}
 
 .hero h1 {
     font-family: 'Spectral', serif;
@@ -126,8 +142,8 @@ h6 {
 }
 
 .hero-content-wrapper {
-    padding: 100px 0;
-    gap: 40px;
+    padding: 200px 0;
+    gap: 60px;
 }
 
 #start-reading {
@@ -204,7 +220,7 @@ h6 {
 /********* other articles *********/
 
 .bottom {
-
+    margin-inline: 50px;
     padding-top: 56px;
     justify-content: center;
 }
@@ -229,7 +245,7 @@ h6 {
     top: 10%;
 }
 
-.thumbnail{
+.thumbnail {
     position: relative;
     left: 280px;
     bottom: 150px;
