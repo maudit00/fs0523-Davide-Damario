@@ -5,6 +5,7 @@
     --trending-numbers: #e6e7e7;
     --black-default-text: #292929;
     --other-text: #757575;
+    --trending-numbers: #e6e7e7;
 
 }
 
@@ -143,6 +144,7 @@ h6 {
 #top-trending {
     padding-top: 40px;
     padding-bottom: 16px;
+    border-bottom: 1px solid var(--trending-numbers);
 }
 
 .top-trending-title {
@@ -153,6 +155,17 @@ h6 {
     vertical-align: middle;
 }
 
+/**** numero al fianco del post ****/
+
+.trending-position{
+    color: var(--trending-numbers);
+    font-weight: 900;
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+
+/********/
 .wrapper {
     flex-direction: column;
     gap: 20px;
@@ -167,13 +180,14 @@ h6 {
 
 .article-container {
     row-gap: 20px;
+    padding-bottom: 10px;
 }
 
 .articles-content {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 10px;
+    gap: 30px;
 }
 
 .articles-titles {
@@ -189,19 +203,29 @@ h6 {
 
 /********* other articles *********/
 
-#bottom {
-    width: 50%;
+.bottom {
+   
     padding-top: 56px;
     justify-content: center;
 }
 
 .bottom-content {
-    overflow-y: scroll;
-    flex-basis: 100%;
+    height: 100vh;
+    flex-basis: 70%;
 }
 
+.articles {
+    margin-left: 50px;
+}
 
+/******** discover *******/ 
 
 .right-nav {
-    flex-basis: 100%;
+    flex-grow: 1;
+}
+
+.right-nav h4{
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 20px;
 }
