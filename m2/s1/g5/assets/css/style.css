@@ -1,0 +1,50 @@
+/******** Main settings *****/ 
+
+a{
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/******* utility class *****/ 
+
+.container {
+    padding: 25px 40px;
+}
+
+/****** nav *******/
+
+#header {
+    border-bottom: 1px solid rgb(36, 36, 36)
+}
+
+#header nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+#menu{
+
+    display: flex;
+    gap: 10px;
+}
+
+
+/******* hero******/
+.hero{
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+}
+
+.hero-content-wrapper{
+    display: block;
+    margin-right: auto;
+}
