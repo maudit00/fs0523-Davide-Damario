@@ -81,12 +81,14 @@ body{
 
 .trending-articles-wrapper{
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .top-trending-article{
     display: flex;
     column-gap: 3px;
+    flex-basis: 30%;
 }
 
 .articles-content{
