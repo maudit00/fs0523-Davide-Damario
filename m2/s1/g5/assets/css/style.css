@@ -12,7 +12,8 @@ ul {
 /******* utility class *****/ 
 
 .container {
-    padding: 25px 40px;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
 /****** nav *******/
@@ -31,7 +32,6 @@ ul {
 }
 
 #menu{
-
     display: flex;
     gap: 10px;
 }
@@ -48,3 +48,17 @@ ul {
     display: block;
     margin-right: auto;
 }
+
+
+/********** Top Trending Section ********/ 
+
+
+.top-trending-title{
+    margin-bottom: 16px;
+    display: flex;
+    column-gap: 4px;
+    align-items: center;
+    justify-content: start;
+}
+
+
