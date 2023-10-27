@@ -157,7 +157,7 @@ h6 {
 
 /**** numero al fianco del post ****/
 
-.trending-position{
+.trending-position {
     color: var(--trending-numbers);
     font-weight: 900;
     font-size: 30px;
@@ -204,7 +204,7 @@ h6 {
 /********* other articles *********/
 
 .bottom {
-   
+
     padding-top: 56px;
     justify-content: center;
 }
@@ -218,13 +218,36 @@ h6 {
     margin-left: 50px;
 }
 
-/******** discover *******/ 
+.articles img {
+    vertical-align: middle;
+}
+
+book .articles-time-related {
+    column-gap: 5px
+}
+
+.bookmark-icon {
+    position: relative;
+    left: 110%;
+    top: 10%;
+}
+
+.topic {
+    background-color: var(--trending-numbers);
+    color: var(--other-text);
+    font-size: 13px;
+    line-height: 20px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/******** discover *******/
 
 .right-nav {
     flex-grow: 1;
 }
 
-.right-nav h4{
+.right-nav h4 {
     text-transform: uppercase;
     font-size: 13px;
     line-height: 20px;
