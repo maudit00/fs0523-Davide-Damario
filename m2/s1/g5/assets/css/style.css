@@ -232,7 +232,7 @@ header {
 }
 
 .bottom-content {
-    height: 100vh;
+    height: auto;
     flex: 1 0 70%;
     align-items: flex-start;
     row-gap: 1rem;
@@ -274,6 +274,7 @@ header {
     align-self: flex-start;
     position: sticky;
     top: 115px;
+  
 }
 
 .right-nav h4 {
