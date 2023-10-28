@@ -235,7 +235,9 @@ header {
     height: 100vh;
     flex: 1 0 70%;
     align-items: flex-start;
+    row-gap: 1rem;
 }
+
 
 
 .articles img {
@@ -243,20 +245,18 @@ header {
 }
 
 .articles-time-related {
-    column-gap: 5px
+    justify-content: space-between;
+}
+
+
+.article-tab{
+    column-gap: 100px;
+    align-items: last baseline;
 }
 
 .bookmark-icon {
-    position: relative;
-    left: 110%;
-    top: 10%;
-}
-
-.thumbnail {
-    position: relative;
-    left: 280px;
-    bottom: 150px;
-    display: none;
+        width:25px;
+        height: 25px;
 }
 
 .topic {
