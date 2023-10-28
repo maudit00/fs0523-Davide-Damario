@@ -33,6 +33,8 @@ h6 {
     font-weight: 700;
 }
 
+
+
 /******* utility class *****/
 
 
@@ -108,9 +110,8 @@ h6 {
 
 .nav-wrapper {
     background-color: var(--hero-yellow);
-    gap: 45%;
     height: 50px;
-    padding: 25px 0;
+    padding: 25px 64px;
 }
 
 
@@ -119,7 +120,7 @@ h6 {
     display: flex;
     gap: 10px;
     position: absolute;
-    right: 12rem;
+    right: 100px;
 }
 
 
@@ -128,12 +129,13 @@ h6 {
 .hero {
     background-color: var(--hero-yellow);
     border-bottom: 1px solid var(--black-default-text);
-    padding: 100px 0;
+    padding: 100px 64px;
 }
 
 #matrix-animation {
     position: absolute;
-    right: 12rem;
+    right: 0;
+    top: 100px;
 }
 
 .hero h1 {
@@ -142,8 +144,7 @@ h6 {
 }
 
 .hero-content-wrapper {
-    padding: 200px 0;
-    gap: 60px;
+    padding: 100px 0;
 }
 
 #start-reading {
@@ -163,21 +164,23 @@ h6 {
     border-bottom: 1px solid var(--trending-numbers);
 }
 
+/***** SECTION TITLE **/
+
 .top-trending-title {
     gap: 10px;
 }
 
-.top-trending-title {
-    vertical-align: middle;
-}
 
 /**** numero al fianco del post ****/
 
 .trending-position {
     color: var(--trending-numbers);
     font-weight: 900;
-    font-size: 30px;
-    padding: 0 10px;
+    font-size: 32px;
+    align-self: start;
+    margin-right: 8px;
+    position: relative;
+    bottom: 6px;
 }
 
 
@@ -185,13 +188,13 @@ h6 {
 .wrapper {
     flex-direction: column;
     gap: 20px;
-    padding-inline: 3rem;
 }
 
 .top-trending-article {
     display: flex;
-    column-gap: 3px;
-    flex-basis: 33%;
+    max-width: 33.3333%;
+    flex: 0 0 calc(33.3333% - 8px);
+
 }
 
 .article-container {
@@ -199,15 +202,20 @@ h6 {
     padding-bottom: 10px;
 }
 
+.articles-author a{
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.articles-content div {
+    margin-bottom: 10px;
+}
+
 .articles-content {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 30px;
-}
-
-.articles-titles {
-    overflow: hidden;
+    align-self: flex-start;
 }
 
 #top-trending img {

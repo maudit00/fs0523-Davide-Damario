@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Spectral:wght@500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Spectral:wght@500;700&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/reset.css">
@@ -20,8 +20,8 @@
 
 <body>
     <header>
-        <nav id="nav" class="fixed-nav auto-padding">
-            <div class="nav-wrapper flex align-items-center auto">
+        <nav id="nav" class="fixed-nav">
+            <div class="nav-wrapper flex align-items-center auto-padding">
                 <a class="logo" href="#"><img src="./assets/imgs/svg/logo.svg"></a>
                 <ul id="menu">
                     <li><a href="#">Our story</a></li>
@@ -34,14 +34,14 @@
         </nav>
     </header>
     <div class="hero flex align-items-center auto-padding">
-        <div class="hero-content-wrapper">
+        <div iv class="hero-content-wrapper">
             <h1>Stay Curious.</h1>
             <h4>Discover stories, thinking, and expertise from writers on any topic.</h4>
             <button id="start-reading" class="black-btn" name="start-reading">Start Reading</button>
+        </div>    
             <div id="matrix-animation">
-            </div>
-                <!-- svg that makes m animation on hero section  -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585 462" width="585" height="462"
+            <!-- svg that makes m animation on hero section  -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585 462" width="585" height="462"
                 preserveAspectRatio="xMidYMid meet"
                 style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
                 <defs>
@@ -5349,16 +5349,16 @@
     </div>
     <main>
         <section id="top-trending">
-            <div class="wrapper wrap flex">
-
-                <div class="top-trending-title flex">
+            <div class="wrapper wrap flex auto-padding">
+                <!--- top trending article container-->
+                <div class="top-trending-title flex align-items-center">
                     <img src="./assets/imgs/svg/trending.svg" alt="trending logo">
                     <h2>Trending on Medium</h2>
                 </div>
-
+                <!-- article tab -->
                 <div class="article-container flex wrap">
                     <article class="top-trending-article">
-
+                        <div class="flex align-items-center">
                         <span class="trending-position">01</span>
                         <div class="articles-content">
 
@@ -5381,10 +5381,10 @@
                             </div>
 
                         </div>
-
+                        </div>
                     </article>
                     <article class="top-trending-article">
-
+                        <div class="flex align-items-center">
                         <span class="trending-position">02</span>
                         <div class="articles-content">
 
@@ -5409,13 +5409,12 @@
                             </div>
 
                         </div>
-
+                    </div>
                     </article>
                     <article class="top-trending-article">
-
+                    <div class="flex align-items-center">
                         <span class="trending-position">03</span>
                         <div class="articles-content">
-
                             <div class="articles-author">
                                 <a href="#">
                                     <img class="square-border" src="./assets/imgs/authors/kim-kelly-stamp.png">
@@ -5425,7 +5424,7 @@
 
                             <div class="articles-titles top-trending-articles-title">
                                 <a href="#"></a>
-                                <h4>The Secrets of Retirement No One Tells You</h4>
+                                <h2>The Secrets of Retirement No One Tells You</h2>
                                 </a>
                             </div>
 
@@ -5435,10 +5434,10 @@
                             </div>
 
                         </div>
-
+                    </div>
                     </article>
                     <article class="top-trending-article">
-
+                        <div class="flex align-items-center">
                         <span class="trending-position">04</span>
                         <div class="articles-content">
 
@@ -5460,10 +5459,11 @@
                             </div>
 
                         </div>
-
+                    </div>
                     </article>
+                    
                     <article class="top-trending-article">
-
+                        <div class="flex align-items-center">
                         <span class="trending-position">05</span>
                         <div class="articles-content">
 
@@ -5488,10 +5488,10 @@
                             </div>
 
                         </div>
-
+                    </div>
                     </article>
                     <article class="top-trending-article">
-
+                        <div class="flex align-items-center">
                         <span class="trending-position">06</span>
                         <div class="articles-content">
 
@@ -5514,7 +5514,7 @@
                             </div>
 
                         </div>
-
+                    </div>
                     </article>
                 </div>
 
