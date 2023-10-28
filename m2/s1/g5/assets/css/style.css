@@ -6,7 +6,7 @@
     --black-default-text: #292929;
     --other-text: #757575;
     --trending-numbers: #e6e7e7;
-
+    --scrolled-btn : #1a8917;
 }
 
 a {
@@ -32,6 +32,7 @@ h6 {
 
     font-weight: 700;
 }
+
 
 
 
@@ -113,6 +114,14 @@ header {
     padding: 25px 64px;
 }
 
+.nav-wrapper-scrolled {
+    background-color: #fff;
+}
+
+.nav-btn-scrolled {
+    background-color: var(--scrolled-btn);
+    color: #fff;
+}
 
 
 #menu {
@@ -128,7 +137,7 @@ header {
 .hero {
     background-color: var(--hero-yellow);
     border-bottom: 1px solid var(--black-default-text);
-    padding: 100px 64px;
+    padding: 70px 64px;
 }
 
 #matrix-animation {
@@ -137,13 +146,28 @@ header {
     top: 100px;
 }
 
+#matrix-animation svg {
+    width: auto;
+}
+
 .hero h1 {
     font-family: 'Spectral', serif;
-    font-size: 80px;
+    font-size: 106px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+
+.hero h4{
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .hero-content-wrapper {
-    padding: 100px 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    width: 550px;
 }
 
 #start-reading {
@@ -201,7 +225,7 @@ header {
     padding-bottom: 10px;
 }
 
-.articles-author a{
+.articles-author a {
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -249,14 +273,14 @@ header {
 }
 
 
-.article-tab{
+.article-tab {
     column-gap: 100px;
     align-items: last baseline;
 }
 
 .bookmark-icon {
-        width:25px;
-        height: 25px;
+    width: 25px;
+    height: 25px;
 }
 
 .topic {
@@ -274,7 +298,7 @@ header {
     align-self: flex-start;
     position: sticky;
     top: 115px;
-  
+
 }
 
 .right-nav h4 {
