@@ -20,7 +20,6 @@ header{
 
 nav {
     @include flexySm;
-    align-items: center;
     img {
         width: 200px;
         @media screen and (min-width: 769px) {
@@ -31,7 +30,6 @@ nav {
         @include ulStyle;
         @include flexySm;
         font-size: nth($fontSize, 2);
-        align-items: center;
         row-gap: nth($fontSize, 1)
     }
     a{
