@@ -1,0 +1,79 @@
+@import 'colorsAndSize';
+@import 'mix';
+
+a{
+    text-decoration: none;
+};
+
+nav {
+    @include flexySm;
+    align-items: center;
+    background-color: map-get($color-map, primary);
+    img {
+        width: 200px;
+        @media screen and (min-width: 769px) {
+            width: 350px;            
+        }
+    }
+    #menu{
+        @include ulStyle;
+        @include flexySm;
+        font-size: nth($fontSize, 2);
+        align-items: center;
+        row-gap: nth($fontSize, 1)
+    }
+    a{
+        color: map-get($color-map, secondary );
+    }
+}
+
+.hero {
+    @include flexySm;
+    background-color: map-get($color-map, details);
+    h1{
+      font-size: nth($fontSize, 5);
+      color: map-get($color-map, secondary);
+      text-shadow: -1px 0 map-get($color-map, primary), 0 1px map-get($color-map, primary), 1px 0 map-get($color-map, primary), 0 -1px map-get($color-map, primary);
+    }
+};
+
+@each $m in $sizes {
+    .mt-#{$m}{
+        margin-top: $m+ px;
+    }
+    .mb-#{$m}{
+        margin-bottom: $m+ px;
+    }
+    .ml-#{$m}{
+        margin-left: $m+ px;
+    }
+    .mr-#{$m}{
+        margin-right: $m+ px;
+    }
+    .m-#{$m}{
+        margin: $m+ px;
+    }
+    
+
+}
+
+@each $p in $sizes {
+    .pt-#{$p}{
+        padding-top: $p+ px;
+    }
+    .pb-#{$p}{
+        padding-bottom: $p+ px;
+    }
+    .pl-#{$p}{
+        padding-left: $p+ px;
+    }
+    .pr-#{$p}{
+        padding-right: $p+ px;
+    }
+    .p-#{$p}{
+        padding: $p+ px;
+    }
+
+}
+
+

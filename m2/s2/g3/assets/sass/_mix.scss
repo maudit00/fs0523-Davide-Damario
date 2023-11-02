@@ -1,0 +1,16 @@
+@mixin flexyL {
+    display: flex;
+    justify-content: space-between ;
+    margin-inline: 2rem;
+
+}
+@mixin flexySm {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+
+@mixin ulStyle {
+    list-style: none;
+}
