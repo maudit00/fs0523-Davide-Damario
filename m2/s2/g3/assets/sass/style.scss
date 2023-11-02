@@ -1,14 +1,26 @@
-@import 'colorsAndSize';
+@import 'reset';
+@import 'colors';
 @import 'mix';
+@import 'animations';
+@import 'buttons';
+@import 'spaces';
+@import 'fonts';
 
 a{
     text-decoration: none;
 };
 
+body{
+    color: map-get($color-map, txts);
+}
+
+header{
+    background-color: map-get($color-map, heroBg);
+}
+
 nav {
     @include flexySm;
     align-items: center;
-    background-color: map-get($color-map, primary);
     img {
         width: 200px;
         @media screen and (min-width: 769px) {
@@ -23,17 +35,20 @@ nav {
         row-gap: nth($fontSize, 1)
     }
     a{
-        color: map-get($color-map, secondary );
+        color: map-get($color-map, txts);
     }
 }
 
 .hero {
     @include flexySm;
-    background-color: map-get($color-map, details);
     h1{
-      font-size: nth($fontSize, 5);
-      color: map-get($color-map, secondary);
-      text-shadow: -1px 0 map-get($color-map, primary), 0 1px map-get($color-map, primary), 1px 0 map-get($color-map, primary), 0 -1px map-get($color-map, primary);
+      @include title-big;
+    }
+    hr{
+        @include myhr;
+    }
+    a {
+        @include heroButtons;
     }
 };
 

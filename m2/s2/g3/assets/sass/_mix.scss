@@ -10,7 +10,28 @@
     padding: 0;
 }
 
+@mixin backgroundSettings {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 @mixin ulStyle {
     list-style: none;
+}
+
+@mixin myhr{
+    border: 3px solid map-get($color-map, details );
+    border-radius: 10px;
+    box-shadow: 5px 10px 15px 0.4;
+    width: 80%;
+}
+
+@mixin heroButtons {
+    border: 2px solid rgb(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+@mixin title-big {
+    font-size: nth($fontSize, 7);
+    font-family: nth($fontFamily, 1) ;
 }
