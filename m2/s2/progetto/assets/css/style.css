@@ -1,17 +1,28 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 4 | @import "offcanvas";
- *   |         ^^^^^^^^^^^
- *   '
- *   assets/sass/style.scss 4:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 4 \2502  @import \"offcanvas\";\a   \2502          ^^^^^^^^^^^\a   \2575 \a   assets/sass/style.scss 4:9  root stylesheet";
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: -100px;
 }
+
+nav ul {
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+nav .top-avatar {
+  width: 40px;
+}
+nav .off-canvas-logo {
+  max-width: 80px;
+}
+@media screen and (min-width: 576px) {
+  nav #menu {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

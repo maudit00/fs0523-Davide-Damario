@@ -1,7 +1,6 @@
 @import "functions";
 @import 'dropdown';
 @import "variables";
-@import "offcanvas";
 
 
 nav{
@@ -31,7 +30,4 @@ nav{
             align-items: center;
         }
     }
-    .avatar {
-        width: 30px;
-    }   
 }

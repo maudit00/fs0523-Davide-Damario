@@ -13,11 +13,11 @@
 <body class="bg-dark">
     <div class="container-fluid">
         <nav class="navbar navbar-dark bg-dark">
-            <a class="col-4 col-md-2 navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLabel"
+            <a class="col-4 col-md-1 navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLabel"
                 aria-controls="offcanvasExample">
                 <img src="./assets/img/netflix_logo.png" alt="" width="50" height="24">
             </a>
-            <div class="col-md-7 offcanvas-sm offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasLabel"
+            <div class="col-md-8 offcanvas-sm offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasLabel"
                 aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasExampleLabel" data-bs-scroll="true"
@@ -47,22 +47,77 @@
                         data-bs-toggle="dropdown" aria-expanded="false"><img class="avatar img-fluid"
                             src="assets/img/avatar.png" alt="avatar">
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Change Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                    <ul class="dropdown-menu bg-dark text-white" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item text-white" href="#">Change Profile</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Profile Settings</a></li>
                         <li><a class="dropdown-item text-danger" href="#">Exit</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="row align-items-center">
+            <div class="col-3">
+                <h4 class="display-7 fs-5 text-white">Tv Shows</h4>
+            </div>
+            <div class="col"> <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">Genre
+                    <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Anime</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Adventure</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Comic</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Drama</a></li>
+                        <li><a class="dropdown-item text-white" href="#">History</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Documentary</a></li>
+                    </ul>
+            </div>
+            <div class="col row text-center">
+                <a class="text-white col"href="#"><i class=" border border-white p-2 bi bi-text-left"></i></a>
+                <a class="text-white col"href="#"><i class=" border border-white p-2 bi bi-grid-fill"></i></a>
+            </div>
+
+            <section class="mt-4">
+                <h4 class="text-white display-7">Trending Now</h4>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </section>
+            <section class="mt-4">
+                <h4 class="text-white display-7">Trending Now</h4>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </section>
+            <section class="mt-4">
+                <h4 class="text-white display-7">Trending Now</h4>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+
     </div>
-
-
-
-
-
-
-
     </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
