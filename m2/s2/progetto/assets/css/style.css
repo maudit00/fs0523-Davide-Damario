@@ -25,4 +25,51 @@ nav .off-canvas-logo {
   }
 }
 
+/****** profile page ***/
+.profile-logo {
+  width: 150px;
+}
+
+.profile-img {
+  background-image: url(../img/avatar.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 150px;
+}
+
+.profile-bg {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(31, 31, 31) 24%);
+}
+
+.profile-name {
+  background-color: #666666;
+}
+
+.edit-pencil {
+  background-color: black;
+  border-radius: 100%;
+  font-size: 0.5rem;
+}
+
+.maturity {
+  background-color: #333;
+}
+
+.my-btn {
+  letter-spacing: 0.1rem;
+}
+
+.profile-content {
+  color: #ccc;
+}
+
+select {
+  background-color: #000;
+}
+
+.autoplay-checks label {
+  font-size: 0.8rem;
+}
+
 /*# sourceMappingURL=style.css.map */
