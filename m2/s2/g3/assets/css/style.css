@@ -72,6 +72,10 @@ body {
   color: #f4f4f4;
 }
 
+img {
+  max-width: 100%;
+}
+
 header {
   background-color: #640fc5;
 }
@@ -105,19 +109,23 @@ nav a {
 
 .hero {
   display: flex;
-  flex-direction: column;
-  padding: 0;
-  align-items: center;
+  column-gap: 10px;
+  justify-content: space-evenly;
 }
 .hero h1 {
   font-size: 6rem;
   font-family: "Roboto";
+  text-align: center;
 }
-.hero hr {
-  border: 3px solid;
-  border-radius: 10px;
-  box-shadow: 5px 10px 15px 0.4;
-  width: 80%;
+.hero #hero-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero .buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 .hero a {
   border: 2px solid rgba(255, 255, 255, 0.2);

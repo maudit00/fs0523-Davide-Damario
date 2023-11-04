@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix- Home</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-dark">
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="col-4 col-md-2 navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLabel"
+                aria-controls="offcanvasExample">
+                <img src="./assets/img/netflix_logo.png" alt="" width="50" height="24">
+            </a>
+            <div class="col-md-7 offcanvas-sm offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasLabel"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel" data-bs-scroll="true"
+                        data-bs-backdrop="true"><img class="off-canvas-logo img-fluid" src="assets/img/netflix_logo.png"
+                            alt="Netflix Logo"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        data-bs-target="#offcanvasLabel" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="col">
+                        <ul id="menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a class="fw-bold" href="#">Tv Shows</a></li>
+                            <li><a href="#">Movies</a></li>
+                            <li><a href="#">Recently Added</a></li>
+                            <li><a href="#">My List</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 text-white row text-center align-items-center">
+                <a class="col" href="#"><i class="bi bi-search"></i></a>
+                <a class="col text-uppercase" href="#">kids</a>
+                <a class="col" href="#"><i class="bi bi-bell-fill"></i></a>
+                <div class="col dropdown">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false"><img class="avatar img-fluid"
+                            src="assets/img/avatar.png" alt="avatar">
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Change Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Exit</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+
+
+
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
