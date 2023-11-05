@@ -3,15 +3,17 @@
   left: -100px;
 }
 
+/***** general settings ***/
+img {
+  vertical-align: middle;
+}
+
 nav ul {
   list-style: none;
 }
 nav a {
   text-decoration: none;
   color: white;
-}
-nav .top-avatar {
-  width: 40px;
 }
 nav .off-canvas-logo {
   max-width: 80px;
@@ -23,6 +25,12 @@ nav .off-canvas-logo {
     gap: 10px;
     align-items: center;
   }
+}
+
+.movie {
+  background-image: url(../img/media/media0.webp);
+  background-size: contain;
+  box-sizing: content-box;
 }
 
 /****** profile page ***/
@@ -58,6 +66,13 @@ nav .off-canvas-logo {
 
 .my-btn {
   letter-spacing: 0.1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+}
+.my-btn:hover {
+  background-color: white;
+  color: #333;
+  transition-duration: 0.5ms;
 }
 
 .profile-content {

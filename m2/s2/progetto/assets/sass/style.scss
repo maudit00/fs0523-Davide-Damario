@@ -2,7 +2,11 @@
 @import 'dropdown';
 @import "variables";
 
+/***** general settings ***/
 
+img {
+    vertical-align: middle;
+}
 nav{
 
     ul {
@@ -12,10 +16,6 @@ nav{
     a{
         text-decoration: none;
         color: white;
-    }
-    
-    .top-avatar {
-        width: 40px;
     }
     
     .off-canvas-logo{
@@ -30,6 +30,12 @@ nav{
             align-items: center;
         }
     }
+}
+
+.movie {
+    background-image: url(../img/media/media0.webp);
+    background-size: contain;
+    box-sizing: content-box;
 }
 
 
@@ -67,6 +73,13 @@ nav{
 
 .my-btn {
     letter-spacing: 0.1rem;
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    &:hover{
+        background-color: white;
+        color:#333;
+        transition-duration: 0.5ms;
+    }
 }
 
 .profile-content {
@@ -77,9 +90,8 @@ select {
 }
 
 .autoplay-checks{
-
-
     label{
         font-size: 0.8rem;
     }
 }
+
