@@ -7,6 +7,10 @@
 img {
     vertical-align: middle;
 }
+
+body {
+    background-color: $black;
+}
 nav{
 
     ul {
@@ -30,6 +34,12 @@ nav{
             align-items: center;
         }
     }
+}
+
+.profile-sqr{
+    background-image: url(../img/avatar.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .movie {
