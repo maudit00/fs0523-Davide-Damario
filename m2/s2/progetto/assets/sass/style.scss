@@ -4,30 +4,33 @@
 
 /***** general settings ***/
 
-img {
+img svg {
     vertical-align: middle;
 }
 
 body {
     background-color: $black;
 }
-nav{
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
 
     ul {
         list-style: none;
     }
-    
-    a{
-        text-decoration: none;
-        color: white;
-    }
-    
-    .off-canvas-logo{
+
+
+    .off-canvas-logo {
         max-width: 80px;
     }
-    
-    #menu{
-        @media screen and (min-width: 576px){
+
+    #menu {
+        @media screen and (min-width: 576px) {
             display: flex;
             justify-content: start;
             gap: 10px;
@@ -36,10 +39,18 @@ nav{
     }
 }
 
-.profile-sqr{
+.profile-sqr {
     background-image: url(../img/avatar.png);
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.carousel-control-next {
+    width: 3%;
+}
+
+.carousel-control-prev {
+    width: 3%;
 }
 
 .movie {
@@ -48,46 +59,73 @@ nav{
     box-sizing: content-box;
 }
 
+.mov-thumb {
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+        transition-delay: 0.2s;
+    }
+}
+
+footer {
+    color: #828282;
+
+    a {
+        color: #828282;
+    }
+
+    .service-button{
+        border: 1px solid #626262;
+        display: inline-block;
+        padding: 7px;
+    }
+}
+
 
 /****** profile page ***/
 
-.profile-logo{
+.profile-logo {
     width: 150px;
 }
+
 .profile-img {
     background-image: url(../img/avatar.png);
     background-repeat: no-repeat;
     background-size: contain;
     min-height: 150px;
 }
+
 .profile-bg {
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(31,31,31,1) 24%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(31, 31, 31, 1) 24%);
 }
 
 .profile-name {
     background-color: #666666;
 }
 
-.edit-pencil{
+.edit-pencil {
 
- 
+
     background-color: black;
     border-radius: 100%;
     font-size: 0.5rem;
 }
 
-.maturity{
+.maturity {
     background-color: #333;
 }
 
 .my-btn {
     letter-spacing: 0.1rem;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     color: white;
-    &:hover{
+
+    &:hover {
         background-color: white;
-        color:#333;
+        color: #333;
         transition-duration: 0.5ms;
     }
 }
@@ -95,13 +133,13 @@ nav{
 .profile-content {
     color: #ccc;
 }
+
 select {
     background-color: $black;
 }
 
-.autoplay-checks{
-    label{
+.autoplay-checks {
+    label {
         font-size: 0.8rem;
     }
 }
-
