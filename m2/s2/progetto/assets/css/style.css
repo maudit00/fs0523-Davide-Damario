@@ -27,9 +27,13 @@ nav .off-canvas-logo {
   nav #menu {
     display: flex;
     justify-content: start;
-    gap: 10px;
+    column-gap: 15px;
     align-items: center;
   }
+}
+nav .profile-btn {
+  position: relative;
+  left: 15px;
 }
 
 .profile-sqr {

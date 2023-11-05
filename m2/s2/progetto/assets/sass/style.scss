@@ -33,9 +33,14 @@ nav {
         @media screen and (min-width: 576px) {
             display: flex;
             justify-content: start;
-            gap: 10px;
+            column-gap: 15px;
             align-items: center;
+            
         }
+    }
+    .profile-btn{
+        position: relative;
+        left: 15px;
     }
 }
 
