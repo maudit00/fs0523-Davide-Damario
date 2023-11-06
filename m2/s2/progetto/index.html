@@ -12,23 +12,25 @@
 
 <body>
     <div class="container-fluid">
+        
         <nav class="navbar navbar-dark bg-transparent">
-            <a class="col-2 col-md-1 col-lg-1 navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLabel"
-                aria-controls="offcanvasExample">
+            <a class="col-3 col-sm-2 col-md-1 col-lg-1 navbar-brand">
                 <img src="./assets/img/netflix_logo.png" alt="" class="img-fluid">
             </a>
-            <div class="col-md-8  col-lg-7 offcanvas-sm offcanvas-start bg-dark text-white" tabindex="-1"
-                id="offcanvasLabel" aria-labelledby="offcanvasExampleLabel">
+            <a class="col-1 btn bg-transparent text-white list-icon px-0 d-sm-none fs-4" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu" aria-controls="offcanvasMenu"><i
+                    class="bi bi-list"></i></a>
+            <div class="col-sm-7 col-md-6 col-lg-8 me-auto offcanvas-sm offcanvas-start menu-wrapper text-white"
+                tabindex="-1" id="offcanvas-menu" aria-labelledby="offcanvasMenu">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel" data-bs-scroll="true"
+                    <h5 class="offcanvas-title" id="offcanvas-title" data-bs-scroll="true"
                         data-bs-backdrop="true"><img class="off-canvas-logo img-fluid" src="assets/img/netflix_logo.png"
                             alt="Netflix Logo"></h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        data-bs-target="#offcanvasLabel" aria-label="Close"></button>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas"
+                        data-bs-target="#offcanvas-menu" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body me-auto bg-transparent">
                     <div>
-                        <ul id="menu">
+                        <ul id="menu" class="d-sm-flex gap-2">
                             <li><a href="#">Home</a></li>
                             <li><a class="fw-bold" href="#">Tv Shows</a></li>
                             <li><a href="#">Movies</a></li>
@@ -38,11 +40,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9 col-md-2 col-lg-3 text-white row text-center justify-content-center align-items-center">
-                <a class="col" href="#"><i class="bi bi-search"></i></a>
-                <a class="col text-uppercase" href="#">kids</a>
-                <a class="col" href="#"><i class="bi bi-bell-fill"></i></a>
-                <div class="col dropdown profile-sqr">
+            <div class="col-8 col-sm-3 col-md-2 col-lg-3 text-white row text-center align-items-center">
+                <a class="col px-0 " href="#"><i class="bi bi-search"></i></a>
+                <a class="col px-0  text-uppercase" href="#">kids</a>
+                <a class="col px-0 " href="#"><i class="bi bi-bell-fill"></i></a>
+                <div class="col  px-0 dropdown profile-sqr">
                     <button class="btn profile-btn btn-transparent text-white dropdown-toggle" type="button"
                         id="dropdownMenuProfile" data-bs-toggle="dropdown" aria-expanded="false"></button>
                     <ul class="dropdown-menu bg-dark text-white" aria-labelledby="dropdownMenuProfile">
@@ -53,12 +55,13 @@
                 </div>
             </div>
         </nav>
+
         <div class="row align-items-center">
-            <div class="col col-md-9 row">
-                <h4 class="col-6 display-7 fs-5 text-white">Tv Shows</h4>
-                <div class="col-6"> <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuGenre"
-                        data-bs-toggle="dropdown" aria-expanded="false">Genre
-                        <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuGenre">
+            <div class="col col-md-9 ">
+                <h4 class=" display-7 fs-5 text-white d-inline me-4">Tv Shows</h4>
+                <div class="d-inline"> <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuGenres"
+                        data-bs-toggle="dropdown" aria-expanded="false">Genres
+                        <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuGenres">
                             <li><a class="dropdown-item text-white" href="#">Action</a></li>
                             <li><a class="dropdown-item text-white" href="#">Anime</a></li>
                             <li><a class="dropdown-item text-white" href="#">Adventure</a></li>

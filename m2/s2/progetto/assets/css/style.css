@@ -23,12 +23,12 @@ nav ul {
 nav .off-canvas-logo {
   max-width: 80px;
 }
+nav .menu-wrapper {
+  background-color: #333;
+}
 @media screen and (min-width: 576px) {
-  nav #menu {
-    display: flex;
-    justify-content: start;
-    column-gap: 15px;
-    align-items: center;
+  nav .menu-wrapper {
+    background-color: transparent;
   }
 }
 nav .profile-btn {

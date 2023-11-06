@@ -29,15 +29,21 @@ nav {
         max-width: 80px;
     }
 
-    #menu {
+    .menu-wrapper {
+        background-color: #333;
         @media screen and (min-width: 576px) {
-            display: flex;
-            justify-content: start;
-            column-gap: 15px;
-            align-items: center;
-            
+        background-color: transparent;   
         }
     }
+    // #menu {
+    //     @media screen and (min-width: 576px) {
+    //         display: flex;
+    //         justify-content: start;
+    //         column-gap: 15px;
+    //         align-items: center;
+    //         margin: 0;
+    //     }
+    // }
     .profile-btn{
         position: relative;
         left: 15px;
