@@ -35,15 +35,13 @@ nav {
         background-color: transparent;   
         }
     }
-    // #menu {
-    //     @media screen and (min-width: 576px) {
-    //         display: flex;
-    //         justify-content: start;
-    //         column-gap: 15px;
-    //         align-items: center;
-    //         margin: 0;
-    //     }
-    // }
+
+    .hover-effect:hover{
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #ccc;
+        transition-delay: 0.3s;
+    }
     .profile-btn{
         position: relative;
         left: 15px;
@@ -114,6 +112,7 @@ footer {
 .profile-bg {
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(31, 31, 31, 1) 24%);
+    height: 100vh;
 }
 
 .profile-name {
@@ -136,7 +135,6 @@ footer {
     letter-spacing: 0.1rem;
     background-color: rgba(0, 0, 0, 0.1);
     color: white;
-
     &:hover {
         background-color: white;
         color: #333;

@@ -31,6 +31,12 @@ nav .menu-wrapper {
     background-color: transparent;
   }
 }
+nav .hover-effect:hover {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  transition-delay: 0.3s;
+}
 nav .profile-btn {
   position: relative;
   left: 15px;
@@ -95,6 +101,7 @@ footer .copyright {
 .profile-bg {
   background: rgb(0, 0, 0);
   background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(31, 31, 31) 24%);
+  height: 100vh;
 }
 
 .profile-name {

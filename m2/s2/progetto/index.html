@@ -12,14 +12,17 @@
 
 <body>
     <div class="container-fluid">
-        
+        <!-- nav-bar -->
         <nav class="navbar navbar-dark bg-transparent">
-            <a class="col-3 col-sm-2 col-md-1 col-lg-1 navbar-brand">
+            <!-- logo -->
+            <a class="col-3 col-sm-1 col-md-1 col-lg-1 navbar-brand">
                 <img src="./assets/img/netflix_logo.png" alt="" class="img-fluid">
             </a>
+            <!-- offcanvas button   -->
             <a class="col-1 btn bg-transparent text-white list-icon px-0 d-sm-none fs-4" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu" aria-controls="offcanvasMenu"><i
                     class="bi bi-list"></i></a>
-            <div class="col-sm-7 col-md-6 col-lg-8 me-auto offcanvas-sm offcanvas-start menu-wrapper text-white"
+            <!-- menu section -->
+            <div class="col-sm-9 col-md-6 col-lg-8 me-auto offcanvas-sm offcanvas-start menu-wrapper text-white"
                 tabindex="-1" id="offcanvas-menu" aria-labelledby="offcanvasMenu">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvas-title" data-bs-scroll="true"
@@ -40,14 +43,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8 col-sm-3 col-md-2 col-lg-3 text-white row text-center align-items-center">
-                <a class="col px-0 " href="#"><i class="bi bi-search"></i></a>
-                <a class="col px-0  text-uppercase" href="#">kids</a>
-                <a class="col px-0 " href="#"><i class="bi bi-bell-fill"></i></a>
-                <div class="col  px-0 dropdown profile-sqr">
+            <div class="col-8 col-sm-2 col-md-2 col-lg-3 text-white row text-center align-items-center">
+                <a class="col px-1 hover-effect " href="#"><i class="bi bi-search"></i></a>
+                <a class="col px-1 hover-effect  text-uppercase" href="#">kids</a>
+                <a class="col px-1 hover-effect " href="#"><i class="bi bi-bell-fill"></i></a>
+                <div class="col  px-1 hover-effect dropdown profile-sqr">
                     <button class="btn profile-btn btn-transparent text-white dropdown-toggle" type="button"
                         id="dropdownMenuProfile" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                    <ul class="dropdown-menu bg-dark text-white" aria-labelledby="dropdownMenuProfile">
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuProfile">
                         <li><a class="dropdown-item text-white" href="#">Change Profile</a></li>
                         <li><a class="dropdown-item text-white" href="profile.html">Profile Settings</a></li>
                         <li><a class="dropdown-item text-danger" href="#">Exit</a></li>
@@ -55,13 +58,13 @@
                 </div>
             </div>
         </nav>
-
         <div class="row align-items-center">
-            <div class="col col-md-9 ">
-                <h4 class=" display-7 fs-5 text-white d-inline me-4">Tv Shows</h4>
+            <div class="col col-lg-9">
+                <!-- Genres dropdown and his headings -->
+                <h4 class="display-6 fs-5 fw-bold text-white d-inline me-4">Tv Shows</h4>
                 <div class="d-inline"> <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuGenres"
                         data-bs-toggle="dropdown" aria-expanded="false">Genres
-                        <ul class="dropdown-menu bg-dark " aria-labelledby="dropdownMenuGenres">
+                        <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdownMenuGenres">
                             <li><a class="dropdown-item text-white" href="#">Action</a></li>
                             <li><a class="dropdown-item text-white" href="#">Anime</a></li>
                             <li><a class="dropdown-item text-white" href="#">Adventure</a></li>
@@ -72,15 +75,17 @@
                         </ul>
                 </div>
             </div>
-            <div class="col col-md-3 text-center">
-                <a class="text-white " href="#"><i class=" border border-white p-1 bi bi-text-left"></i></a>
-                <a class="text-white " href="#"><i class=" border border-white p-1 bi bi-grid-fill"></i></a>
+
+            <!-- 2 buttons under nav-bar section -->
+            <div class="col-3 col-md-2 col-lg-2 ms-auto text-center">
+                <a class="text-white" href="#"><i class=" hover-effect border border-white p-1 bi bi-text-left"></i></a>
+                <a class="text-white" href="#"><i class=" hover-effect border border-white p-1 bi bi-grid-fill"></i></a>
             </div>
 
 
             <!-- Sezione caroselli films-->
             <section class="mt-4">
-                <h4 class="text-white display-7">Trending Now</h4>
+                <h4 class="text-white fw-bold">Trending Now</h4>
                 <div id="trending-carousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="5000">
@@ -147,7 +152,7 @@
             </section>
 
             <section class="mt-5">
-                <h4 class="text-white display-7">Watch it again</h4>
+                <h4 class="text-white fw-bold">Watch it again</h4>
                 <div id="watchagain-carousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="4000">
@@ -215,7 +220,7 @@
             </section>
 
             <section class="mt-5">
-                <h4 class="text-white display-7">New Releseas</h4>
+                <h4 class="text-white fw-bold">New Releseas</h4>
                 <div id="newreleseas-carousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="4000">
@@ -314,8 +319,7 @@
                     <p class="copyright">© 1997-2019 Netflix, inc. &#123i-Ofoi3en309fhj&#125</p>
                 </div>
             </footer>
-
-        </div>
+    </div>
 
 
 
