@@ -12,11 +12,11 @@ if (sessionTimer!= null) {
 timer = parseInt(sessionTimer);
 timer = timer + 1;
 sessionStorage.setItem("timer", timer);
-timerDisplay.innerHTML = timer;
+timerDisplay.innerText = `Sono passati ${timer} secondi dall'inizio sessione`;
 } else{
     timer = timer + 1;  
     sessionStorage.setItem("timer", timer);
-    timerDisplay.innerHTML = timer;
+    timerDisplay.innerText = `Sono passati ${timer} secondi dall'inizio sessione`;
 }}, 1000);
 
 

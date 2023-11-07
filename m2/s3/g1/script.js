@@ -34,6 +34,7 @@ console.log(p1, p2);
 /**** esercizio 2 */
 
 class HTMLinit {
+    
 
 }
 
