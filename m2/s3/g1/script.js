@@ -33,10 +33,58 @@ console.log(p1, p2);
 
 /**** esercizio 2 */
 
-class HTMLinit {
-    
+class PetApp {
+    constructor(appAreaSelector) {
+        this.appArea = document.querySelector(appAreaSelector);
+        this.petNameInput = null;
+        this.ownerNameInput = null;
+        this.speciesInput = null;
+        this.breedInput = null;
+        this.saveButton = null;
+        this.petListsArea = null;
+        this.HTMLinit();
+        this.placeHolderSet();
+        this.formClassSet();
 
-}
+    }
+
+    HTMLinit() {
+        this.petNameInput = document.createElement("input");
+        this.ownerNameInput = document.createElement("input");
+        this.speciesInput = document.createElement("input");
+        this.breedInput = document.createElement("input");
+        this.saveButton = document.createElement("button");  
+        this.petListsArea = document.createElement("div");
+        this.appArea.append(this.petNameInput, this.ownerNameInput, this.speciesInput, this.breedInput, this.saveButton, this.petListsArea);
+        }
+        
+    placeHolderSet(){
+        this.petNameInput.placeholder = "Nome dell'Animale";
+        this.ownerNameInput.placeholder = "Nome del Proprietario";
+        this.speciesInput.placeholder = "Nome della Specie";
+        this.breedInput.placeholder = "Nome della Razza";
+        this.saveButton.innerText = "Salva"; 
+    }
+
+    formClassSet() {
+        this.petNameInput.classList.add("pet-name-input");
+        this.ownerNameInput.classList.add("owner-name-input");
+        this.speciesInput.classList.add("species-input");
+        this.breedInput.classList.add("breed-input");
+        this.saveButton.classList.add("save-button");
+        this.petListsArea.classList.add("pet-lists-area");
+    }
+
+    createList() {
+        let inputs = document.querySelectorAll("input");
+        
+    }
+        
+        
+    }
+
+    new PetApp('#app')
+    
 
 class Pet {
     constructor(pn, on, sp, br) {

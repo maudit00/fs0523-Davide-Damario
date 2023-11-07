@@ -3,21 +3,17 @@ const delButton = document.getElementById("del-button");
 let nome = document.getElementById("nome");
 const display = document.querySelector(".nome-display");
 const timerDisplay = document.querySelector(".timer-display");
+let sessionTimer = sessionStorage.getItem("timer");
 let timer = 0;
 
-setInterval(() => {
-let sessionTimer = sessionStorage.getItem("timer");
+if (sessionTimer) {
+  timer = sessionTimer; };
 
-if (sessionTimer!= null) {
-timer = parseInt(sessionTimer);
-timer = timer + 1;
+setInterval(() => {
+timer++;
 sessionStorage.setItem("timer", timer);
 timerDisplay.innerText = `Sono passati ${timer} secondi dall'inizio sessione`;
-} else{
-    timer = timer + 1;  
-    sessionStorage.setItem("timer", timer);
-    timerDisplay.innerText = `Sono passati ${timer} secondi dall'inizio sessione`;
-}}, 1000);
+}, 1000);
 
 
 setInterval(() => {
