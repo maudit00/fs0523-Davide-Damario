@@ -41,11 +41,11 @@ class PetApp {
         this.speciesInput = null;
         this.breedInput = null;
         this.saveButton = null;
+        this.compareButton = null;
         this.petListsArea = null;
         this.HTMLinit();
         this.placeHolderSet();
         this.formClassSet();
-
     }
 
     HTMLinit() {
@@ -53,7 +53,8 @@ class PetApp {
         this.ownerNameInput = document.createElement("input");
         this.speciesInput = document.createElement("input");
         this.breedInput = document.createElement("input");
-        this.saveButton = document.createElement("button");  
+        this.saveButton = document.createElement("button");
+        this.compareButton = document.createElement("button");
         this.petListsArea = document.createElement("div");
         this.appArea.append(this.petNameInput, this.ownerNameInput, this.speciesInput, this.breedInput, this.saveButton, this.petListsArea);
         }
@@ -75,31 +76,75 @@ class PetApp {
         this.petListsArea.classList.add("pet-lists-area");
     }
 
-    createList() {
-        let inputs = document.querySelectorAll("input");
         
     }
-        
-        
+    
+    class Pet {
+        constructor(pn, on, sp, br) {
+            this.petName = pn;
+            this.ownerName = on;
+            this.species = sp;
+            this.breed = br
+        }
+    
+        ownerNameCheck(pet2) {
+            if (this.ownerName == pet2.ownerName) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     new PetApp('#app')
+    let petsArray = [];
+
     
+    let petNameInput = document.querySelector(".pet-name-input");
+    let ownerNameInput = document.querySelector(".owner-name-input");
+    let speciesInput = document.querySelector(".species-input");
+    let breedInput = document.querySelector(".breed-input");
+    let petListsArea = document.querySelector(".pet-lists-area");
+    let saveBtn = document.querySelector(".save-button");
 
-class Pet {
-    constructor(pn, on, sp, br) {
-        this.petName = pn;
-        this.ownerName = on;
-        this.species = sp;
-        this.breed = br
-    }
-
-    ownerNameCheck(pet2) {
-        if (this.ownerName == pet2.ownerName) {
-            return true;
+    saveBtn.addEventListener('click', () => {
+        if (inputChecker()) {
+        petsArray.push(new Pet(petNameInput.value, ownerNameInput.value, speciesInput.value, breedInput.value));
+        petListMaker2();
+        inputClearer();
+        console.log(petsArray);
         } else {
-            return false;
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Non hai inserito tutti i campi!",
+              });
+            
         }
-    }
+    })
+
+
+function inputClearer() {
+    petNameInput.value = "";
+    ownerNameInput.value = "";
+    speciesInput.value = "";
+    breedInput.value = "";
 }
 
+function inputChecker() {
+    if (petNameInput.value!= "" && ownerNameInput.value!= "" && speciesInput.value!= "" && breedInput.value!= "") {
+        return true;
+    } else {
+        return false;
+    }
+}
+function petListMaker2() {
+    let list = document.createElement("ul");
+    list.classList.add("pet-list");
+    for (let prop in petsArray[petsArray.length - 1]) {
+        let li = document.createElement("li");
+        li.innerText = `${prop}: ${petsArray[petsArray.length - 1][prop]}`;
+        list.append(li);
+    }
+    petListsArea.append(list);
+}
