@@ -33,6 +33,9 @@ console.log(p1, p2);
 
 /**** esercizio 2 */
 
+class HTMLinit {
+
+}
 
 class Pet {
     constructor(pn, on, sp, br) {
@@ -50,3 +53,4 @@ class Pet {
         }
     }
 }
+
