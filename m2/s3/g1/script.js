@@ -119,7 +119,6 @@ class PetApp {
                 title: "Oops...",
                 text: "Non hai inserito tutti i campi!",
               });
-            
         }
     })
 
@@ -130,7 +129,6 @@ function inputClearer() {
     speciesInput.value = "";
     breedInput.value = "";
 }
-
 function inputChecker() {
     if (petNameInput.value!= "" && ownerNameInput.value!= "" && speciesInput.value!= "" && breedInput.value!= "") {
         return true;
