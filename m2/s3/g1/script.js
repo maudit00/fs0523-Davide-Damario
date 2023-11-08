@@ -152,7 +152,7 @@ saveBtn.addEventListener("click", () => {
     petListMaker2(petsArray, counter);
     inputClearer();
   } else {
-    new Alert("top-left", "error", "Non hai inserito tutti i campi!").alertMaker();
+    new Alert("top", "error", "Non hai inserito tutti i campi!").alertMaker();
   }
 });
 
@@ -184,12 +184,12 @@ function compareButtonChecker(button) {
       petsArray[parseInt(idToCompare) - 1]
     );
     if (result) {
-    new Alert("top-left", "success", "E`lo stesso proprietario!").alertMaker();
+    new Alert("top", "success", "E`lo stesso proprietario!").alertMaker();
     } else {
-    new Alert("top-left", "error", "I proprietari sono diversi!").alertMaker();
+    new Alert("top", "error", "I proprietari sono diversi!").alertMaker();
     }
   } else {
-    new Alert("top-left", "error", "Inserisci un ID valido!").alertMaker();
+    new Alert("top", "error", "Inserisci un ID valido!").alertMaker();
     };
   }
 
