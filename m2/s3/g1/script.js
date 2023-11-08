@@ -80,7 +80,8 @@ class PetApp {
     }
     
     class Pet {
-        constructor(pn, on, sp, br) {
+        constructor(id, pn, on, sp, br) {
+            this.id = id;
             this.petName = pn;
             this.ownerName = on;
             this.species = sp;
@@ -97,22 +98,23 @@ class PetApp {
     }
 
     new PetApp('#app')
+
     let petsArray = [];
 
-    
     let petNameInput = document.querySelector(".pet-name-input");
     let ownerNameInput = document.querySelector(".owner-name-input");
     let speciesInput = document.querySelector(".species-input");
     let breedInput = document.querySelector(".breed-input");
     let petListsArea = document.querySelector(".pet-lists-area");
     let saveBtn = document.querySelector(".save-button");
+    let counter = 0;
 
     saveBtn.addEventListener('click', () => {
         if (inputChecker()) {
-        petsArray.push(new Pet(petNameInput.value, ownerNameInput.value, speciesInput.value, breedInput.value));
-        petListMaker2();
+        counter++;
+        petsArray.push(new Pet(counter, petNameInput.value, ownerNameInput.value, speciesInput.value, breedInput.value));
+        petListMaker2(petsArray, counter);
         inputClearer();
-        console.log(petsArray);
         } else {
             Swal.fire({
                 icon: "error",
@@ -121,6 +123,7 @@ class PetApp {
               });
         }
     })
+
 
 
 function inputClearer() {
@@ -136,13 +139,62 @@ function inputChecker() {
         return false;
     }
 }
+
+function compareButtonChecker(button) {
+    let idOfThebutton = button.parentElement.firstChild.lastChild.innerText;
+    console.log(idOfThebutton);
+    let idToCompare = prompt("Inserisci l'ID del Proprietario da confrontare");
+    if (idToCompare && idToCompare > 0 && idToCompare <= petsArray.length) {
+    let result = petsArray[idOfThebutton-1].ownerNameCheck(petsArray[parseInt(idToCompare)-1])
+    if (result) {
+        ownerCheckSuccess();
+    } else {
+        ownerCheckFail();
+    }
+    } else { 
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Non hai inserito un id Valido!",
+          });
+    
+}
+}
+
+function ownerCheckSuccess(){
+    Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "E`lo stesso proprietario!",
+        showConfirmButton: false,
+        timer: 5000
+      });
+}
+
+function ownerCheckFail(){
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Il proprietario non è lo stesso!",
+        showConfirmButton: false,
+        timer: 5000
+      });
+}
+
 function petListMaker2() {
     let list = document.createElement("ul");
     list.classList.add("pet-list");
     for (let prop in petsArray[petsArray.length - 1]) {
         let li = document.createElement("li");
-        li.innerText = `${prop}: ${petsArray[petsArray.length - 1][prop]}`;
+        li.innerHTML = `<span class="prop-name">${prop}:</span> <span class="prop-value">${petsArray[petsArray.length - 1][prop]}</span>`;
         list.append(li);
     }
+    let compareButton = document.createElement("button");
+    compareButton.classList.add("compare-button");
+    compareButton.innerText = "Confronta Proprietario";
+    compareButton.addEventListener('click', () => {
+        compareButtonChecker(compareButton);
+    });
+    list.append(compareButton);
     petListsArea.append(list);
 }
