@@ -9,8 +9,9 @@ const hideButtons = document.querySelectorAll(".card-button-2")
 const imgIdArea = document.querySelectorAll(".img-id");
 const cardImg = document.querySelectorAll(".card-img");
 const userQuery = document.querySelector("#user-query");
-console.log(userQuery);
+const cards = document.querySelectorAll(".card");
 
+console.log(cards);
 
 
 async function loadImages() {
@@ -81,10 +82,13 @@ changeElementsContent (hideButtons, "Hide");
 hideButtons.forEach((button) => {
     button.addEventListener("click", () => {
         let cardArea = button.parentElement.parentElement.parentElement.parentElement
-        hideCard(cardArea);
+        removeElement(cardArea);
     });
 });
 
+function removeElement (e) {
+    e.remove();
+}
 
 function changeElementsContent (elements, content) {
     elements.forEach((e) => {
@@ -92,6 +96,9 @@ function changeElementsContent (elements, content) {
     })
 }
 
-function hideCard (card) {
-    card.remove();
-}
+
+cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+        window.location.href = "index2.html"
+    });
+});
