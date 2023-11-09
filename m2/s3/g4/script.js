@@ -1,5 +1,5 @@
 const url = "https://api.pexels.com/v1/search?query=";
-const queryUrl = "https://api.pexels.com/v1/search?query=Mountain";
+const queryUrl = "https://api.pexels.com/v1/search?query=Mountain?=avg_color";
 const queryUrl2 = "https://api.pexels.com/v1/search?query=Pizza";
 const apiKey = "FIYcS3vrRpfihtMR0JEEE4xMHgje6Q6mMqGR5czOo8rCil03yVmh07ti";
 const loadButton = document.querySelector("#load-button");
@@ -21,17 +21,31 @@ async function loadImages() {
         }
     })
     let data = await res.json();
+    console.log(data);
 
 
     imgIdArea.forEach((id, j)=> {
         id.innerText = data.photos[j].id;
     });
 
+    cards.forEach((card, i)=> {
+        card.style.backgroundColor = data.photos[i].avg_color;
+    });
+
     cardImg.forEach((img, i)=> {
         img.src = data.photos[i].src.original;
     })
-    
 }
+
+// async function avgColor() {
+//     let res = await fetch(queryUrl + "?=avg_color", {
+//         headers: {
+//             "Authorization": `${apiKey}`
+//         }
+//     })
+//     let data = await res.json();
+//     console.log(data);   
+// }
 
 async function loadImages2() {
     let res = await fetch(queryUrl2, {
@@ -71,6 +85,7 @@ async function loadImagesCustom() {
     })
 
 }
+
 
 loadButton.addEventListener("click", loadImages);
 loadButton2.addEventListener("click", loadImages2);
