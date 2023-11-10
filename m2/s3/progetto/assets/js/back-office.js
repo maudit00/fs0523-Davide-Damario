@@ -35,7 +35,6 @@ async function renderProducts() {
 
   let products = await getProducts();
   let target = document.querySelector("#list");
-  console.log(target);
 
   products.forEach((p, i) => {
 

@@ -46,7 +46,6 @@ async function renderSingleProduct(id) {
     let imageUrl = document.querySelector("#imageUrl");
     let price = document.querySelector("#price");
 
-    
     name.value = product.name;
     brand.value = product.brand;
     desc.value = product.description;
