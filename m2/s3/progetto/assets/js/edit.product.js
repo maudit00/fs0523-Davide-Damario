@@ -4,6 +4,7 @@ const API_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRkZjcwNDk1ZDRmNjAwMTg1NjI0ZDgiLCJpYXQiOjE2OTk2MDgzMjQsImV4cCI6MTcwMDgxNzkyNH0.AjDfv8LqVS2wCnPKoO24OBFxpUsOl6p1MEr0YSvxpyc";
 const API_URL = "https://striveschool-api.herokuapp.com/api/product/";
 const editButton = document.querySelector("#edit-button");
+const resetButton = document.querySelector("#reset-button");
 
 
 
@@ -96,7 +97,30 @@ renderSingleProduct(id);
         editProduct(id);
     });
 
-  
+    resetButton.addEventListener("click", ()=> {
+        Swal.fire({
+            title: "Sicuro di voler resettare i campi?",
+            showDenyButton: false,
+            showCancelButton: true,
+            confirmButtonText: "Reset",
+            denyButtonText: `Cancella`
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire("Campi Resettati", "", "success");
+              resetForm();
+            } else if (result.isDenied) {
+              Swal.fire("Changes are not saved", "", "info");
+            }
+          });
+    });
+    
+    function resetForm() {
+        let inputs = document.querySelectorAll("input")
+        inputs.forEach((input) => {
+            input.value = "";
+        })
+    }
 
 
 

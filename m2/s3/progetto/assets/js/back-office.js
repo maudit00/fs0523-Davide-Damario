@@ -24,7 +24,6 @@ async function deleteProduct(product, tr) {
     }).then((res) => {
         if (res.status == 200) {
         tr.remove();
-        alert(`Prodotto ${product.name} eliminato`);
         }
     });
   }
@@ -57,7 +56,21 @@ async function renderProducts() {
     editButton.href = `edit-product.html?id=${p._id}`;
 
     deleteButton.addEventListener("click", () => {
-        deleteProduct(p, tr);
+        Swal.fire({
+            title: "Sicuro di voler cancellare questo prodotto ?",
+            showDenyButton: false,
+            showCancelButton: true,
+            confirmButtonText: "CANCELLA",
+            denyButtonText: `No`
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire("Prodotto Cancellato con successo!", "", "success");
+              deleteProduct(p, tr);
+            } else if (result.isDenied) {
+              Swal.fire("Changes are not saved", "", "info");
+            }
+          });
     });
 
     tr.append(clone);
