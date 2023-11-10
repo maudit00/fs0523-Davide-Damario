@@ -12,16 +12,7 @@ async function getProducts() {
   }).then((res) => res.json());
 }
 
-async function getSingleProduct(id) {
-    return await fetch(API_URL + id, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${API_KEY}`,
-      },
-    }).then((res) => res.json());
-}
-
-
+/**** funzione di rendering prodotti */
 async function renderProducts() {
   let products = await getProducts();
   let target = document.querySelector(".product-container");
@@ -29,54 +20,26 @@ async function renderProducts() {
   products.forEach((p) => {
     let clone = cardClone();
     let img = clone.querySelector(".product-img");
-    console.log(img);
     let title = clone.querySelector(".product-name");
     let brand = clone.querySelector(".product-brand");
     let desc = clone.querySelector(".product-desc");
     let price = clone.querySelector(".product-price");
-    let button = clone.querySelector(".btn");
+    let moreButton = clone.querySelector("#more");
+    let editButton = clone.querySelector("#edit");
 
-    button.addEventListener("click", () => {
-      alert(p.name);
-    });
-
+    
     img.src = p.imageUrl;
     title.textContent = p.name;
     brand.textContent = p.brand;
     desc.textContent = p.description;
     price.textContent = `${p.price} €`;
+    moreButton.href = `product-detail.html?id=${p._id}`;
 
     target.appendChild(clone);
   });
 }
 
-/****** prove renderizzazione prodotto singolo  */
-async function renderSingleProduct(id) {
-    let product = await getSingleProduct(id);
-    let target = document.querySelector(".product-container");
 
-    let clone = cardClone();
-    let img = clone.querySelector(".product-img");
-    let title = clone.querySelector(".product-name");
-    let brand = clone.querySelector(".product-brand");
-    let desc = clone.querySelector(".product-desc");
-    let price = clone.querySelector(".product-price");
-    let button = clone.querySelector(".btn");
-
-    button.addEventListener("click", () => {
-      alert(product.name);
-    });
-
-    img.src = product.imageUrl;
-    title.textContent = product.name;
-    brand.textContent = product.brand;
-    desc.textContent = product.description;
-    price.textContent = `${product.price} €`;
-
-    target.appendChild(clone);
-}
-
-let renderOne = document.querySelector(".renderOne");
 /****lancio funzione renderizzazione prodotti product page */
 renderProducts();
 

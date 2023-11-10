@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/product-details.css">
+    <link rel="shortcut icon" href="assets/img/Rafiqul-Hassan-Blogger-Basket.512.png" type="image/x-icon" />
 </head>
+
 <body>
-    <div class="product-container">
-        <div class="btn btn-warning renderOne">Renderizza uno</div>
-    </div>
-<template>
-    <img class="product-img" src="" alt="">
-    <h3 class="product-name"></h3>
-    <h5 class="product-brand"></h5>
-    <div class="d-flex flex-column align-items-center">
-        <p class="product-desc"></p>
-        <p class="product-price"></p>
-        <button class="btn btn-primary">Bottone</button>
-    </div>
-</template>
-<script src="assets/js/script.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="product-container container-fluid bg-secondary"></div>
+
+    <template>
+        <div class="container product pt-5 bg-dark text-white">
+            <div class="product-header d-flex flex-column align-items-center">
+                <h3 class="product-name"></h3>
+                <h5 class="product-brand"></h5>
+                <img class="product-img" src="" alt="" />
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <p class="product-desc"></p>
+                <p class="product-full-desc"></p>
+                <p class="product-price text-success fw-bold"></p>
+            </div>
+        </div>
+    </template>
+    <script src="assets/js/product-details.js"></script>
 </body>
+
 </html>
