@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modifica -</title>
+    <title>Shop - BackOffice</title>
     <link rel="shortcut icon" href="assets/img/Rafiqul-Hassan-Blogger-Basket.512.png" type="image/x-icon" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/product-details.css" />
-    <link rel="stylesheet" href="node_modules/@sweetalert2/theme-dark/dark.min.css" />
 </head>
 
 <body class="bg-secondary">
@@ -37,30 +35,38 @@
         </ul>
     </header>
 
-    <div class="container bg-dark">
-        <h1 class="text-white text-center display-2 mt-5">
-            Modifica Prodotto
-        </h1>
-        <div class="my-form bg-secondary mt-5">
-            <input type="text" id="name" placeholder="Nome Prodotto" class="py-2 my-2 form-control" />
-            <input type="text" id="brand" placeholder="Fornitore" class="py-2 my-2 form-control" />
-            <input type="text" id="desc" placeholder="Descrizione del prodotto" class="py-2 my-2 form-control" />
-            <input type="text" id="imageUrl" placeholder="Inserisci qui l'URL dell'imagine"
-                class="py-2 my-2 form-control" />
-            <input type="number" name="price" id="price" placeholder="Inserisci qui il prezzo"
-                class="py-2 my-2 form-control" />
-        </div>
-        <div class="d-flex justify-content-center gap-2 mt-5">
-            <button type="button" id="edit-button" name="edit-button" class="btn my-5 btn-success text-white">
-                Modifica
-            </button>
-            <button type="button" id="reset-button" name="reset-button" class="btn my-5 btn-danger text-white">
-                Reset
-            </button>
+    <div class="container-fluid bg-dark p-3">
+        <h1 class="text-center text-white mt-5">Lista Prodotti</h1>
+        <div class="container">
+            <a href="add-product.html" class="btn btn-success my-2">Aggiungi un nuovo prodotto</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Nome Prodotto</td>
+                        <td>Brand</td>
+                        <td>Descrizione</td>
+                        <td>Prezzo</td>
+                        <td>Azioni</td>
+                    </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
         </div>
     </div>
-<body>
- <script src="assets/js/edit.product.js"></script>
- <script src="node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+
+    <template>
+        <td class="id"></td>
+        <td class="name"></td>
+        <td class="brand"></td>
+        <td class="desc"></td>
+        <td class="price"></td>
+        <td class="azioni">
+            <a href="modifica.html" class="edit btn btn-warning">Modifica</a>
+            <button class="delete btn btn-danger">Elimina</button>
+        </td>
+    </template>
+    <script src="assets/js/back-office.js"></script>
 </body>
+
 </html>

@@ -26,8 +26,9 @@ addButton.addEventListener("click", async (e) => {
         price: document.querySelector("#price").value,
         imageUrl: document.querySelector("#imageUrl").value
     }
+    
     let response = await addProduct(product);
-    console.log(response);
+  
 
     /**** aggiunta singolo prodotto */
     async function addProduct() {

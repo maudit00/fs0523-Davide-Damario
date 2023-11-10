@@ -4,8 +4,6 @@ const API_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRkZjcwNDk1ZDRmNjAwMTg1NjI0ZDgiLCJpYXQiOjE2OTk2MDgzMjQsImV4cCI6MTcwMDgxNzkyNH0.AjDfv8LqVS2wCnPKoO24OBFxpUsOl6p1MEr0YSvxpyc";
 const API_URL = "https://striveschool-api.herokuapp.com/api/product/";
 
-console.log(id);
-
 
 /**** get singolo prodotto */
 async function getSingleProduct(id) {
@@ -27,7 +25,6 @@ async function renderSingleProduct(id) {
     let title = clone.querySelector(".product-name");
     let brand = clone.querySelector(".product-brand");
     let desc = clone.querySelector(".product-desc");
-    let fullDesc = clone.querySelector(".product-full-desc");
     let price = clone.querySelector(".product-price");
 
     document.title = product.name;
