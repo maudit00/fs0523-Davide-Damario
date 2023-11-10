@@ -6,6 +6,24 @@ const API_URL = "https://striveschool-api.herokuapp.com/api/product/";
 const editButton = document.querySelector("#edit-button");
 
 
+
+class Alert {
+    constructor(icon, message, text) {
+        this.icon = icon;
+        this.message = message;
+        this.text = text;
+    }
+
+    showAlert() {
+        Swal.fire({
+            icon: this.icon,
+            title: this.message,
+            text: this.text,
+          });
+        }
+}
+
+
 /**** get singolo prodotto */
 async function getSingleProduct(id) {
     return await fetch(API_URL + id, {
@@ -15,10 +33,6 @@ async function getSingleProduct(id) {
       },
     }).then((res) => res.json());
 }
-
-
-/****modifica prodotto */
-
 
 
 /****** renderizzazione prodotto sul form */
@@ -43,13 +57,26 @@ async function renderSingleProduct(id) {
 renderSingleProduct(id);
 
     editButton.addEventListener("click", () => {
+        /**** selezione campi */
+        let name = document.querySelector("#name").value;
+        let brand = document.querySelector("#brand").value;
+        let desc = document.querySelector("#desc").value;
+        let imageUrl = document.querySelector("#imageUrl").value;
+        let price = document.querySelector("#price").value;
+
+        /*****controllo riempimento campi*/
+         if (!name ||!brand ||!desc ||!imageUrl ||!price){
+            new Alert("error", "Ooops..!", "Non hai riempito tutti i campi!").showAlert();
+                return;
+        }
+        /***** creazione oggetto prodotto */
             
         let product = {
-            name: document.querySelector("#name").value,
-            brand: document.querySelector("#brand").value,
-            description: document.querySelector("#desc").value,
-            price: document.querySelector("#price").value,
-            imageUrl: document.querySelector("#imageUrl").value
+         name,
+         brand,
+         desc,
+         price,
+         imageUrl
         }
 
         async function editProduct(id) {
@@ -62,12 +89,7 @@ renderSingleProduct(id);
               body: JSON.stringify(product),
             }).then((res) => res.json());
           }
-        alert("modifica prodotto");
-        //   Swal.fire({
-        //       icon: "success",
-        //       title: "Prodotto modificato con successo!",
-        //       text: "verrai reindirizzato alla Home!",
-        //     });
+          new Alert("success", "OK!", "Prodotto modificato con successo!").showAlert();
           setTimeout(() => {
           window.location.href = "back-office.html";
           }, 3000);

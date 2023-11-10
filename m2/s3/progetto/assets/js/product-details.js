@@ -17,6 +17,7 @@ async function getSingleProduct(id) {
 
 /****** prove renderizzazione prodotto singolo  */
 async function renderSingleProduct(id) {
+    
     let product = await getSingleProduct(id);
     let target = document.querySelector(".product-container");
 

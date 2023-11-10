@@ -5,19 +5,29 @@ const API_URL = "https://striveschool-api.herokuapp.com/api/product/";
 const addButton = document.querySelector("#add-button");
 const resetButton = document.querySelector("#reset-button");
 
+class Alert {
+  constructor(icon, message, text) {
+      this.icon = icon;
+      this.message = message;
+      this.text = text;
+  }
+
+  showAlert() {
+      Swal.fire({
+          icon: this.icon,
+          title: this.message,
+          text: this.text,
+        });
+      }
+}
 
 /***** click sul bottone aggiungi */
-addButton.addEventListener("click", async (e) => {
+addButton.addEventListener("click", async () => {
     /*****controllo riempimento campi*/
     if (!document.querySelector("#name").value || !document.querySelector("#brand").value || !document.querySelector("#desc").value || !document.querySelector("#price").value || !document.querySelector("#imageUrl")){
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Non hai riempito tutti i campi!",
-          });
+    new Alert("error", "Ooops..!", "Non hai riempito tutti i campi!").showAlert();
           return;
     }
-
     /***** creazione oggetto prodotto */
     let product = {
         name: document.querySelector("#name").value,
@@ -27,7 +37,7 @@ addButton.addEventListener("click", async (e) => {
         imageUrl: document.querySelector("#imageUrl").value
     }
     
-    let response = await addProduct(product);
+    await addProduct(product);
   
 
     /**** aggiunta singolo prodotto */
@@ -41,11 +51,7 @@ addButton.addEventListener("click", async (e) => {
         body: JSON.stringify(product),
       }).then((res) => res.json());
     }
-    Swal.fire({
-        icon: "success",
-        title: "Prodotto aggiunto con successo!",
-        text: "verrai reindirizzato alla Home!",
-      });
+    new Alert("success", "OK!", "Prodotto aggiunto con successo!").showAlert();
     setTimeout(() => {
     window.location.href = "index.html";
     }, 3000);
