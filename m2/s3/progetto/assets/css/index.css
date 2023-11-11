@@ -1,0 +1,27 @@
+.main-title {
+position: relative;
+animation-name: bounces;
+animation-duration: 1s;
+animation-iteration-count: 2;
+animation-timing-function: ease-in;
+text-shadow: 3px 3px #ccc;
+}
+
+@keyframes bounces {
+    0%, 100%  {
+        bottom: 0px;
+    }
+    10%, 90%{
+        bottom: 5px;
+    }
+    20%, 80% {
+        bottom: 10px;
+    }
+    40%, 60% {
+        bottom: 15px;
+    }
+    50% {
+        bottom: 20px;
+    }
+
+  }

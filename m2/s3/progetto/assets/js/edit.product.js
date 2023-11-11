@@ -87,7 +87,7 @@ renderSingleProduct(id);
                 Authorization: `Bearer ${API_KEY}`,
               },
               body: JSON.stringify(product),
-            }).then((res) => res.json());
+            })
           }
           new Alert("success", "OK!", "Prodotto modificato con successo!").showAlert();
           setTimeout(() => {

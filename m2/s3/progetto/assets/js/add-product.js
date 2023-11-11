@@ -37,7 +37,7 @@ addButton.addEventListener("click", async () => {
         imageUrl: document.querySelector("#imageUrl").value
     }
     
-    await addProduct(product);
+    await addProduct();
   
 
     /**** aggiunta singolo prodotto */
@@ -46,14 +46,14 @@ addButton.addEventListener("click", async () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${API_KEY}`,
+          Authorization: `Bearer ${API_KEY}`
         },
         body: JSON.stringify(product),
-      }).then((res) => res.json());
+      })
     }
     new Alert("success", "OK!", "Prodotto aggiunto con successo!").showAlert();
     setTimeout(() => {
-    window.location.href = "index.html";
+    location.href = "back-office.html";
     }, 3000);
 });
 
