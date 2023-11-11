@@ -7,6 +7,7 @@
     <title>Shop - BackOffice</title>
     <link rel="shortcut icon" href="assets/img/Rafiqul-Hassan-Blogger-Basket.512.png" type="image/x-icon" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="bg-secondary">
@@ -39,32 +40,44 @@
         <h1 class="text-center text-white mt-5">Lista Prodotti</h1>
         <div class="container">
             <a href="add-product.html" class="btn btn-success my-2">Aggiungi un nuovo prodotto</a>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td>#</td>
-                        <td>Nome Prodotto</td>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <td>#</td>
+                            <td>Nome Prodotto</td>
                         <td>Brand</td>
                         <td>Descrizione</td>
                         <td>Prezzo</td>
                         <td>Azioni</td>
+                        <td>Anteprima</td>
                     </tr>
                 </thead>
                 <tbody id="list"></tbody>
             </table>
         </div>
+        </div>
     </div>
 
     <template>
-        <td class="id"></td>
-        <td class="name"></td>
-        <td class="brand"></td>
-        <td class="desc"></td>
-        <td class="price"></td>
-        <td class="azioni">
-            <a href="modifica.html" class="edit btn btn-warning">Modifica</a>
-            <button class="delete btn btn-danger">Elimina</button>
+        <td class="id text-center align-middle"></td>
+        <td class="name text-center align-middle"></td>
+        <td class="brand text-center align-middle"></td>
+        <td class="desc text-center align-middle"></td>
+        <td class="price text-center align-middle"></td>
+        <td class="">
+            <div class="azioni d-flex flex-column justify-content-center">
+                <a href="modifica.html" class="edit btn btn-warning">Modifica</a>
+                <button class="delete btn btn-danger ">Elimina</button>
+                <button class="show btn btn-success">Mostra Anteprima</button>
+            </div>
         </td>
+        <td>
+            <div class="img-area p-5 rounded-3">
+                <img src="" class="d-none img" alt="">
+            </div>
+        </td>
+
     </template>
     <script src="assets/js/back-office.js"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>

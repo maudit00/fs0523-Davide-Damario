@@ -25,3 +25,13 @@ text-shadow: 3px 3px #ccc;
     }
 
   }
+
+  .img-area {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+  }
+
+  td .azioni {
+    height: 100%;
+  }

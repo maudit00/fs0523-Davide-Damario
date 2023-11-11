@@ -47,6 +47,8 @@ async function renderProducts() {
     let price = clone.querySelector(".price");
     let editButton = clone.querySelector(".edit");
     let deleteButton = clone.querySelector(".delete");
+    let showButton = clone.querySelector(".show");
+    let img = clone.querySelector(".img")
 
     id.innerText = i + 1;
     name.innerText = p.name;
@@ -54,6 +56,11 @@ async function renderProducts() {
     description.innerText = p.description;
     price.innerText = `${p.price} €`;
     editButton.href = `edit-product.html?id=${p._id}`;
+    img.src = p.imageUrl;
+
+    showButton.addEventListener("click", () => {
+      img.classList.toggle("d-none");
+    });
 
     deleteButton.addEventListener("click", () => {
         Swal.fire({
