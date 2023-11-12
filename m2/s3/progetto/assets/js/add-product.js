@@ -4,6 +4,8 @@ const API_KEY =
 const API_URL = "https://striveschool-api.herokuapp.com/api/product/";
 const addButton = document.querySelector("#add-button");
 const resetButton = document.querySelector("#reset-button");
+const image = document.querySelector('#imageUrl')
+const imgPreview = document.querySelector('.img-preview img')
 
 class Alert {
   constructor(icon, message, text) {
@@ -20,6 +22,13 @@ class Alert {
         });
       }
 }
+
+
+/***** funzione preview */
+image.addEventListener('change', () => {
+  imgPreview.src = image.value
+})
+
 
 /***** click sul bottone aggiungi */
 addButton.addEventListener("click", async () => {

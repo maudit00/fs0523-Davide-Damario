@@ -5,6 +5,8 @@ const API_KEY =
 const API_URL = "https://striveschool-api.herokuapp.com/api/product/";
 const editButton = document.querySelector("#edit-button");
 const resetButton = document.querySelector("#reset-button");
+const image = document.querySelector('#imageUrl');
+let imgPreview = document.querySelector('.img-preview img');
 
 
 
@@ -35,6 +37,10 @@ async function getSingleProduct(id) {
     }).then((res) => res.json());
 }
 
+/***** funzione preview */
+image.addEventListener('change', () => {
+  imgPreview.src = image.value
+})
 
 /****** renderizzazione prodotto sul form */
 
@@ -47,10 +53,12 @@ async function renderSingleProduct(id) {
     let imageUrl = document.querySelector("#imageUrl");
     let price = document.querySelector("#price");
 
+    
     name.value = product.name;
     brand.value = product.brand;
     desc.value = product.description;
     imageUrl.value = product.imageUrl;
+    imgPreview.src = imageUrl.value
     price.value = product.price;
 }
   

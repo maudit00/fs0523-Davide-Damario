@@ -28,6 +28,7 @@ text-shadow: 3px 3px #e12523;;
   }
 
 
+
   /****** animazione e stile titolo back-office *****/
 
   .back-office-title {
@@ -50,11 +51,6 @@ text-shadow: 3px 3px #e12523;;
   /*** loading spinner ***/ 
 
   #spinner:not([hidden]) {
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +84,10 @@ text-shadow: 3px 3px #e12523;;
   }
 
   td .azioni {
-    height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   gap: 10px;
   }
 
   /***** pagina scopri di più ***/
