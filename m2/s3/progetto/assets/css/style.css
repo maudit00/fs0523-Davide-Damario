@@ -1,3 +1,4 @@
+/****** animazione e stile titolo principale *****/ 
 .main-title {
 position: relative;
 animation-name: bounces;
@@ -26,6 +27,25 @@ text-shadow: 3px 3px #e12523;;
 
   }
 
+
+  /****** animazione e stile titolo back-office *****/
+
+  .back-office-title {
+    position:relative;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: 3;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes rotate {
+   0% {
+     transform: rotateY(0deg);
+   }
+   100% {
+     transform: rotateY(360deg);
+   }
+  }
 
   /*** loading spinner ***/ 
 
@@ -70,3 +90,20 @@ text-shadow: 3px 3px #e12523;;
   td .azioni {
     height: 100%;
   }
+
+  /***** pagina scopri di più ***/
+
+
+
+input::placeholder{
+    text-align:center;
+}
+
+/****** footer ***/
+
+.footer-div {
+    background-image: url('../img/black\ abstract.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}

@@ -29,6 +29,7 @@ async function renderProducts() {
     let desc = clone.querySelector(".product-desc");
     let price = clone.querySelector(".product-price");
     let moreButton = clone.querySelector(".more");
+    let editButton = clone.querySelector(".edit");
 
 
     
@@ -38,6 +39,7 @@ async function renderProducts() {
     desc.textContent = p.description;
     price.textContent = `${p.price} €`;
     moreButton.href = `product-detail.html?id=${p._id}`;
+    editButton.href = `edit-product.html?id=${p._id}`;
 
     target.appendChild(clone);
   });

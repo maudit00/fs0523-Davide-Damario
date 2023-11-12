@@ -12,7 +12,7 @@
 
 <body>
   <!-- SEZIONE NAVBAR -->
-  <header>
+  <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img width="94" height="94"
@@ -27,8 +27,7 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <button class="nav-link active border border-danger sound-button" data-bs-toggle="modal" data-bs-target="#psx-startup" aria-current="page">Clicca
-                qui per affogare nei ricordi</button>
+
             </li>
           </ul>
         </div>
@@ -44,26 +43,6 @@
       </li>
     </ul>
 
-    <div class="modal fade modal-bg-dark" id="psx-startup" tabindex="-1" aria-labelledby="psx-startup" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">TROPPI RICORDI NON CE LA FACCIO!</h1>
-          </div>
-          <div class="modal-body">
-            <iframe width="460" height="300"
-              src="https://www.youtube.com/embed/BOPViekdacQ?si=rXaYcVMPXprvbMI1"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ora puoi anche chiudere!</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </header>
   <main>
     <div class="bg-secondary d-flex flex-column align-items-center">
@@ -74,6 +53,33 @@
       <div class="container row mt-3 justify-content-center product-container bg-dark"></div>
     </div>
   </main>
+  <footer id="footer">
+    <div class="d-flex justify-content-center align-items-center gap-3 p-4 footer-div">
+        <h5 class="text-white">Psx - Retro Game Shop</h5>
+        <button class="nav-link active border border-danger text-white p-3 fw-bold sound-button" data-bs-toggle="modal" data-bs-target="#psx-startup" aria-current="page">Clicca
+          qui per affogare nei ricordi</button>
+    </div>
+</footer>
+<div class="modal fade modal-bg-dark" id="psx-startup" tabindex="-1" aria-labelledby="psx-startup" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">TROPPI RICORDI NON CE LA FACCIO!</h1>
+      </div>
+      <div class="modal-body">
+        <iframe width="460" height="300"
+          src="https://www.youtube.com/embed/BOPViekdacQ?si=rXaYcVMPXprvbMI1"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ora puoi anche chiudere!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <template>
     <div class="card bg-transparent rounded text-white col-12 col-lg-4 mt-3">
@@ -83,7 +89,7 @@
         <p class="product-brand card-subtitle text-muted mb-4"></p>
         <p class="card-text product-desc"></p>
         <p class="card-text product-price"></p>
-        <div class="d-flex justify-content-evenly gap-2">
+        <div class="d-flex justify-content-evenly gap-2 align-items-center">
           <a href="#" class="btn btn-success text-white more">Scopri di Più</a>
           <a href="#" class="btn btn-warning text-white d-none edit">Modifica</a>
         </div>

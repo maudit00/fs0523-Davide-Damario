@@ -28,6 +28,7 @@ async function renderSingleProduct(id) {
     let brand = clone.querySelector(".product-brand");
     let desc = clone.querySelector(".product-desc");
     let price = clone.querySelector(".product-price");
+    let editButton = clone.querySelector(".edit");
 
     document.title = product.name;
     img.src = product.imageUrl;
@@ -35,6 +36,7 @@ async function renderSingleProduct(id) {
     brand.textContent = product.brand;
     desc.textContent = product.description;
     price.textContent = `${product.price} €`;
+    editButton.href = `edit-product.html?id=${product._id}`;
 
     target.appendChild(clone);
 }
