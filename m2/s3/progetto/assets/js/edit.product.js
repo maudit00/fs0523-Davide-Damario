@@ -55,8 +55,8 @@ async function renderSingleProduct(id) {
 
     
     name.value = product.name;
-    brand.value = product.brand;
     desc.value = product.description;
+    brand.value = product.brand;
     imageUrl.value = product.imageUrl;
     imgPreview.src = imageUrl.value
     price.value = product.price;
@@ -67,8 +67,8 @@ renderSingleProduct(id);
     editButton.addEventListener("click", () => {
         /**** selezione campi */
         let name = document.querySelector("#name").value;
+        let description = document.querySelector("#desc").value;
         let brand = document.querySelector("#brand").value;
-        let desc = document.querySelector("#desc").value;
         let imageUrl = document.querySelector("#imageUrl").value;
         let price = document.querySelector("#price").value;
 
@@ -81,10 +81,10 @@ renderSingleProduct(id);
             
         let product = {
          name,
+         description,
          brand,
-         desc,
-         price,
-         imageUrl
+         imageUrl,
+         price
         }
 
         async function editProduct(id) {
@@ -100,7 +100,7 @@ renderSingleProduct(id);
           new Alert("success", "OK!", "Prodotto modificato con successo!").showAlert();
           setTimeout(() => {
           window.location.href = "back-office.html";
-          }, 3000);
+          }, 2000);
 
         editProduct(id);
     });

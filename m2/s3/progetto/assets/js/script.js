@@ -38,6 +38,7 @@ async function renderProducts() {
     brand.textContent = p.brand;
     desc.textContent = p.description;
     price.textContent = `${p.price} €`;
+    img.parentNode.href = `product-detail.html?id=${p._id}`;
     moreButton.href = `product-detail.html?id=${p._id}`;
     editButton.href = `edit-product.html?id=${p._id}`;
 
