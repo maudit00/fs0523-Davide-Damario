@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Shop</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="shortcut icon" href="assets/img/Rafiqul-Hassan-Blogger-Basket.512.png" type="image/x-icon" />
+  <link type="image/png" sizes="32x32" rel="icon" href="assets/img/icons8-playstation-3d-fluency-32.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -15,7 +15,8 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"><img width="94" height="94"
+            src="https://img.icons8.com/3d-fluency/94/play-station.png" alt="play-station" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,6 +25,10 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link active border border-danger sound-button" data-bs-toggle="modal" data-bs-target="#psx-startup" aria-current="page">Clicca
+                qui per affogare nei ricordi</button>
             </li>
           </ul>
         </div>
@@ -34,12 +39,38 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="back-office.html">Back Office</a>
       </li>
+      <li class="nav-item">
+        <button class="nav-link text-warning" id="show-edit-buttons">Clicca per la modalità : <span id="edit-mode-span">Modificà</span><span id="view-mode-span" class="d-none">Visualizza</span></button>
+      </li>
     </ul>
-  </header>
 
+    <div class="modal fade modal-bg-dark" id="psx-startup" tabindex="-1" aria-labelledby="psx-startup" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">TROPPI RICORDI NON CE LA FACCIO!</h1>
+          </div>
+          <div class="modal-body">
+            <iframe width="460" height="300"
+              src="https://www.youtube.com/embed/BOPViekdacQ?si=rXaYcVMPXprvbMI1"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ora puoi anche chiudere!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
   <main>
     <div class="bg-secondary d-flex flex-column align-items-center">
-      <h1 class="text-center display-2 mt-4 text-white main-title">Home Page - Catalogo Prodotti</h1>
+      <div class="d-flex justify-content-center-gap-2">
+        <div hidden id="spinner"></div>
+        <h1 class="col-lg-10 text-center display-2 mt-4 text-white main-title">Catalogo Giochi</h1>
+      </div>
       <div class="container row mt-3 justify-content-center product-container bg-dark"></div>
     </div>
   </main>
@@ -52,14 +83,17 @@
         <p class="product-brand card-subtitle text-muted mb-4"></p>
         <p class="card-text product-desc"></p>
         <p class="card-text product-price"></p>
-        <a href="#" class="btn btn-secondary text-white" id="more">Scopri di Più</a>
-        <a href="#" class="btn btn-secondary text-white d-none" id="edit">Modifica</a>
+        <div class="d-flex justify-content-evenly gap-2">
+          <a href="#" class="btn btn-success text-white more">Scopri di Più</a>
+          <a href="#" class="btn btn-warning text-white d-none edit">Modifica</a>
+        </div>
       </div>
     </div>
   </template>
 
   <footer id="footer"></footer>
   <script src="assets/js/script.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

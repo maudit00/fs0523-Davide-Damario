@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aggiungi un nuovo prodotto</title>
-    <link rel="shortcut icon" href="assets/img/Rafiqul-Hassan-Blogger-Basket.512.png" type="image/x-icon" />
+    <link type="image/png" sizes="32x32" rel="icon" href="assets/img/icons8-playstation-3d-fluency-32.png">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/product-details.css" />
     <link rel="stylesheet" href="node_modules/@sweetalert2/theme-dark/dark.min.css" />
@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#"><img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/play-station.png" alt="play-station"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,15 +25,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -41,15 +32,13 @@
 
         <ul class="nav bg-dark justify-content-end">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Back Office</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="add-product.html">Add Product</a>
+                <a class="nav-link text-white" href="back-office.html">Back Office</a>
             </li>
         </ul>
     </header>
 
-    <div class="container bg-dark">
+    <div class="container bg-dark d-flex justify-content-center gap-3">
+        <div hidden id="spinner"></div>
         <h1 class="text-white text-center display-2 mt-5">
             Aggiungi un nuovo prodotto
         </h1>
@@ -63,10 +52,10 @@
                 class="py-2 my-2 form-control" />
         </div>
         <div class="d-flex justify-content-center gap-2 mt-5">
-            <button type="button" id="add-button" name="add-button" class="btn my-5 btn-secondary text-white">
+            <button type="button" id="add-button" name="add-button" class="btn my-5 btn-success text-white">
                 Aggiungi
             </button>
-            <button type="button" id="reset-button" name="reset-button" class="btn my-5 btn-secondary text-white">
+            <button type="button" id="reset-button" name="reset-button" class="btn my-5 btn-danger text-white">
                 Reset
             </button>
         </div>
