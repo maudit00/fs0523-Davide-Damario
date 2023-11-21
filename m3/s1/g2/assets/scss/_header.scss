@@ -1,0 +1,18 @@
+@import 'mixins.scss';
+
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include title;
+}
+
+.sub-title{
+    font-size: 1rem;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.main-title{
+    @include title;
+}

@@ -1,0 +1,14 @@
+
+@mixin title {
+    .main-title{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 10px 0;
+        color: rgb(70, 47, 16);
+        text-shadow: 2px 2px 3px #D6BEB2;
+    }
+}
+
+@mixin flex-container{
+    display: flex;
+}
