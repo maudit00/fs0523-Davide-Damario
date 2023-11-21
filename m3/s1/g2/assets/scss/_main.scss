@@ -2,9 +2,14 @@
 
 .content-wrapper {
     @include flex-container;
+    .account-section {
+        border: 1px solid black;
+        flex : 0 0 50%;
+    }
+
 }
 
-.account-section {
-    border: 1px solid black;
-    flex : 0 0 50%;
+.user-name-title{
+    font-size: 2rem;
+    text-align: center;
 }

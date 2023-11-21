@@ -58,7 +58,6 @@ table {
   align-items: center;
 }
 .header-wrapper .main-title {
-  font-size: 1.5rem;
   font-weight: 700;
   margin: 10px 0;
   color: rgb(70, 47, 16);
@@ -71,8 +70,10 @@ table {
   font-weight: 400;
 }
 
-.main-title .main-title {
+.main-title {
   font-size: 1.5rem;
+}
+.main-title .main-title {
   font-weight: 700;
   margin: 10px 0;
   color: rgb(70, 47, 16);
@@ -82,10 +83,14 @@ table {
 .content-wrapper {
   display: flex;
 }
-
-.account-section {
+.content-wrapper .account-section {
   border: 1px solid black;
   flex: 0 0 50%;
+}
+
+.user-name-title {
+  font-size: 2rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
