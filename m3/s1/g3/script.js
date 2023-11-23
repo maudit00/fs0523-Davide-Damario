@@ -46,4 +46,3 @@ let persona1 = new Lavoratore(40, 50000, 26.5, 10);
 persona1.printInfo();
 let persona2 = new Lavoratore(22, 100000, 26.5, 27);
 persona2.printInfo();
-//# sourceMappingURL=script.js.map

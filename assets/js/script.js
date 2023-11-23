@@ -1,4 +1,21 @@
 "use strict";
+let p1Num = 35;
+let p2Num = 75;
+let random = Math.floor(Math.random() * 100);
+console.log(`Il numero estratto è: ${random}`);
+if (p1Num == random) {
+    console.log("Il giocatore 1 ha indovinato!");
+}
+else if (p2Num == random) {
+    console.log("Il giocatore 2 ha indovinato!");
+}
+else {
+    if (Math.abs(p1Num - random) < Math.abs(p2Num - random)) {
+        console.log("Nessuno ci ha azzeccato! Ma il giocatore 1 è quello che ci è andato vicino");
+    }
+    else
+        console.log("Nessuno ci ha azzeccato! Ma il giocatore 2 è quello che ci è andato vicino");
+}
 class SonAccount {
     constructor() {
         this.balanceInit = 0;
@@ -116,3 +133,51 @@ account2.getBalance();
 account2.getInterestAmount();
 account2.getDepositAmount();
 account2.getWithdrawAmount();
+class Tasse {
+    constructor(codredd, redditoannuolordo, tasseinps, tasseirpef) {
+        this.codredd = codredd;
+        this.redditoannuolordo = redditoannuolordo;
+        this.tasseinps = tasseinps;
+        this.tasseirpef = tasseirpef;
+    }
+}
+class Lavoratore extends Tasse {
+    constructor(codredd, redditoannuolordo, tasseinps, tasseirpef) {
+        super(codredd, redditoannuolordo, tasseinps, tasseirpef);
+    }
+    get getUtileTasse() {
+        return this.getRedditoAnnuoNetto - this.getTasseInps - this.getTasseIrpef;
+    }
+    get getTasseInps() {
+        return this.getRedditoAnnuoNetto * (this.tasseinps / 100);
+    }
+    get getTasseIrpef() {
+        return this.getRedditoAnnuoNetto * (this.tasseirpef / 100);
+    }
+    get getRedditoAnnuoNetto() {
+        return this.redditoannuolordo - this.redditoannuolordo * (this.codredd / 100);
+    }
+    printLine(n) {
+        for (let i = 0; i < n; i++) {
+            console.log('-----------------------------------------------------------------------');
+        }
+        // console.log("----------------------------------------------------------------");
+    }
+    printInfo() {
+        this.printLine(2);
+        console.log(`Il Lavoratore ha un reddito annuo di ${this.redditoannuolordo}`);
+        this.printLine(1);
+        console.log(`Il Lavoratore pagherà le tasse su un reddito imponibile di ${this.getRedditoAnnuoNetto}`);
+        this.printLine(1);
+        console.log(`Il Lavoratore pagherà una aliquota IRPEF : ${this.tasseirpef} : ${this.getTasseIrpef}`);
+        this.printLine(1);
+        console.log(`Il Lavoratore pagherà una aliquota INPS : ${this.tasseinps} : ${this.getTasseInps}`);
+        this.printLine(1);
+        console.log(`Il Lavoratore avrà quindi un utile netto di ${this.getUtileTasse}`);
+    }
+}
+let persona1 = new Lavoratore(40, 50000, 26.5, 10);
+persona1.printInfo();
+let persona2 = new Lavoratore(22, 100000, 26.5, 27);
+persona2.printInfo();
+console.log('ciao');
