@@ -20,3 +20,4 @@ export async function getCapi ():Promise<tipoCapo[]> {
     let data:tipoCapo[] = await res.json()
     return data;
 }
+

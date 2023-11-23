@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,8 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const getCapi_js_1 = require("./Modules/getCapi.js");
+import { getCapi } from './Modules/getCapi.js';
 class Capo {
     constructor(id, codprod, collezione, capo, modello, quantita, colore, prezzoivaesclusa, prezzoivainclusa, disponibile, saldo) {
         this.id = id;
@@ -33,7 +31,7 @@ class Capo {
 }
 function makeCapi() {
     return __awaiter(this, void 0, void 0, function* () {
-        let capi = yield (0, getCapi_js_1.getCapi)();
+        let capi = yield getCapi();
         capi.forEach(capo => {
             let capoDaScontare = new Capo(capo.id, capo.codprod, capo.collezione, capo.capo, capo.modello, capo.quantita, capo.colore, capo.prezzoivaesclusa, capo.prezzoivainclusa, capo.disponibile, capo.saldo);
             console.log(`Il Capo ${capoDaScontare.capo} ha uno sconto del ${capoDaScontare.saldo} % - ${capoDaScontare.getSaldocapo()}€`);
