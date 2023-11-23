@@ -11,19 +11,12 @@ class Capo {
     }
 }
 
-// let capoProva:Capo = new Capo(4, 1111, "estate", "maglione", 1221, 2, "rosso", 20, 24.40, "negozio", 50)
-// console.log(capoProva.getSaldocapo());
-// capoProva.getSaldocapo();
-// console.log(capoProva.getAcquistocapo());
-// capoProva.getAcquistocapo();
-
-
 async function makeCapi(): Promise<void> {
     let capi:Capo[] = await getCapi(); 
     capi.forEach(capo => {
     let capoDaScontare:Capo = new Capo(capo.id, capo.codprod, capo.collezione, capo.capo, capo.modello, capo.quantita, capo.colore, capo.prezzoivaesclusa, capo.prezzoivainclusa, capo.disponibile, capo.saldo)
-    console.log(capoDaScontare.getSaldocapo())
-    console.log(capoDaScontare.getAcquistocapo());
+    console.log(`Il Capo ${capoDaScontare.capo} ha uno sconto del ${capoDaScontare.saldo} % - ${capoDaScontare.getSaldocapo()}€`)
+    console.log(`Il prezzo finale è di ${capoDaScontare.getAcquistocapo()}`);
     })
 }
 

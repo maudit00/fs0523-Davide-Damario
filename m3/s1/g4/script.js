@@ -31,18 +31,13 @@ class Capo {
         return this.prezzoivaesclusa - this.getSaldocapo();
     }
 }
-// let capoProva:Capo = new Capo(4, 1111, "estate", "maglione", 1221, 2, "rosso", 20, 24.40, "negozio", 50)
-// console.log(capoProva.getSaldocapo());
-// capoProva.getSaldocapo();
-// console.log(capoProva.getAcquistocapo());
-// capoProva.getAcquistocapo();
 function makeCapi() {
     return __awaiter(this, void 0, void 0, function* () {
         let capi = yield (0, getCapi_js_1.getCapi)();
         capi.forEach(capo => {
             let capoDaScontare = new Capo(capo.id, capo.codprod, capo.collezione, capo.capo, capo.modello, capo.quantita, capo.colore, capo.prezzoivaesclusa, capo.prezzoivainclusa, capo.disponibile, capo.saldo);
-            console.log(capoDaScontare.getSaldocapo());
-            console.log(capoDaScontare.getAcquistocapo());
+            console.log(`Il Capo ${capoDaScontare.capo} ha uno sconto del ${capoDaScontare.saldo} % - ${capoDaScontare.getSaldocapo()}€`);
+            console.log(`Il prezzo finale è di ${capoDaScontare.getAcquistocapo()}`);
         });
     });
 }

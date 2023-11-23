@@ -21,4 +21,4 @@ export async function getCapi ():Promise<tipoCapo[]> {
     return data;
 }
 
-console.log("ciao");
+

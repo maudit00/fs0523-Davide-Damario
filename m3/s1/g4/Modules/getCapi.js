@@ -18,5 +18,4 @@ function getCapi() {
     });
 }
 exports.getCapi = getCapi;
-console.log("ciao");
 //# sourceMappingURL=getCapi.js.map
