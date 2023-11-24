@@ -1,0 +1,33 @@
+#header {
+  background-color: black;
+  padding: 30px;  
+}
+
+.container {
+    background-color: #ccc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/***** sezione telefono **/
+
+.phone-container{
+  height: 600px;
+  width: 400px;
+  background-image: url("../img/iphone.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center;
+  position:relative;
+}
+
+.mobile-time {
+  position:absolute
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2rem;
+    color: bisque;
+}
