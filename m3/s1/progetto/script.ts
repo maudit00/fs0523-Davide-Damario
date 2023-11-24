@@ -1,3 +1,5 @@
+import {printLine} from "./Modules/printLines.js";
+
 interface Sim {
     carica:number;
     numeroChiamate:number;
@@ -20,7 +22,7 @@ class Smartphone implements Sim {
     carica = 0;
     numeroChiamate = 0;
     costoMinuto = 0.20;
-    private id:number=0;
+    id:number=0;
     registroChiamate:infoC[]=[];
     infoChiamata!:infoC;
     
@@ -58,9 +60,14 @@ class Smartphone implements Sim {
     }
 
     filtraRegistro(ora:number):infoC[]{
-        let oraConvertita:Date = converToLocalHourDate(ora);
+        let oraConvertita:Date = this.converToLocalHourDate(ora);
         if (this.registroChiamate.length == 0) return [];
         return this.registroChiamate.filter(chiamata => chiamata.data >= oraConvertita);
+    }
+
+    private converToLocalHourDate(data:number):Date{
+        let now:Date = new Date();
+        return new Date(now.getFullYear(), now.getMonth(), now.getDate(), data, 0, 0);
     }
 
 
@@ -115,50 +122,39 @@ smart3.chiamata(15);
 mostraCredito(smart3);
 mostraRegistroChiamate(smart3);
 mostraNumeroChiamate(smart3);
-filtraChiamate(smart3, 14);
+filtraChiamate(smart3, 16);
 
 smart3.azzeraChiamate();
 mostraNumeroChiamate(smart3);
 mostraRegistroChiamate
 
 
-
-
-
-
 function mostraCredito(smartphone:Smartphone):void {
+    printLine(2);
     console.log(`Il credito residuo è di ${smartphone.numero404()}`);
+    printLine(2);
 }
 
 function mostraNumeroChiamate(smartphone:Smartphone):void {
+    printLine(1)
     console.log(`Il numero di chiamate è ${smartphone.getNumeroChiamate()}`);
+    printLine(1)
 }
 
 function mostraRegistroChiamate(smartphone:Smartphone):void{
+    printLine(2)
     console.log(`Il registro chiamate è il seguente:`);
-    smartphone.mostraRegistro().forEach(chiamata => console.log("id " + chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min')
+    smartphone.mostraRegistro().forEach(chiamata => console.log("id " + chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'));
+    printLine(2)
 }
 
 function filtraChiamate(smartphone:Smartphone, ora:number):void{
     if (smartphone.filtraRegistro(ora).length > 0) {
-    console.log(`Il numero di chiamate filtrato  dalle ${ora} è`);
+        printLine(1)
+        console.log(`Il numero di chiamate filtrato  dalle ${ora} è`);
+        printLine(1)
     smartphone.filtraRegistro(ora).forEach(chiamata => console.log("id " + chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'))
     }
     else console.log(`Il numero di chiamate filtrato dalle ${ora} è vuoto`);
 }
 
-// function filtraChiamate(smartphone:Smartphone):void {
-//     let registroChiamateFiltrato:infoC[] = smartphone.registroChiamate.filter(chiamata => chiamata.data >= oraConvertita);
-//     if (registroChiamateFiltrato.length > 0) {
-//     console.log(`Il registro chiamate dalle ${ora} filtrato è il seguente:`);
-//     registroChiamateFiltrato.forEach(chiamata => console.log(chiamata.id + "id", chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'));
-//     }
-//     else {
-//         console.log(`Non ci sono chiamate dalle ${smartphone.filtraRegistro.ora} in poi`);
-//     }
-// }
-
-function converToLocalHourDate(data:number):Date{
-    let now:Date = new Date();
-    return new Date(now.getFullYear(), now.getMonth(), now.getDate(), data, 0, 0);
-}
