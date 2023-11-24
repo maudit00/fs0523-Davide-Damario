@@ -8,7 +8,7 @@ interface Sim {
     ricarica(euro:number):void;
     numero404():string;
     getNumeroChiamate():number;
-    chiamata(min:number):void;
+    chiamata(min:number, contatto:string):void;
     azzeraChiamate():void;
 }
 
@@ -16,9 +16,10 @@ type infoC = {
     id:number;
     durata:number;
     data:Date;
+    contatto:String;
 }
 
-class Smartphone implements Sim {
+export class Smartphone implements Sim {
     carica = 0;
     numeroChiamate = 0;
     costoMinuto = 0.20;
@@ -39,13 +40,14 @@ class Smartphone implements Sim {
         return this.numeroChiamate;
     }
 
-    chiamata(min:number): void {
+    chiamata(min:number, contatto:string): void {
         this.numeroChiamate++;
         this.carica -= min * this.costoMinuto;
         this.infoChiamata = {
             id:this.id++,
             durata:min,
-            data:new Date()
+            data:new Date(),
+            contatto:contatto
         }
         this.registroChiamate.push(this.infoChiamata);        
     }
@@ -79,13 +81,13 @@ smart1.ricarica(10);
 
 mostraCredito(smart1);
 
-smart1.chiamata(25);
+smart1.chiamata(25, "mamma");
 mostraRegistroChiamate(smart1);
 
 mostraCredito(smart1);
 mostraNumeroChiamate(smart1);
 
-smart1.chiamata(30);
+smart1.chiamata(30, "mamma");
 mostraRegistroChiamate(smart1);
 
 mostraCredito(smart1);
@@ -99,8 +101,8 @@ let smart2 = new Smartphone();
 smart2.ricarica(50)
 mostraCredito(smart2);
 
-smart2.chiamata(10);
-smart2.chiamata(30);
+smart2.chiamata(10, "mamma");
+smart2.chiamata(30, "mamma");
 
 mostraCredito(smart2);
 mostraRegistroChiamate(smart2);
@@ -116,9 +118,9 @@ smart3.ricarica(100);
 
 mostraCredito(smart3);
 
-smart3.chiamata(45);
-smart3.chiamata(25);
-smart3.chiamata(15);
+smart3.chiamata(45, "mamma");
+smart3.chiamata(25, "mamma");
+smart3.chiamata(15, "mamma");
 mostraCredito(smart3);
 mostraRegistroChiamate(smart3);
 mostraNumeroChiamate(smart3);
@@ -144,7 +146,7 @@ function mostraNumeroChiamate(smartphone:Smartphone):void {
 function mostraRegistroChiamate(smartphone:Smartphone):void{
     printLine(2)
     console.log(`Il registro chiamate è il seguente:`);
-    smartphone.mostraRegistro().forEach(chiamata => console.log("id " + chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'));
+    smartphone.mostraRegistro().forEach(chiamata => console.log("id " + chiamata.id, "contatto " + chiamata.contatto ,chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'));
     printLine(2)
 }
 
@@ -153,7 +155,7 @@ function filtraChiamate(smartphone:Smartphone, ora:number):void{
         printLine(1)
         console.log(`Il numero di chiamate filtrato  dalle ${ora} è`);
         printLine(1)
-    smartphone.filtraRegistro(ora).forEach(chiamata => console.log("id " + chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'))
+    smartphone.filtraRegistro(ora).forEach(chiamata => console.log("id " + chiamata.id, "contatto " + chiamata.contatto ,chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'))
     }
     else console.log(`Il numero di chiamate filtrato dalle ${ora} è vuoto`);
 }

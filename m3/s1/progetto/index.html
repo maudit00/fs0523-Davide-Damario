@@ -17,16 +17,27 @@
 <div class="container">
      <div class="phone-container">
         <span class="mobile-time"></span>
+        <div class="phone-screen-button" id="start-button">Iniziamo!</div>
         <div class="phone-screen">
-            <div class="ricarica">Ricarica Credito</div>
-            <div class="ricarica">Ricarica Credito</div>
-            <div class="ricarica">Ricarica Credito</div>
+            <div class="phone-screen-button ricarica-button">Ricarica Credito</div>
+            <div class="phone-screen-button chiamata-button">Effettua una chiamata</div>
+            <div class="phone-screen-button credito-button">Controlla il tuo credito</div>
+            <div class="phone-screen-button registro-button">Registro chiamate</div>
+            <div class="phone-screen-button registro-filtrato-button">Registro chiamate filtrato</div>
         </div>
      </div>
 </div>
 </main>
- 
-<script src="index.js"></script>
+
+<template id="ricarica">
+    <div class="ricarica-area">
+        <h4>Form di ricarica</h4>
+        <p>quanto credito vuoi ricaricare</p>
+        <input type="number" id="quantità" name="quantità">
+        <span id="ricarica-button">Ricarica</span>
+    </div>
+</template>
+<script type="module" src="index.js"></script>
 <script type="module" src="script.js"></script>
 </body>
 
