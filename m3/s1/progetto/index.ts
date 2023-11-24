@@ -1,4 +1,5 @@
-import { Smartphone } from "./script.js"
+import { Smartphone } from "./script.js";
+
 
 let smartphone: Smartphone | null = null;
 const startBtn = <HTMLDivElement | null>document.getElementById("start-button");
@@ -42,11 +43,7 @@ function renderRicarica(): void {
     let quantità = <HTMLInputElement | null>document.querySelector("#quantità")
     ricarica ? ricarica.addEventListener("click", () => {
         smartphone?.ricarica(quantità ? parseFloat(quantità.value) : 0)
-        Swal.fire({
-            icon: "success",
-            title: "Ricarica effettuata con successo!",
-            text: `la tua ricarica di ${quantità? quantità.value : 0} è stata effettuata`,
-          });
+        alert("ricarica effettuata con successo")
     }): console.error("no ricarica button")
 }
 // function renderCredito ():void {
