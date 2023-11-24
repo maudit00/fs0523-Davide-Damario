@@ -42,7 +42,7 @@ smart1.chiamata(30);
 mostraRegistroChiamate(smart1);
 mostraCredito(smart1);
 mostraNumeroChiamate(smart1);
-filtraChiamate(smart1, 11);
+filtraChiamate(smart1, 14);
 smart1.azzeraChiamate();
 mostraNumeroChiamate(smart1);
 function mostraCredito(smartphone) {
@@ -56,21 +56,18 @@ function mostraRegistroChiamate(smartphone) {
     smartphone.registroChiamate.forEach(chiamata => console.log(chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata, chiamata.data));
 }
 function filtraChiamate(smartphone, ora) {
-    let oraConvertita = converteToHourDate(ora);
-    // console.log(oraConvertita);
-    // smartphone.registroChiamate.forEach(chiamata => console.log(chiamata.data));
+    let oraConvertita = converToLocalHourDate(ora);
     let registroChiamateFiltrato = smartphone.registroChiamate.filter(chiamata => chiamata.data >= oraConvertita);
     if (registroChiamateFiltrato.length > 0) {
         console.log(`Il registro chiamate dalle ${ora} filtrato è il seguente:`);
         registroChiamateFiltrato.forEach(chiamata => console.log(chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata));
     }
     else {
-        console.log(`Non ci sono chiamate da quest'ora in poi`);
+        console.log(`Non ci sono chiamate dalle ${ora} in poi`);
     }
 }
-function converteToHourDate(data) {
+function converToLocalHourDate(data) {
     let now = new Date();
     return new Date(now.getFullYear(), now.getMonth(), now.getDate(), data, 0, 0);
 }
-console.log(converteToHourDate(11));
 //# sourceMappingURL=script.js.map
