@@ -45,6 +45,27 @@ mostraNumeroChiamate(smart1);
 filtraChiamate(smart1, 14);
 smart1.azzeraChiamate();
 mostraNumeroChiamate(smart1);
+let smart2 = new Smartphone();
+smart2.ricarica(50);
+mostraCredito(smart2);
+smart2.chiamata(10);
+smart2.chiamata(30);
+mostraCredito(smart2);
+mostraRegistroChiamate(smart2);
+mostraNumeroChiamate(smart2);
+filtraChiamate(smart2, 12);
+smart2.azzeraChiamate();
+mostraNumeroChiamate(smart2);
+let smart3 = new Smartphone();
+smart3.ricarica(100);
+mostraCredito(smart3);
+smart3.chiamata(45);
+mostraRegistroChiamate(smart3);
+mostraNumeroChiamate(smart3);
+filtraChiamate(smart3, 10);
+smart3.azzeraChiamate();
+mostraNumeroChiamate(smart3);
+mostraRegistroChiamate;
 function mostraCredito(smartphone) {
     console.log(`Il credito residuo è di ${smartphone.numero404()}`);
 }
