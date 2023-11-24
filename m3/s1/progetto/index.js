@@ -32,6 +32,16 @@ function renderRicarica() {
     }
     else
         console.error("no container or ricarica area");
+    let ricarica = document.querySelector("#ricarica-button");
+    let quantità = document.querySelector("#quantità");
+    ricarica ? ricarica.addEventListener("click", () => {
+        smartphone === null || smartphone === void 0 ? void 0 : smartphone.ricarica(quantità ? parseFloat(quantità.value) : 0);
+        Swal.fire({
+            icon: "success",
+            title: "Ricarica effettuata con successo!",
+            text: `la tua ricarica di ${quantità ? quantità.value : 0} è stata effettuata`,
+        });
+    }) : console.error("no ricarica button");
 }
 // function renderCredito ():void {
 // }

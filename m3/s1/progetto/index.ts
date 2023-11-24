@@ -37,6 +37,17 @@ function renderRicarica(): void {
     if (container && ricaricaArea) {
         container.append(ricaricaArea)
     } else console.error("no container or ricarica area")
+
+    let ricarica = <HTMLDivElement | null>document.querySelector("#ricarica-button")
+    let quantità = <HTMLInputElement | null>document.querySelector("#quantità")
+    ricarica ? ricarica.addEventListener("click", () => {
+        smartphone?.ricarica(quantità ? parseFloat(quantità.value) : 0)
+        Swal.fire({
+            icon: "success",
+            title: "Ricarica effettuata con successo!",
+            text: `la tua ricarica di ${quantità? quantità.value : 0} è stata effettuata`,
+          });
+    }): console.error("no ricarica button")
 }
 // function renderCredito ():void {
 
