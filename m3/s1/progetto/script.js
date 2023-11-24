@@ -74,14 +74,14 @@ function mostraNumeroChiamate(smartphone) {
 }
 function mostraRegistroChiamate(smartphone) {
     console.log(`Il registro chiamate è il seguente:`);
-    smartphone.registroChiamate.forEach(chiamata => console.log(chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata, chiamata.data));
+    smartphone.registroChiamate.forEach(chiamata => console.log(chiamata.id + "id", chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'));
 }
 function filtraChiamate(smartphone, ora) {
     let oraConvertita = converToLocalHourDate(ora);
     let registroChiamateFiltrato = smartphone.registroChiamate.filter(chiamata => chiamata.data >= oraConvertita);
     if (registroChiamateFiltrato.length > 0) {
         console.log(`Il registro chiamate dalle ${ora} filtrato è il seguente:`);
-        registroChiamateFiltrato.forEach(chiamata => console.log(chiamata.id, chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata));
+        registroChiamateFiltrato.forEach(chiamata => console.log(chiamata.id + "id", chiamata.data.toLocaleTimeString(), chiamata.data.toLocaleDateString(), chiamata.durata + 'min'));
     }
     else {
         console.log(`Non ci sono chiamate dalle ${ora} in poi`);

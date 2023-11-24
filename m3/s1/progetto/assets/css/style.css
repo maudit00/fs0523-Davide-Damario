@@ -3,6 +3,12 @@
   padding: 30px;  
 }
 
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  color: bisque;
+}
+
 .container {
     background-color: #ccc;
     height: 100vh;
@@ -14,7 +20,7 @@
 
 .phone-container{
   height: 600px;
-  width: 400px;
+  width: 300px;
   background-image: url("../img/iphone.png");
   background-repeat: no-repeat;
   background-size:contain;
@@ -22,12 +28,27 @@
   position:relative;
 }
 
-.mobile-time {
-  position:absolute
+.phone-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
 }
 
-.main-title {
-    text-align: center;
-    font-size: 2rem;
-    color: bisque;
+.mobile-time {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+  font-size: 0.8rem;
 }
+
+.ricarica {
+  padding: 3px 8px;
+  color:white;
+  font-size: 0.8rem;
+  background-color: #666;
+  border: 1px solid #ccc;
+  
+}
+
