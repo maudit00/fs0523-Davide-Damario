@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --rosso-scuro :#9C1D2A;
+    --giallo : #F5FA2D;
+    --ciano : #72F7FC;
+}
+
+
+h1, h3 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 4rem;
+}
+
+h3 {
+    color: yellow;
+    font-size: 2rem;
+}
+
+h1, h3, p {
+    text-align: center;
+}
+
+.yellow {
+    color: var(--giallo);
+}
+
+.dark-red {
+    color : var(--rosso-scuro);
+}
+
+.cyan {
+    color: var(--ciano)
+}
