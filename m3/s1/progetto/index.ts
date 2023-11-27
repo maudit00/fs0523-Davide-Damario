@@ -51,6 +51,6 @@ function renderRicarica(): void {
 // }
 
 function cloneTemplate(template: string): DocumentFragment | null {
-    let temp = <HTMLTemplateElement | null>document.getElementById(template);
+    let temp = <HTMLTemplateElement>document.getElementById(template);
     return temp? temp.content.cloneNode(true) as DocumentFragment : null;
 }
