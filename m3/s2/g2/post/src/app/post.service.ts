@@ -12,7 +12,7 @@ export class PostService {
       content:
         'Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.',
       author: 'Mario Rossi',
-      date: new Date(),
+      date: new Date().toLocaleString(),
       active: true,
     },
     {
@@ -21,7 +21,7 @@ export class PostService {
       content:
         'Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.',
       author: 'Bruno Bianchi',
-      date: new Date(),
+      date: new Date().toLocaleString(),
       active: true,
     },
     {
@@ -30,7 +30,7 @@ export class PostService {
       content:
         'Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.',
       author: 'Captain Mike',
-      date: new Date(),
+      date: new Date().toLocaleString(),
       active: true,
     }
   ];
@@ -43,6 +43,6 @@ export class PostService {
     return this.posts.filter(post => post.active);
   }
   getUnactivePosts():IPost[] {
-    return this.posts.filter(post => post.active);
+    return this.posts.filter(post => !post.active);
   }
 }

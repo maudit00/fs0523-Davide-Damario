@@ -1,1 +1,14 @@
-<p>post-inattivi works!</p>
+<div class="row my-4">
+  <div class="col-3" *ngFor="let post of posts">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{post.author}}</h6>
+        <p class="card-text">{{post.content}}</p>
+        <p>{{post.date}} -- <span *ngIf="post.active" class="text-success">Disponibile</span><span *ngIf="!post.active" class="text-danger">Non Disponibile</span></p>
+        <button *ngIf="!post.active" class="btn btn-success" (click)="post.active = !post.active">Attiva</button>
+        <button *ngIf="post.active" class="btn btn-danger" (click)="post.active = !post.active">Disattiva</button>
+      </div>
+    </div>
+  </div>
+</div>
