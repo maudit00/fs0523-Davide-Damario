@@ -42,7 +42,7 @@ export class PostService {
   getActivePosts():IPost[] {
     return this.posts.filter(post => post.active);
   }
-  getUnactivePosts():IPost[] {
+  getInactivePosts():IPost[] {
     return this.posts.filter(post => !post.active);
   }
 }
