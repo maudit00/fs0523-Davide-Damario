@@ -10,7 +10,6 @@ import { IPost } from '../../i-post';
 })
 export class HomeComponent implements OnInit {
   posts:IPost[]= [];
-  bgClass:string = "";
   constructor(private postService: PostService) {
 }
   ngOnInit() {
@@ -19,4 +18,6 @@ export class HomeComponent implements OnInit {
       post.bgClass = this.postService.getPostColor(post);
     })
   }
+
+
 }

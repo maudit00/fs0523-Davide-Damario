@@ -1,4 +1,4 @@
 <app-post-card class="row my-4" [posts]="posts">
 
-    <button #attivaBtn>Attiva</button>
+    <button #attivaBtn (click)="deactivatePost(posts[3])">Attiva</button>
 </app-post-card>

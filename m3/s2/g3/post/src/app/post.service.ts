@@ -70,4 +70,15 @@ export class PostService {
   }
   return bg;
 }
+
+  activatePost(post:IPost):void{
+    post.active ? post.active = false : post.active = true;
+  }
+
+  deactivatePost(post:IPost):void{
+    post.active? post.active = true : post.active = false;
+  }
+
+
+
 }
