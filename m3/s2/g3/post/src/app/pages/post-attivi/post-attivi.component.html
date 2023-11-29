@@ -1,4 +1,8 @@
-<app-post-card class="row my-4" [posts]="posts">
+<div class="row">
+ <div class="col-12 col-md4 col-lg-3" *ngFor="let p of posts">
+   <app-post-card [post]="p">
 
-    <button #attivaBtn (click)="deactivatePost(posts[3])">Attiva</button>
-</app-post-card>
+     <a (click)="deactivatePost(p)"class="btn btn-primary text-white">Disattiva</a>
+    </app-post-card>
+  </div>
+</div>

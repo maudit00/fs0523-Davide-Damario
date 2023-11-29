@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { PostService } from '../../post.service';
 import { IPost } from '../../i-post';
 
@@ -14,10 +14,5 @@ export class HomeComponent implements OnInit {
 }
   ngOnInit() {
     this.posts = this.postService.getPosts();
-    this.posts.forEach(post => {
-      post.bgClass = this.postService.getPostColor(post);
-    })
   }
-
-
 }

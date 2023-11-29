@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChild, ElementRef, Input } from '@angular/core';
+import {Component, Input } from '@angular/core';
 import { IPost } from '../../i-post';
 
 
@@ -7,15 +7,13 @@ import { IPost } from '../../i-post';
   templateUrl: './post-card.component.html',
   styleUrl: './post-card.component.scss'
 })
-export class PostCardComponent implements AfterViewInit{
+export class PostCardComponent{
 
-  @Input () posts: IPost[]= [];
-  @ContentChild('attivaBtn') attivaBtn!: ElementRef;
-
+  @Input () post!:IPost;
 
 
-  ngAfterViewInit(){
-
+  getObjClass():string {
+  if
   }
 
 }

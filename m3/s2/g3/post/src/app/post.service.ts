@@ -15,7 +15,6 @@ export class PostService {
       date: new Date().toLocaleString(),
       active: true,
       type:"news",
-      bgClass:""
     },
     {
       id: 2,
@@ -26,7 +25,6 @@ export class PostService {
       date: new Date().toLocaleString(),
       active: true,
       type:"politic",
-      bgClass:""
     },
     {
       id: 3,
@@ -37,7 +35,6 @@ export class PostService {
       date: new Date().toLocaleString(),
       active: true,
       type:"education",
-      bgClass:""
     }
   ];
 
@@ -52,31 +49,12 @@ export class PostService {
     return this.posts.filter(post => !post.active);
   }
 
-  getPostColor(post:IPost): string {
-    let bg:string = "";
-     switch (post.type) {
-       case "news":
-         bg = "bg-warning";
-         break;
-       case "politic":
-         bg = "bg-dark";
-         break;
-       case "education":
-         bg = "bg-info";
-         break;
-       default:
-         bg = "bg-warning";
-         break;
-  }
-  return bg;
-}
-
   activatePost(post:IPost):void{
-    post.active ? post.active = false : post.active = true;
+    post.active ? post.active = true : post.active = false;
   }
 
   deactivatePost(post:IPost):void{
-    post.active? post.active = true : post.active = false;
+    post.active? post.active = false : post.active = true;
   }
 
 

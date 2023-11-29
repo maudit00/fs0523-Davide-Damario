@@ -6,5 +6,4 @@ export interface IPost {
   date:string;
   active:boolean;
   type:string;
-  bgClass:string;
 }

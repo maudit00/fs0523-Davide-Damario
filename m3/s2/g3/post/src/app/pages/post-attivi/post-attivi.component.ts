@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit} from '@angular/core';
 import { PostService } from '../../post.service';
 import { IPost } from '../../i-post';
 
@@ -7,18 +7,20 @@ import { IPost } from '../../i-post';
   templateUrl: './post-attivi.component.html',
   styleUrl: './post-attivi.component.scss'
 })
-export class PostAttiviComponent implements OnInit {
+export class PostAttiviComponent implements OnInit, AfterViewInit {
   posts:IPost[]= [];
+
   constructor(private postService: PostService) {
 }
   ngOnInit() {
     this.posts = this.postService.getActivePosts();
-    this.posts.forEach(post => {
-      post.bgClass = this.postService.getPostColor(post);
-    })
+  }
+
+  ngAfterViewInit(): void {
   }
 
   deactivatePost(post:IPost):void {
     this.deactivatePost(post);
   }
+
 }

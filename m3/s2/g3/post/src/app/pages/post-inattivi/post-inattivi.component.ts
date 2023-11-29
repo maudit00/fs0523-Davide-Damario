@@ -13,9 +13,6 @@ export class PostInattiviComponent  implements OnInit{
 }
   ngOnInit() {
     this.posts = this.postService.getInactivePosts();
-    this.posts.forEach(post => {
-      post.bgClass = this.postService.getPostColor(post);
-    })
   }
 
   activatePost(post:IPost):void {
