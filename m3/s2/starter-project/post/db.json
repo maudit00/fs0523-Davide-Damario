@@ -6,7 +6,7 @@
       "content": "Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.",
       "author": "Mario Rossi",
       "date": "29/11/2023",
-      "active": "true",
+      "active": true,
       "type":"news"
     },
     {
@@ -15,7 +15,7 @@
       "content": "Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.",
       "author": "Davide D'Amario",
       "date": "30/11/2023",
-      "active": "true",
+      "active": false,
       "type":"politic"
     },
     {
@@ -24,7 +24,7 @@
       "content": "Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.",
       "author": "Captain Mike",
       "date": "29/11/2023",
-      "active": "true",
+      "active": true,
       "type":"education"
     }
   ]
