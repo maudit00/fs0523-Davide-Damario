@@ -16,4 +16,8 @@ export class PostService {
   return fetch(`${this.apiUrl}${status}`).then(res => res.json())
   }
 
+  getPostById(id:number):Promise<IPost>{
+  return fetch(`${this.apiUrl}/${id}`).then(res => res.json())
+  }
+
 }

@@ -14,6 +14,8 @@ import { CardComponent } from './component/card/card.component';
 import { UpperPipe } from './upper.pipe';
 import { HighlightTextDirective } from './highlight-text.directive';
 import { InfopostComponent } from './pages/infopost/infopost.component';
+import { Page404Component } from './pages/page404/page404.component';
+import { UsersComponent } from './pages/users/users.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { InfopostComponent } from './pages/infopost/infopost.component';
     CardComponent,
     UpperPipe,
     HighlightTextDirective,
-    InfopostComponent
+    InfopostComponent,
+    Page404Component,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

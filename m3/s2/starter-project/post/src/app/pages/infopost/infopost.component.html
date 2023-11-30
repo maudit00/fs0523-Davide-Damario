@@ -1,1 +1,8 @@
-<p>infopost works!</p>
+<div class="alert alert-info" *ngIf="loading">
+  <p>Stiamo caricando il post</p>
+</div>
+
+<div class="d-flex justify-content-center my-5" *ngIf="!loading">
+  <app-card [post]="post">
+  </app-card>
+</div>
