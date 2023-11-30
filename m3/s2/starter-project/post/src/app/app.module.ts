@@ -10,6 +10,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NavUlComponent } from './component/header/nav-ul/nav-ul.component';
 import { ButtonsWrapperComponent } from './component/header/buttons-wrapper/buttons-wrapper.component';
+import { CardComponent } from './component/card/card.component';
+import { UpperPipe } from './upper.pipe';
+import { HighlightTextDirective } from './highlight-text.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ButtonsWrapperComponent } from './component/header/buttons-wrapper/butt
     HeaderComponent,
     FooterComponent,
     NavUlComponent,
-    ButtonsWrapperComponent
+    ButtonsWrapperComponent,
+    CardComponent,
+    UpperPipe,
+    HighlightTextDirective
   ],
   imports: [
     BrowserModule,

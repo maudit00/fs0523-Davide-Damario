@@ -5,4 +5,5 @@ export interface IPost {
   author:string;
   date:string;
   active:boolean;
+  type:string;
 }

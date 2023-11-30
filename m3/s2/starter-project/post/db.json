@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Aliquota Iva",
+      "content": "Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.",
+      "author": "Mario Rossi",
+      "date": "29/11/2023",
+      "active": "true",
+      "type":"news"
+    },
+    {
+      "id": 1,
+      "title": "Ritiro della Meloni",
+      "content": "Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.",
+      "author": "Davide D'Amario",
+      "date": "30/11/2023",
+      "active": "true",
+      "type":"politic"
+    },
+    {
+      "id": 1,
+      "title": "Le pizze nel mondo dei developers",
+      "content": "Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.",
+      "author": "Captain Mike",
+      "date": "29/11/2023",
+      "active": "true",
+      "type":"education"
+    }
+  ]
+}

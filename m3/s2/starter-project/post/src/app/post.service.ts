@@ -5,44 +5,15 @@ import { IPost } from './i-post';
   providedIn: 'root',
 })
 export class PostService {
-  posts: IPost[] = [
-    {
-      id: 1,
-      title: 'Aliquote IVA',
-      content:
-        'Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.',
-      author: 'Mario Rossi',
-      date: new Date().toLocaleString(),
-      active: true,
-    },
-    {
-      id: 2,
-      title: 'Ritiro dal basket di Lebron James',
-      content:
-        'Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.',
-      author: 'Bruno Bianchi',
-      date: new Date().toLocaleString(),
-      active: true,
-    },
-    {
-      id: 3,
-      title: 'Pizze nel mondo dei developer',
-      content:
-        'Aliquip sunt adipisicing tempor labore nulla in dolor. Ut incididunt ullamco fugiat deserunt veniam veniam non. Labore veniam incididunt laboris velit et reprehenderit ullamco. Sit nulla est deserunt nisi culpa.',
-      author: 'Captain Mike',
-      date: new Date().toLocaleString(),
-      active: true,
-    }
-  ];
+  posts: IPost[] = [];
+  apiUrl:string = "http://localhost:3000/posts";
 
-  getPosts(): IPost[] {
-  return this.posts;
+  getPosts():Promise<IPost[]>{
+  return fetch(this.apiUrl).then(res => res.json())
   }
 
-  getActivePosts():IPost[] {
-    return this.posts.filter(post => post.active);
+  getPostsByStatus(status:boolean):Promise<IPost[]>{
+  return fetch(`${this.apiUrl}${status}`).then(res => res.json())
   }
-  getInactivePosts():IPost[] {
-    return this.posts.filter(post => !post.active);
-  }
+
 }

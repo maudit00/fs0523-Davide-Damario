@@ -12,7 +12,7 @@ export class PostInattiviComponent  implements OnInit{
   constructor(private postService: PostService) {
 }
   ngOnInit() {
-    this.posts = this.postService.getInactivePosts();
+
   }
 
 

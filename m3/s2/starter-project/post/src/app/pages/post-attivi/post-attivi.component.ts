@@ -11,7 +11,7 @@ export class PostAttiviComponent implements OnInit {
   posts:IPost[]= [];
   constructor(private postService: PostService) {
 }
-  ngOnInit() {
-    this.posts = this.postService.getActivePosts();
-  }
+ngOnInit(): void {
+
+}
 }
