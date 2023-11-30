@@ -13,6 +13,7 @@ import { ButtonsWrapperComponent } from './component/header/buttons-wrapper/butt
 import { CardComponent } from './component/card/card.component';
 import { UpperPipe } from './upper.pipe';
 import { HighlightTextDirective } from './highlight-text.directive';
+import { InfopostComponent } from './pages/infopost/infopost.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HighlightTextDirective } from './highlight-text.directive';
     ButtonsWrapperComponent,
     CardComponent,
     UpperPipe,
-    HighlightTextDirective
+    HighlightTextDirective,
+    InfopostComponent
   ],
   imports: [
     BrowserModule,
