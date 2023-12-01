@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #4bb371;
+  --secondary-color: rgb(198, 221, 206);
+  --tertiary-color:#76bddb;
+}
+
+a {
+text-decoration: none;
+color: var(--tertiary-color);
+font-weight: bold;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: bottom 30px;
+  text-align: center;
+  font-weight: 500;
+}
