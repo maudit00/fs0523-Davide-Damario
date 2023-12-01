@@ -32,4 +32,14 @@ apiUrl:string = "http://localhost:3000/tasks"
     .then(res => res.json())
   }
 
+  updateTask(task:iTodos):Promise<iTodos>{
+    return fetch((`${this.apiUrl}${task.id}`), {
+      method: 'PUT',
+      headers: {
+        "Content-type": 'application/json'
+      },
+    body:JSON.stringify(task)})
+   .then(res => res.json())
+  }
+
 }
