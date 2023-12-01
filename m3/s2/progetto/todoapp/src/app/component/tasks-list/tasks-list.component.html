@@ -1,4 +1,5 @@
 <div class="list-container">
+  <p class="main-title" *ngIf="tasks.length && !loading">{{page}} List</p>
   <ul class="list">
       <app-task [task]="task" *ngFor="let task of tasks">
       <button class="button li-button elimina-button" (click)="delete(task.id)">Elimina</button>

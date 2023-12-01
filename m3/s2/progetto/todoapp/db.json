@@ -1,19 +1,9 @@
 {
   "tasks": [
     {
-      "title": "Fare la spesa",
+      "title": "andare a fare la spesa",
       "completed": false,
       "id": 2
-    },
-    {
-      "title": "ciao",
-      "completed": true,
-      "id": 3
-    },
-    {
-      "title": "qwe",
-      "completed": false,
-      "id": 4
     }
   ]
 }

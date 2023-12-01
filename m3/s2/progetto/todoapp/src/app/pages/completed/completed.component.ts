@@ -10,10 +10,18 @@ import { TodosService } from '../../todos.service';
 export class CompletedComponent implements OnInit {
   todoArr:iTodos[]=[];
   loadingTasks:boolean=false;
-  loadingOperation:boolean=false;
-  savedTask:iTodos|null=null;
+  page:string="Completed";
 
   constructor(private todoSvc:TodosService){}
+
+
+  delete(id:string){
+    this.todoArr=this.todoArr.filter(t=>t.id!= id)
+  }
+
+  update(task:iTodos){
+    this.todoArr=this.todoArr.filter(t=>t.id!=task.id)
+  }
 
   ngOnInit(){
     this.loadingTasks = true;

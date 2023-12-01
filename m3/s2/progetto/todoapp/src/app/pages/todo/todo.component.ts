@@ -14,6 +14,7 @@ loadingTasks:boolean=false;
 loadingOperation:boolean=false;
 savedTask:iTodos|null=null;
 page:string = "ToDo"
+
 newTask:Partial<iTodos>={
 title:'',
 completed:false
@@ -32,6 +33,17 @@ addTask(){
       completed:false
     }
   })
+  }
+
+
+  delete(id:string){
+    this.todoArr=this.todoArr.filter(t=>t.id!= id)
+    console.log(this.todoArr);
+
+  }
+
+  update(task:iTodos){
+    this.todoArr=this.todoArr.filter(t=>t.id!=task.id)
   }
 
 ngOnInit(){

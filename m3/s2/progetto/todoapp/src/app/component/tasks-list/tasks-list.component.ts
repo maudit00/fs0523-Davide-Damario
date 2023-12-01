@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodosService } from '../../todos.service';
 import { iTodos } from '../../Modules/itodos';
 
@@ -8,9 +8,16 @@ import { iTodos } from '../../Modules/itodos';
   styleUrl: './tasks-list.component.scss'
 })
 export class TasksListComponent {
+
 @Input() tasks: iTodos[] = [];
 @Input() loading: boolean = false;
 @Input() page!:string;
+@Input() savedTask:iTodos|null=null;
+
+@Output() onDeletedTask:EventEmitter<string> = new EventEmitter();
+@Output() onUpdatedTask:EventEmitter<iTodos> = new EventEmitter();
+
+
 
 pageTodo:boolean=false;
 pageCompleted:boolean=false;
@@ -21,7 +28,7 @@ delete(id:string){
   this.loading=true;
   this.todoSvc.deleteTask(id).then(res=>{
     this.tasks=this.tasks.filter(t=>t.id != id)
-    // this.savedTask=res;
+    this.onDeletedTask.emit(id)
     this.loading=false;
   })
 }
@@ -31,11 +38,12 @@ complete(task:iTodos){
   task.completed = true
   this.todoSvc.updateTask(task).then(res=>{
     this.tasks= this.tasks.filter(t=>t.id!=task.id)
+    this.savedTask=task
+    console.log(this.savedTask)
+    this.onUpdatedTask.emit(this.savedTask)
     this.loading=false;
   })
 }
-
-
 
 todo(task:iTodos){
   this.loading=true;
@@ -48,7 +56,7 @@ todo(task:iTodos){
 
 ngOnInit(){
   this.checkPage()
-  console.log(this.pageTodo, this.pageCompleted);
+
 
 }
   checkPage(){
