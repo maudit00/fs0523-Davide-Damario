@@ -14,7 +14,7 @@ export class PostInattiviComponent implements OnInit {
     this.postService
       .getPosts()
       .then(
-        (posts) => (this.posts = posts.filter(post => post.active == false))
+        (posts) => (this.posts = posts.filter(post => !post.active))
       );
   }
 }
