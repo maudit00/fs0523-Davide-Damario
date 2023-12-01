@@ -16,3 +16,21 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   font-weight: 500;
 }
+
+.button{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 20px;
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.2);
+    transition-delay: 0.4ms;
+  }
+}

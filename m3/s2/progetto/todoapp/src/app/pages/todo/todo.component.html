@@ -8,13 +8,14 @@
   </div>
   <div class="list-container">
     <ul class="list">
-      <li *ngFor="let task of todoArr">
-        <app-task [task]="task"></app-task>
-      </li>
+        <app-task [task]="task" *ngFor="let task of todoArr">
+        <button class="button li-button elimina-button">Elimina</button>
+        <button class="button li-button complete-button">Completato</button>
+        </app-task>
     </ul>
   </div>
-  <div class="add-tasks">
-    <input type="text" name="taskinput" placeholder="Inserisci il task da aggiungere" [(ngModel)]="newTask.title">
+  <div class="add-tasks" *ngIf="!loadingTasks">
+    <input class="taskinput" type="text" name="taskinput" placeholder="Inserisci il task da aggiungere" [(ngModel)]="newTask.title">
     <button name="add" (click)="addTask()" class="button">Aggiungi</button>
   </div>
   {{newTask | json}}

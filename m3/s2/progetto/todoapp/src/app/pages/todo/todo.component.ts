@@ -2,6 +2,7 @@ import { iTodos } from '../../Modules/itodos';
 import { TodosService } from './../../todos.service';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -30,9 +31,15 @@ addTask(){
       title:'',
     }
   })
+  }
 
-
+delete(id:string){
+  this.loadingOperation=true;
+  this.todoSvc.deleteTask(id).then(res=>{
+    this.todoArr=this.todoArr.filter(t=>t.id != id)
+  })
 }
+
 ngOnInit(){
   this.loadingTasks = true;
   this.todoSvc.getTasks().then(tasks => {
@@ -42,3 +49,7 @@ ngOnInit(){
   });
 }
 }
+function deleteTask(id: any, string: any) {
+  throw new Error('Function not implemented.');
+}
+

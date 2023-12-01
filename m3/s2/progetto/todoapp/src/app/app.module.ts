@@ -10,6 +10,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { FormsModule } from '@angular/forms';
+import { TaskComponent } from './component/task/task.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CompletedComponent,
     HeaderComponent,
     FooterComponent,
-    Page404Component
+    Page404Component,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
