@@ -29,14 +29,27 @@ addTask(){
     this.savedTask=res;
     this.newTask={
       title:'',
+      completed:false
     }
   })
   }
+
 
 delete(id:string){
   this.loadingOperation=true;
   this.todoSvc.deleteTask(id).then(res=>{
     this.todoArr=this.todoArr.filter(t=>t.id != id)
+    this.savedTask=res;
+    this.loadingOperation=false;
+  })
+}
+
+complete(task:iTodos){
+  this.loadingOperation=true;
+  task.completed = true
+  this.todoSvc.updateTask(task).then(res=>{
+    this.todoArr= this.todoArr.filter(t=>t.id!=task.id)
+    this.loadingOperation=false;
   })
 }
 

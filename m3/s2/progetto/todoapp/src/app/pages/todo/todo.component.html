@@ -6,13 +6,18 @@
   <div class="empty-arr" *ngIf="!loadingTasks && !todoArr.length">
     <p>Non ci sono tasks da visualizzare</p>
   </div>
+
   <div class="list-container">
     <ul class="list">
         <app-task [task]="task" *ngFor="let task of todoArr">
-        <button class="button li-button elimina-button">Elimina</button>
-        <button class="button li-button complete-button">Completato</button>
+        <button class="button li-button elimina-button" (click)="delete(task.id)">Elimina</button>
+        <button class="button li-button complete-button" (click)="complete(task)">Completato</button>
         </app-task>
     </ul>
+
+    <div class="operation">
+      <p></p>
+    </div>
   </div>
   <div class="add-tasks" *ngIf="!loadingTasks">
     <input class="taskinput" type="text" name="taskinput" placeholder="Inserisci il task da aggiungere" [(ngModel)]="newTask.title">

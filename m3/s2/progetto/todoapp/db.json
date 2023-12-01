@@ -1,8 +1,8 @@
 {
   "tasks": [
     {
-      "title": "awef",
-      "completed": false,
+      "title": "Fare la spesa",
+      "completed": true,
       "id": 1
     }
   ]

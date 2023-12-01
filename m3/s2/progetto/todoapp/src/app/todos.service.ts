@@ -13,6 +13,10 @@ apiUrl:string = "http://localhost:3000/tasks"
     return fetch(this.apiUrl).then(res => res.json())
   }
 
+  getTaskById(id:string):Promise<iTodos> {
+    return fetch(`${this.apiUrl}/${id}`).then(res => res.json())
+  }
+
   addTask(task:Partial<iTodos>):Promise<iTodos>{
     return fetch(this.apiUrl, {
       method: 'POST',
@@ -24,7 +28,7 @@ apiUrl:string = "http://localhost:3000/tasks"
   }
 
   deleteTask(id:string):Promise<iTodos>{
-    return fetch((`${this.apiUrl}${id}`), {
+    return fetch((`${this.apiUrl}/${id}`), {
       method: 'DELETE',
       headers: {
         "Content-type": 'application/json'
@@ -33,7 +37,7 @@ apiUrl:string = "http://localhost:3000/tasks"
   }
 
   updateTask(task:iTodos):Promise<iTodos>{
-    return fetch((`${this.apiUrl}${task.id}`), {
+    return fetch((`${this.apiUrl}/${task.id}`), {
       method: 'PUT',
       headers: {
         "Content-type": 'application/json'
