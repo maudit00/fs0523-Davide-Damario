@@ -1,0 +1,12 @@
+<div class="list-container">
+  <ul class="list">
+      <app-task [task]="task" *ngFor="let task of tasks">
+      <button class="button li-button elimina-button" (click)="delete(task.id)">Elimina</button>
+      <button class="button li-button complete-button" (click)="complete(task)">Completato</button>
+      </app-task>
+  </ul>
+
+  <div class="operation">
+    <p></p>
+  </div>
+</div>

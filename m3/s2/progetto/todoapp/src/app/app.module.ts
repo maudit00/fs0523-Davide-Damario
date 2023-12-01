@@ -11,6 +11,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { FormsModule } from '@angular/forms';
 import { TaskComponent } from './component/task/task.component';
+import { LoadingTaskComponent } from './component/loading-task/loading-task.component';
+import { EmptyTasksComponent } from './component/empty-tasks/empty-tasks.component';
+import { TasksListComponent } from './component/tasks-list/tasks-list.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { TaskComponent } from './component/task/task.component';
     HeaderComponent,
     FooterComponent,
     Page404Component,
-    TaskComponent
+    TaskComponent,
+    LoadingTaskComponent,
+    EmptyTasksComponent,
+    TasksListComponent
   ],
   imports: [
     BrowserModule,

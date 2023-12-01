@@ -1,0 +1,11 @@
+.li-button {
+  color: white;
+  padding: 10px 24px;
+  font-size: 13px;
+  &.elimina-button{
+    background-color: red;
+  }
+  &.complete-button{
+    background-color:green;
+  }
+}

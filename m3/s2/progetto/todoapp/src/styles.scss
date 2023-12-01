@@ -34,3 +34,10 @@ h1, h2, h3, h4, h5 {
     transition-delay: 0.4ms;
   }
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}

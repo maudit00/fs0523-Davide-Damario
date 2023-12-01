@@ -1,27 +1,11 @@
-<div class="loading" *ngIf="loadingTasks">
-  <p>Stiamo Caricando i tasks della ToDoList</p>
-</div>
+<app-loading-task [loading]="loadingTasks"></app-loading-task>
 
 <div class="container">
-  <div class="empty-arr" *ngIf="!loadingTasks && !todoArr.length">
-    <p>Non ci sono tasks da visualizzare</p>
-  </div>
+  <app-empty-tasks [tasks]="todoArr" [loading]="loadingTasks" [page]="page"></app-empty-tasks>
+  <app-tasks-list [tasks]="todoArr" [loading]="loadingOperation"></app-tasks-list>
 
-  <div class="list-container">
-    <ul class="list">
-        <app-task [task]="task" *ngFor="let task of todoArr">
-        <button class="button li-button elimina-button" (click)="delete(task.id)">Elimina</button>
-        <button class="button li-button complete-button" (click)="complete(task)">Completato</button>
-        </app-task>
-    </ul>
-
-    <div class="operation">
-      <p></p>
-    </div>
-  </div>
   <div class="add-tasks" *ngIf="!loadingTasks">
     <input class="taskinput" type="text" name="taskinput" placeholder="Inserisci il task da aggiungere" [(ngModel)]="newTask.title">
     <button name="add" (click)="addTask()" class="button">Aggiungi</button>
   </div>
-  {{newTask | json}}
 </div>

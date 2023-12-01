@@ -1,23 +1,4 @@
-.loading {
-  display:flex;
-  justify-content: center;
-  font-size: 30px;
-  color: var(--tertiary-color);
-  background-color: var(--primary-color);
-}
-
-.container{
-display: flex;
-flex-direction: column;
-align-items: center;
-
-  .empty-arr {
-    font-size: 50px;
-    margin-top: 150px;
-    color: var(--tertiary-color);
-  }
-
-  input {
+  .container input {
    width: 300px;
 
    &::placeholder{
@@ -25,18 +6,4 @@ align-items: center;
     color: darken(blue, 20);
     font-weight: bold;
    }
-
   }
-
-  .li-button {
-    color: white;
-    padding: 10px 24px;
-    font-size: 13px;
-    &.elimina-button{
-      background-color: red;
-    }
-    &.complete-button{
-      background-color:green;
-    }
-  }
-}

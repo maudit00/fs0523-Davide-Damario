@@ -1,1 +1,8 @@
-<p>completed works!</p>
+
+<app-loading-task [loading]="loadingTasks"></app-loading-task>
+
+<div class="container">
+  <app-empty-tasks [tasks]="todoArr" [loading]="loadingTasks"></app-empty-tasks>
+  <app-tasks-list [tasks]="todoArr" [loading]="loadingOperation"></app-tasks-list>
+</div>
+
