@@ -1,0 +1,23 @@
+.main {
+  background-image: url(../../../assets/background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  position:relative;
+}
+
+h1{
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  padding-top: 20px;
+  text-shadow: var(--primary-color) 1px 0 10px;
+}
+
+.desc {
+  color: white;
+  text-align: right;
+  text-shadow: var(--primary-color) 1px 0 10px;
+  margin-right: 20px;
+}
