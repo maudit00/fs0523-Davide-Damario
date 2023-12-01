@@ -14,6 +14,7 @@ loadingTasks:boolean=false;
 loadingOperation:boolean=false;
 savedTask:iTodos|null=null;
 page:string = "ToDo"
+operation:string="";
 
 newTask:Partial<iTodos>={
 title:'',
@@ -25,6 +26,7 @@ completed:false
 
 addTask(){
   this.loadingOperation=true;
+  this.operation="Creando";
   this.todoSvc.addTask(this.newTask).then(res=>{
     this.todoArr.push(res)
     this.savedTask=res;
@@ -32,7 +34,16 @@ addTask(){
       title:'',
       completed:false
     }
+    this.loadingOperation=false;
   })
+  }
+
+  define(operation:string){
+    this.operation=operation;
+  }
+
+  load(status:boolean){
+    this.loadingOperation=status;
   }
 
 

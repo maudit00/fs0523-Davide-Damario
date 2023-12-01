@@ -14,6 +14,7 @@ import { TaskComponent } from './component/task/task.component';
 import { LoadingTaskComponent } from './component/loading-task/loading-task.component';
 import { EmptyTasksComponent } from './component/empty-tasks/empty-tasks.component';
 import { TasksListComponent } from './component/tasks-list/tasks-list.component';
+import { TaskoperationComponent } from './component/taskoperation/taskoperation.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TasksListComponent } from './component/tasks-list/tasks-list.component'
     TaskComponent,
     LoadingTaskComponent,
     EmptyTasksComponent,
-    TasksListComponent
+    TasksListComponent,
+    TaskoperationComponent
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,9 @@
 
 <div class="container">
   <app-empty-tasks [tasks]="todoArr" [loading]="loadingTasks"></app-empty-tasks>
-  <app-tasks-list (onDeletedTask)="delete($event)" (onUpdatedTask)="update($event)" [tasks]="todoArr" [savedTask]="savedTask" [loading]="loadingOperation" [page]="page"></app-tasks-list>
-
+  <app-tasks-list (onLoadingOperation)="load($event)"(onTaskOperating)="define($event)" (onDeletedTask)="delete($event)" (onUpdatedTask)="update($event)"
+  [tasks]="todoArr" [page]="page"></app-tasks-list>
+  <app-taskoperation [operation]="operation" [loading]="loadingOperation"></app-taskoperation>
   <div class="add-tasks" *ngIf="!loadingTasks">
     <input class="taskinput" type="text" name="taskinput" placeholder="Inserisci il task da aggiungere" [(ngModel)]="newTask.title">
     <button name="add" (click)="addTask()" class="button">Aggiungi</button>
