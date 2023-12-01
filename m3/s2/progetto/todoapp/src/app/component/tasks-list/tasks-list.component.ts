@@ -10,6 +10,10 @@ import { iTodos } from '../../Modules/itodos';
 export class TasksListComponent {
 @Input() tasks: iTodos[] = [];
 @Input() loading: boolean = false;
+@Input() page!:string;
+
+pageTodo:boolean=false;
+pageCompleted:boolean=false;
 
   constructor(private todoSvc:TodosService) { }
 
@@ -29,5 +33,12 @@ complete(task:iTodos){
     this.tasks= this.tasks.filter(t=>t.id!=task.id)
     this.loading=false;
   })
+}
+
+checkPage(){
+if (this.page == "ToDo") {
+  return this.pageTodo = true;
+}
+ return this.pageCompleted = true;
 }
 }
