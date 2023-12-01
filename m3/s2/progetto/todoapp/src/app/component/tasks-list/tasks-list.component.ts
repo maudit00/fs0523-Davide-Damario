@@ -35,10 +35,27 @@ complete(task:iTodos){
   })
 }
 
-checkPage(){
-if (this.page == "ToDo") {
-  return this.pageTodo = true;
+
+
+todo(task:iTodos){
+  this.loading=true;
+  task.completed = false
+  this.todoSvc.updateTask(task).then(res=>{
+    this.tasks= this.tasks.filter(t=>t.id!=task.id)
+    this.loading=false;
+  })
 }
- return this.pageCompleted = true;
+
+ngOnInit(){
+  this.checkPage()
+  console.log(this.pageTodo, this.pageCompleted);
+
 }
+  checkPage(){
+    if (this.page == "ToDo") {
+      return this.pageTodo = true;
+    }
+    return this.pageCompleted = true;
+  }
+
 }

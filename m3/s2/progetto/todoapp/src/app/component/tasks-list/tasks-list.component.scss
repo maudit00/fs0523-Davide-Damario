@@ -8,4 +8,11 @@
   &.complete-button{
     background-color:green;
   }
+  &.todo-button{
+    background-color:var(--tertiary-color);
+  }
+}
+
+.hidden {
+  display: none;
 }

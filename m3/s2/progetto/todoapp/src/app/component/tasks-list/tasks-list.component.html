@@ -2,8 +2,8 @@
   <ul class="list">
       <app-task [task]="task" *ngFor="let task of tasks">
       <button class="button li-button elimina-button" (click)="delete(task.id)">Elimina</button>
-      <button class="button li-button complete-button" *ngIf="pageTodo" (click)="complete(task)">Completato</button>
-      <button class="button li-button complete-button" *ngIf="pageCompleted">Da Completare</button>
+      <button class="button li-button complete-button"  *ngIf="pageTodo" (click)="complete(task)">Completato</button>
+      <button class="button li-button todo-button"  *ngIf="pageCompleted" (click)="todo(task)">Da Completare</button>
       </app-task>
   </ul>
 
