@@ -23,6 +23,13 @@ loadingOperation:boolean=false;
 pageTodo:boolean=false;
 pageCompleted:boolean=false;
 operationType:string = "";
+editing:boolean = false;
+
+editingTask:iTodos ={
+  id: "",
+  title: "",
+  completed: false
+}
 
   constructor(private todoSvc:TodosService) { }
 
@@ -63,6 +70,22 @@ todo(task:iTodos){
   })
 }
 
+editMode(task:iTodos){
+  this.editing = true;
+  this.editingTask = task;
+}
+
+updateTask(task:iTodos){
+  this.todoSvc.updateTask(task).then(res=>{
+    let index:number = this.tasks.findIndex(t=>t.id == task.id)
+    this.tasks[index] = this.editingTask
+    if (this.editingTask.completed){
+      this.tasks= this.tasks.filter(t=>t.id!=task.id)
+    }
+    this.editing = false
+  })
+}
+
 ngOnInit(){
   this.checkPage()
 }
@@ -84,6 +107,13 @@ ngOnInit(){
     this.loading=false;
     this.loadingOperation=false;
     this.onLoadingOperation.emit(this.loadingOperation)
+  }
+
+  returnPageClass ():{}{
+    return {
+      'todotitle': this.pageTodo,
+      'completedtitle': this.pageCompleted
+    }
   }
 
 }

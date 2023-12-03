@@ -1,14 +1,23 @@
 <div class="list-container">
-  <p class="main-title" *ngIf="tasks.length && !loading">{{page}} List</p>
+  <p class="main-title" [ngClass]="{'todoTitle' : this.pageTodo, 'completedTitle': this.pageCompleted}"  *ngIf="tasks.length && !loading">{{page}} List</p>
   <ul class="list">
       <app-task [task]="task" *ngFor="let task of tasks">
       <button class="button li-button elimina-button" (click)="delete(task.id)">Elimina</button>
+      <button class="button li-button edit-button" (click)="editMode(task)">Modifica</button>
       <button class="button li-button complete-button"  *ngIf="pageTodo" (click)="complete(task)">Completato</button>
       <button class="button li-button todo-button"  *ngIf="pageCompleted" (click)="todo(task)">Da Completare</button>
       </app-task>
   </ul>
 
-  <div class="operation">
-    <p></p>
+  <div class="operation" *ngIf="editing">
+    <p class="form-title">Form Modifica TASK</p>
+    <label for="editTitle">Testo Task</label>
+    <input type="text" name="editTitle" [(ngModel)]="editingTask.title">
+    <label for="editStatus">Status</label>
+    <select name="editStatus" [(ngModel)]="editingTask.completed">
+    <option value="true">Completato</option>
+    <option value="false">Da Completare</option>
+    </select>
+    <button class="button li-button update-button" (click)="updateTask(editingTask)">Aggiorna Task</button>
   </div>
 </div>

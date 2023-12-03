@@ -11,4 +11,37 @@
   &.todo-button{
     background-color:var(--tertiary-color);
   }
+  &.edit-button{
+    background-color:#cab709;
+  }
+  &.update-button{
+    background-color:rgb(11, 102, 105);
+  }
+}
+
+
+.operation {
+  label {
+    color:var(--tertiary-color);
+    font-size: 14px;
+    font-weight:bold;
+    margin-inline: 5px;
+  }
+}
+
+
+.todoTitle {
+  color : var(--tertiary-color);
+  &::after{
+    content: "⛏";
+    padding-left: 8px;
+  }
+}
+
+.completedTitle {
+  color : var(--primary-color);
+  &::after{
+    content: "✅";
+    padding-left: 8px;
+  }
 }
