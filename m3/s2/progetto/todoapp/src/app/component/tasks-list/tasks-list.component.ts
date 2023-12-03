@@ -51,7 +51,7 @@ complete(task:iTodos){
   this.onTaskOperating.emit(this.operationType)
   task.completed = true
   this.todoSvc.updateTask(task).then(res=>{
-    this.tasks= this.tasks.filter(t=>t.id!=task.id)
+    this.afterEditArrUpdate(task)
     this.savedTask=task
     console.log(this.savedTask)
     this.onUpdatedTask.emit(this.savedTask)
@@ -65,7 +65,7 @@ todo(task:iTodos){
   this.onTaskOperating.emit(this.operationType)
   task.completed = false
   this.todoSvc.updateTask(task).then(res=>{
-    this.tasks= this.tasks.filter(t=>t.id!=task.id)
+    this.afterEditArrUpdate(task)
     this.loadingOff()
   })
 }
@@ -79,9 +79,7 @@ updateTask(task:iTodos){
   this.todoSvc.updateTask(task).then(res=>{
     let index:number = this.tasks.findIndex(t=>t.id == task.id)
     this.tasks[index] = this.editingTask
-    if (this.editingTask.completed){
-      this.tasks= this.tasks.filter(t=>t.id!=task.id)
-    }
+    this.afterEditArrUpdate(task)
     this.editing = false
   })
 }
@@ -114,6 +112,17 @@ ngOnInit(){
       'todotitle': this.pageTodo,
       'completedtitle': this.pageCompleted
     }
+  }
+
+  afterEditArrUpdate(task:iTodos){
+    if (this.editing){
+      if (this.editingTask.completed && this.pageTodo){
+        this.tasks= this.tasks.filter(t=>t.id!=task.id)
+      } else if (!this.editingTask.completed && this.pageCompleted) {
+        this.tasks= this.tasks.filter(t=>t.id!=task.id)
+      }
+    }
+    this.tasks= this.tasks.filter(t=>t.id!=task.id)
   }
 
 }
