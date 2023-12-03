@@ -49,8 +49,6 @@ addTask(){
 
   delete(id:string){
     this.todoArr=this.todoArr.filter(t=>t.id!= id)
-    console.log(this.todoArr);
-
   }
 
   update(task:iTodos){

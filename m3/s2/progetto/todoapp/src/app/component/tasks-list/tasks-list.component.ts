@@ -38,7 +38,6 @@ delete(id:string){
   this.operationType = "Eliminando"
   this.onTaskOperating.emit(this.operationType)
   this.todoSvc.deleteTask(id).then(res=>{
-    this.tasks=this.tasks.filter(t=>t.id != id)
     this.onDeletedTask.emit(id)
     this.loadingOff()
   })
@@ -46,15 +45,11 @@ delete(id:string){
 
 complete(task:iTodos){
   this.loadingOn()
-
   this.operationType = "Completando"
   this.onTaskOperating.emit(this.operationType)
   task.completed = true
   this.todoSvc.updateTask(task).then(res=>{
-    this.afterEditArrUpdate(task)
-    this.savedTask=task
-    console.log(this.savedTask)
-    this.onUpdatedTask.emit(this.savedTask)
+    this.emitTask(res)
     this.loadingOff()
   })
 }
@@ -65,7 +60,7 @@ todo(task:iTodos){
   this.onTaskOperating.emit(this.operationType)
   task.completed = false
   this.todoSvc.updateTask(task).then(res=>{
-    this.afterEditArrUpdate(task)
+    this.emitTask(res)
     this.loadingOff()
   })
 }
@@ -76,11 +71,15 @@ editMode(task:iTodos){
 }
 
 updateTask(task:iTodos){
+  this.loadingOn()
+  this.operationType = "Modificando"
+  this.onTaskOperating.emit(this.operationType)
   this.todoSvc.updateTask(task).then(res=>{
     let index:number = this.tasks.findIndex(t=>t.id == task.id)
     this.tasks[index] = this.editingTask
-    this.afterEditArrUpdate(task)
+    this.emitTask(res)
     this.editing = false
+    this.loadingOff()
   })
 }
 
@@ -114,15 +113,12 @@ ngOnInit(){
     }
   }
 
-  afterEditArrUpdate(task:iTodos){
-    if (this.editing){
-      if (this.editingTask.completed && this.pageTodo){
-        this.tasks= this.tasks.filter(t=>t.id!=task.id)
-      } else if (!this.editingTask.completed && this.pageCompleted) {
-        this.tasks= this.tasks.filter(t=>t.id!=task.id)
-      }
-    }
-    this.tasks= this.tasks.filter(t=>t.id!=task.id)
+  emitTask (task:iTodos){
+    this.savedTask=task
+    this.onUpdatedTask.emit(this.savedTask)
   }
+
+
+
 
 }
