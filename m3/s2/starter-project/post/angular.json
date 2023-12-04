@@ -33,12 +33,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "./src/favicon.png",
-              "src/assets"
+              "src/assets",
+              "./src/favicon.png"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/scss/bootstrap.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
