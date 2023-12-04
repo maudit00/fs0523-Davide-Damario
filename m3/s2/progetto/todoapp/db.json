@@ -7,7 +7,7 @@
     },
     {
       "title": "Fare la spesa",
-      "completed": false,
+      "completed": "true",
       "id": 2
     },
     {
