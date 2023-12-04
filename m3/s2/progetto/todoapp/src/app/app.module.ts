@@ -7,7 +7,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { TodoComponent } from './pages/todo/todo.component';
 import { CompletedComponent } from './pages/completed/completed.component';
 import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { FormsModule } from '@angular/forms';
 import { TaskComponent } from './component/task/task.component';
@@ -24,7 +23,6 @@ import { TaskoperationComponent } from './component/taskoperation/taskoperation.
     TodoComponent,
     CompletedComponent,
     HeaderComponent,
-    FooterComponent,
     Page404Component,
     TaskComponent,
     LoadingTaskComponent,
