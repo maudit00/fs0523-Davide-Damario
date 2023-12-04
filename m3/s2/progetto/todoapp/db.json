@@ -1,13 +1,18 @@
 {
   "tasks": [
     {
-      "title": "dwd",
+      "title": "Portare il cane a spassoo",
       "completed": true,
       "id": 1
     },
     {
-      "title": "ef",
+      "title": "Fare la spesa",
       "completed": false,
+      "id": 2
+    },
+    {
+      "title": "Andare dal Medico di base",
+      "completed": "true",
       "id": 3
     }
   ]

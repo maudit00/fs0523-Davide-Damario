@@ -52,7 +52,9 @@ addTask(){
   }
 
   update(task:iTodos){
+    if (task.completed) {
     this.todoArr=this.todoArr.filter(t=>t.id!=task.id)
+    }
   }
 
 ngOnInit(){

@@ -22,7 +22,9 @@ export class CompletedComponent implements OnInit {
   }
 
   update(task:iTodos){
+    if (!task.completed) {
     this.todoArr=this.todoArr.filter(t=>t.id!=task.id)
+    }
   }
 
   define(operation:string){
