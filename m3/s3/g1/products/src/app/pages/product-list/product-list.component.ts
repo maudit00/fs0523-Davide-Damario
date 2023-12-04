@@ -9,7 +9,7 @@ import { iProduct } from '../../Modules/iProduct';
 })
 export class ProductListComponent implements OnInit {
 
-productArr:iProduct[] | string | null=[];
+productArr!:iProduct[];
 
 
 constructor(private productSvc:ProductsService) {
@@ -17,17 +17,10 @@ constructor(private productSvc:ProductsService) {
 
 
 ngOnInit(){
-if (!this.productArr){
   this.productSvc.getAll().subscribe(data =>{
     this.productArr = data.products;
-    localStorage.setItem('productArr',JSON.stringify(this.productArr));
-    console.log(this.productArr);
   });
 }
-else{
-  this.productArr = (localStorage.getItem('productArr'));
-  console.log(this.productArr);
-}
-}
+
 
 }
