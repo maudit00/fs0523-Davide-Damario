@@ -14,6 +14,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { Page404Component } from './pages/page404/page404.component';
 import { HeaderComponent } from './component/header/header.component';
 import { BrowseNavComponent } from './component/browse-nav/browse-nav.component';
+import { CardComponent } from './component/card/card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowseNavComponent } from './component/browse-nav/browse-nav.component'
     ProductPageComponent,
     Page404Component,
     HeaderComponent,
-    BrowseNavComponent
+    BrowseNavComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
