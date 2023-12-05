@@ -17,14 +17,14 @@ ngOnInit (){
     cognome: this.fb.control(null, [Validators.required, Validators.minLength(3)]),
     username: this.fb.control(null, [Validators.required, Validators.minLength(3)]),
     password: this.fb.control(null, [Validators.required, Validators.minLength(5), Validators.maxLength(15)]),
-    confermaPassword: this.fb.control(null, [Validators.required, this.comparePasswords])
+    confermaPassword: this.fb.control(null, [Validators.required, this.comparePasswords]),
 })
 }
 
 
-comparePasswords = (password:FormControl):ValidationErrors | null => {
-  password = this.form.get('password')?.value;
-  if (password.value === password) {
+comparePasswords = (input:FormControl):ValidationErrors | null => {
+  this.password = this.form.get('password')?.value;
+  if (input.value === this.password) {
     return null
   } else {
     return {
