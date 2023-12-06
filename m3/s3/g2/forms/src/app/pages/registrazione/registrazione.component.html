@@ -1,23 +1,32 @@
 <form [formGroup]="form">
 
-  <input type="text" class="form-control" formControlName="nome"
-   placeholder="Inserisci il tuo nome"><div *ngIf="!isValid('nome') && isTouched('nome')" class="alert alert-warning text-center">Controllo Nome</div>
+  <input type="text" class="form-control" formControlName="nome" placeholder="Inserisci il tuo nome">
+  <div *ngIf="isValidAndTouched('nome')" class="alert alert-warning text-center">Controllo Nome</div>
 
-  <input type="text" class="form-control" formControlName="cognome"
-  placeholder="Inserisci il tuo Cognome"><div *ngIf="!isValid('cognome') && isTouched('cognome')" class="alert alert-warning text-center">Controllo Cognome</div>
+  <input type="text" class="form-control" formControlName="cognome" placeholder="Inserisci il tuo Cognome">
+  <div *ngIf="isValidAndTouched('nome')" class="alert alert-warning text-center">Controllo Cognome
+  </div>
 
-  <input type="text" class="form-control" formControlName="username"
-  placeholder="Inserisci il tuo Username"><div *ngIf="!isValid('username') && isTouched('username')" class="alert alert-warning text-center">Controllo Username</div>
+  <input type="text" class="form-control" formControlName="username" placeholder="Inserisci il tuo Username">
+  <div *ngIf="isValidAndTouched('nome')" class="alert alert-warning text-center">Controllo Username
+  </div>
 
-  <input type="password" class="form-control" formControlName="password"
-  placeholder="Inserisci la tua Password"><div *ngIf="!isValid('password') && isTouched('password')" class="alert alert-warning text-center">Controllo Password</div>
+  <input type="password" class="form-control" formControlName="password" placeholder="Inserisci la tua Password">
+  <div *ngIf="isValidAndTouched('nome')" class="alert alert-warning text-center">Controllo Password
+  </div>
 
   <input type="password" class="form-control" formControlName="confermaPassword"
-  placeholder="Inserisci di nuovo la tua Password"><div *ngIf="!isValid('confermaPassword') && isTouched('confermaPassword')" class="alert alert-warning text-center">Controllo Password Uguali</div>
+    placeholder="Inserisci di nuovo la tua Password">
+  <div *ngIf="!comparePasswords('password','confermaPassword')" class="alert alert-warning text-center">
+    Controllo Password Uguali</div>
 
+  <input type="text" class="form-control" formControlName="biografia"
+    placeholder="Inserisci una piccola biografia di 30 caratteri almeno">
+  <div *ngIf="isValidAndTouched('nome')" class="alert alert-warning text-center">La biografia deve
+    essere di almeno 30 caratteri</div>
 
   <div class="d-flex justify-content-center">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button (click)="send()" class="btn btn-primary">Submit</button>
   </div>
 
 
@@ -25,3 +34,4 @@
 
 {{this.form.get('password')?.value}}
 {{this.form.get('password')?.valid}}
+{{this.getErrors('biografia') | json}}

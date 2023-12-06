@@ -17,29 +17,34 @@ ngOnInit (){
     cognome: this.fb.control(null, [Validators.required, Validators.minLength(3)]),
     username: this.fb.control(null, [Validators.required, Validators.minLength(3)]),
     password: this.fb.control(null, [Validators.required, Validators.minLength(5), Validators.maxLength(15)]),
-    confermaPassword: this.fb.control(null, [Validators.required, this.comparePasswords]),
+    confermaPassword: this.fb.control(null, [Validators.required]),
+    // immagineProfilo: this.fb.control(null, [Validators.required]),
+    biografia : this.fb.control(null, [Validators.required, Validators.minLength(30)]),
 })
 }
 
-
-comparePasswords = (input:FormControl):ValidationErrors | null => {
-  this.password = this.form.get('password')?.value;
-  if (input.value === this.password) {
-    return null
-  } else {
-    return {
-      invalid: true,
-      message: 'Le password non coincidono'
-    }
-  }
+comparePasswords(passw1:string, passw2:string):boolean{
+  if(!(this.form.get(passw1)?.value === this.form.get(passw2)?.value)) return false
+return this.form.get(passw1)?.value === this.form.get(passw2)?.value;
 }
 
 isTouched (field:string){
   return this.form.get(field)?.touched;
 }
 isValid(field:string){
-  console.log(this.form.get(field)?.valid, this.form.get(field)?.touched);
   return this.form.get(field)?.valid
+}
+
+isValidAndTouched(field:string){
+  return !this.isValid(field) && this.isTouched(field)
+}
+send(){
+console.log(this.form.valid);
+}
+
+
+getErrors (fieldname:string){
+  return this.form.get(fieldname)?.errors;
 }
 
 
