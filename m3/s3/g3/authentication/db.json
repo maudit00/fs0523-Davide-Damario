@@ -1,3 +1,34 @@
 {
-"users":[]
+  "users": [
+    {
+      "email": "pobuvefes@mailinator.com",
+      "password": "$2a$10$fmBxKbu1T6D7oF46jC.KFOZKLJ58a3V1xRMrSOzY7WWP4bIWgjREO",
+      "nome": "Quo vitae duis repre",
+      "id": 1
+    },
+    {
+      "email": "fevimuvar@mailinator.com",
+      "password": "$2a$10$s72SUAwkXSf93XKiC4CSqOZbdm4q90YC3mS.5xktDSQaLaUpb6pl6",
+      "nome": "Quae consectetur ass",
+      "id": 2
+    },
+    {
+      "email": "pyqyn@mailinator.com",
+      "password": "$2a$10$NRUngXdbZ1XaYBAoGiplAecydl8S5V.DuBJYmbUokAitj1Xswyih.",
+      "nome": "Excepturi at ex quod",
+      "id": 3
+    },
+    {
+      "email": "mario@rossi.it",
+      "password": "$2a$10$lAaJIoAKadycKkiSLuCPiurv3HPAbNEPfkocg0suz5DTzcBYOHfK2",
+      "nome": "mario",
+      "id": 4
+    },
+    {
+      "email": "cijyfaboq@mailinator.com",
+      "password": "$2a$10$zDPip5vAYPDmRp3eEGZ2Ke/OR7ZrjYLab5RAs2RwkXmLd4QF1rnnG",
+      "nome": "Voluptate id aut qu",
+      "id": 5
+    }
+  ]
 }

@@ -1,0 +1,6 @@
+<div class="container d-flex flex-column gap-4">
+  <h1 class="display-2 text-center">Accedi con i tuoi dati</h1>
+  <input type="email" name="email" class="form-control" placeholder="Inserisci la tua mail" [(ngModel)]="loginData.email">
+  <input type="password" name="password" class="form-control" placeholder="Inserisci la tua password" [(ngModel)]="loginData.password">
+  <button (click)="login()" class="btn btn-primary btn-block">Accedi!</button>
+</div>
