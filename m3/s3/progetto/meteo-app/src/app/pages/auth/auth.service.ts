@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment.development';
 import { IAuthData } from '../../Models/i-auth-data';
-import { BehaviorSubject } from 'rxjs';
-import { JwtHelperService} from '@auth0/angular-jwt';
+import { BehaviorSubject, map } from 'rxjs';
+import { IUser } from '../../Models/i-user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,14 @@ export class AuthService {
   registerUrl:string = `${environment.userUrl}/register`;
   loginUrl:string = `${environment.userUrl}/login`;
   authSub = new BehaviorSubject<IAuthData | null>(null);
-  jwtH:jwtHelperService = new jwtHelperService();
+
+  user$ = this.authSub.asObservable();
+  isLogged = this.user$.pipe(map(user =>!!user));
+
+
+  register(user:IUser){
+    return this.http.post<IAuthData>(this.registerUrl, user);
+  }
+
 
 }
