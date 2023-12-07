@@ -2,6 +2,22 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2980b9;
+  --tertiary-color: #2c3e50;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+
+
+input::placeholder {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color)
+}
