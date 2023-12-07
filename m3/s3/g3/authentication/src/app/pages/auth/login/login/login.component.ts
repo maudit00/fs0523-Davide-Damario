@@ -19,13 +19,9 @@ export class LoginComponent {
 
 
 login() {
-  try{  this.authService.login(this.loginData).subscribe(res => {
-    console.log(res);
+  this.authService.login(this.loginData).subscribe(res => {
     this.route.navigate(['/home']);
   })
-  } catch (error) {
-    alert(error);
-  }
 }
 
 }

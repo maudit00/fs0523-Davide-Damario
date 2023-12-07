@@ -11,8 +11,8 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/auth">Accedi</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-danger" (click)="logout()">logout</a>
+      <li class="nav-item" *ngIf="loginCheck()">
+        <a class="nav-link text-danger"  (click)="logout()">logout</a>
       </li>
     </ul>
   </div>
