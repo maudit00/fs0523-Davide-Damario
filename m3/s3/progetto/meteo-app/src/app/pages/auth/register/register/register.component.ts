@@ -7,24 +7,36 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
-constructor(private authSvc:AuthService) { }
-@ViewChild ('f', {static: true})
+  constructor(private authSvc: AuthService, private route: Router) {}
+  @ViewChild('f', { static: true })
+  form!: NgForm;
+  confirmPassword: string = '';
 
-form!:NgForm
-confirmPassword:string = ""
-emailRegEx:string = "[a-z]{2,15}@[a-z]{2,15}.[a-z]{2,7}"
+  regex: RegExp = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/;
 
-isEmail(input:NgModel){
-  if(input.errors){
-    return input?.errors['pattern'] && input.dirty
+  isEmail(input: NgModel): boolean {
+    return this.regex.test(input.value);
   }
-  return false;
-}
 
-//   send() {
-//     this.authSvc.register(this.form.value).subscribe(res => {
-// }
+  send() {
+    let user: IRegister = {
+      nome: this.form.value.nome,
+      cognome: this.form.value.cognome,
+      email: this.form.value.email,
+      password: this.form.value.password,
+    };
+
+    this.authSvc.register(user).subscribe((res) => {
+      console.log(res);
+      this.form.reset();
+      this.route.navigate(['/']);
+    });
+  }
+
+  comparePasswords(): boolean {
+    return this.confirmPassword === this.form.value.password;
+  }
 }

@@ -17,16 +17,19 @@
           Devi inserire il cognome
         </div>
 
-        <input type="text" placeholder="E-Mail" [pattern]="emailRegEx"  name="email" #email="ngModel" ngModel  class="form-control text-center">
+        <input type="text" placeholder="E-Mail"  name="email" #email="ngModel" ngModel  class="form-control text-center">
 
-        <div *ngIf="isEmail(email)" class="alert alert-warning">
+        <div *ngIf="!isEmail(email) && email.dirty" class="alert alert-warning">
           Inserisci una mail valida
         </div>
 
         <input type="password" placeholder="Crea una password" required #password="ngModel" ngModel name="password"  class="form-control text-center">
-        <input type="password" placeholder="Conferma la tua password" required [(ngModel)]="confirmPassword" name="confirmPassword"class="form-control text-center">
-        <button class="btn btn-info mt-4" [disabled]="!f.valid" >Registrati</button>
-        <div class="alert alert-warning text-center align-self" *ngIf="f.invalid">Form non valido</div>
+        <input type="password" placeholder="Conferma la tua password" [(ngModel)]="confirmPassword" name="confirmPassword"class="form-control text-center">
+        <div *ngIf="!comparePasswords()" class="alert alert-warning">
+          Le password non corrispondono!
+        </div>
+        <button class="btn btn-info mt-4" [disabled]="!f.valid" (click)="send()" >Registrati</button>
+        <div class="alert alert-warning text-center align-self" *ngIf="f.invalid && f.dirty">Form non valido</div>
       </div>
       </form>
     <p class="text-center">Se sei già registrato clicca <a routerLink="/auth/login">Qui</a> per entrare!</p>

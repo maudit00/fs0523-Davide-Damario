@@ -1,3 +1,18 @@
 {
-"users":[]
+  "users": [
+    {
+      "email": "vofymaje@mailinator.com",
+      "password": "$2a$10$2rT5A.LMm4slnBeRtSXDm./bbUy19uWOjUxJJDpiGxAXsb0LwOfwS",
+      "nome": "Odio minima quod adi",
+      "cognome": "Corporis sapiente as",
+      "id": 1
+    },
+    {
+      "email": "kimorojon@mailinator.com",
+      "password": "$2a$10$iUuoSCNoOljk78BFptiVX.DfLxo2nLJGkvJbkYLihW6u3pdebQc5O",
+      "nome": "Sed voluptate eiusmo",
+      "cognome": "Excepteur sed veniam",
+      "id": 2
+    }
+  ]
 }
