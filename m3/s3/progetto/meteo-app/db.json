@@ -13,6 +13,13 @@
       "nome": "Sed voluptate eiusmo",
       "cognome": "Excepteur sed veniam",
       "id": 2
+    },
+    {
+      "email": "davide1193@gmail.com",
+      "password": "$2a$10$alSx.NgD/nSryr2DCGyzPuybSaRW4Xtm47OoUHW5pspPpl4uAK.Ey",
+      "nome": "Davide",
+      "cognome": "D'Amario",
+      "id": 3
     }
   ]
 }
