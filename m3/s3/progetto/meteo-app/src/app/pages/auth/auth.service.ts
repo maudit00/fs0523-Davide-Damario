@@ -14,7 +14,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  constructor(private http:HttpClient, private route:Router) { }
+  constructor(private http:HttpClient, private route:Router) {
+    this.restoreSession()
+  }
 
 
   registerUrl:string = `${environment.userUrl}/register`;
@@ -35,6 +37,7 @@ export class AuthService {
   .pipe(tap(data =>{
     this.authSub.next(data);
     localStorage.setItem('token', JSON.stringify(data))
+    this.autoLogOut(data.accessToken)
   }
   ));
   }

@@ -13,7 +13,7 @@ import { FormsModule, NgModel } from '@angular/forms';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
