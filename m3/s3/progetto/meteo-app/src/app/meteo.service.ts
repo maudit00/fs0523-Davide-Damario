@@ -29,7 +29,7 @@ export class MeteoService {
 
  getCoord(city:string):Observable<IGeo[]> {
   this.cityName=city;
-  return this.http.get<IGeo[]>(`${environment.geoUrl}${city}${environment.key}`);
+  return this.http.get<IGeo[]>(`${environment.geoUrl}${city}${this.limit}${environment.key}`);
  }
 
  getActual(coord:Coord):Observable<IActualWeather> {

@@ -3,6 +3,7 @@ import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 import { MeteoService } from '../../meteo.service';
 import { AuthService } from '../../pages/auth/auth.service';
 import { Coord } from '../../Models/i-geo';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Coord } from '../../Models/i-geo';
 })
 export class HeaderComponent {
 isMenuCollapsed:boolean=true;
-constructor(private meteoSvc:MeteoService, private authSvc:AuthService) { }
+constructor(private meteoSvc:MeteoService, private authSvc:AuthService, private route:Router) { }
 
 city:string=""
 logged:boolean=false;
@@ -34,7 +35,6 @@ pushCity(){
 searchByCity(){
   this.pushCity()
   return this.meteoSvc.getCoord(this.meteoSvc.cityName).subscribe(res => {
-    console.log(res);
     this.coord.lat=String(res[0].lat);
     this.coord.lon=String(res[0].lon);
 
@@ -44,7 +44,12 @@ searchByCity(){
 }
 
 isLogged () {
-  return this.authSvc.isLogged$;
+this.authSvc.isLogged$.subscribe(res =>{console.log(res);this.logged=res})
+return this.logged
 }
 
+logout () {
+  this.route.navigate(['/auth', 'login']);
+  this.authSvc.logout()
+}
 }

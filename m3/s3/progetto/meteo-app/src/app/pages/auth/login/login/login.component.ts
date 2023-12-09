@@ -19,7 +19,7 @@ export class LoginComponent {
 
   login() {
     this.authSvc.login(this.form.value).subscribe((res) => {
-      this.route.navigate(['/auth/dashboard']);
+      this.route.navigate(['/dashboard']);
     });
   }
 
