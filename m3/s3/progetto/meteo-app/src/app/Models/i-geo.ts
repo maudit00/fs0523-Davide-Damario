@@ -158,3 +158,8 @@ export interface IGeo {
   country: string
   state: string
 }
+
+export type Coord = {
+  lat:string;
+  lon:string;
+}

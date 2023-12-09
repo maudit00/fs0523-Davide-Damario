@@ -2,26 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment.development';
 import { IActualWeather } from './Models/i-actual-weather';
-import { IGeo } from './Models/i-geo';
+import { Coord, IGeo } from './Models/i-geo';
+import { Observable } from 'rxjs/internal/Observable';
 
 
-type Coord = {
-  lat:string;
-  lon:string;
-}
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MeteoService {
 
-  coord:Coord={
-    lat:'',
-    lon:''
-  }
+
   limit:string="&limit=5"
   cityName:string=""
-  cityParam:string=`&q=${this.cityName}`
 
   constructor(private http:HttpClient) { }
 
@@ -33,8 +27,16 @@ export class MeteoService {
     return this.http.get<IActualWeather>(this.london);
   }
 
- getCoord(city:string):Observable<IGeo> {
-  this.
-  return this.http.get<IGeo>(this.geoUrl);
+ getCoord(city:string):Observable<IGeo[]> {
+  this.cityName=city;
+  return this.http.get<IGeo[]>(`${environment.geoUrl}${city}${environment.key}`);
  }
+
+ getActual(coord:Coord):Observable<IActualWeather> {
+  return this.http.get<IActualWeather>(`${environment.actual}lat=${coord.lat}&lon=${coord.lon}${environment.key}`);
+ }
+
+
 }
+
+

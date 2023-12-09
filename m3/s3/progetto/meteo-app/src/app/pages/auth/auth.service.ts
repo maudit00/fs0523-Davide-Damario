@@ -23,7 +23,7 @@ export class AuthService {
   authSub = new BehaviorSubject<IAuthData | null>(null);
 
   user$ = this.authSub.asObservable();
-  isLogged = this.user$.pipe(map(user =>!!user));
+  isLogged$ = this.user$.pipe(map(user =>!!user));
 
 
   register(user:IRegister):Observable<IAuthData> {

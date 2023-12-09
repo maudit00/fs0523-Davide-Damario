@@ -4,6 +4,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 import { ContactsComponent } from './contacts/contacts.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { ContactsComponent } from './contacts/contacts.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    NgbCollapse
+    NgbCollapse,
+    FormsModule
   ]
 })
 export class HomeModule { }

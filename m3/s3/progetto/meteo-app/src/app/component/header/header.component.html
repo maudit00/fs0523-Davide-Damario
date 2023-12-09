@@ -15,6 +15,9 @@
 					<a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Info</a>
 				</li>
 			</ul>
+
+      <input class="form.control mx-2" type="text" name="city" [(ngModel)]="this.city" *ngIf="isLogged()" placeholder="Inserisci una città">
+      <button type="button" class="btn btn-info mx-2" (click)="searchByCity()">Cerca</button>
 		</div>
 	</div>
 </nav>
