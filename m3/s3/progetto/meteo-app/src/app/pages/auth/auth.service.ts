@@ -36,15 +36,10 @@ export class AuthService {
     this.authSub.next(data);
     localStorage.setItem('token', JSON.stringify(data))
   }
-  ), catchError(this.errors));
+  ));
   }
 
-  handleErrors (){
-    return (error:any) => {
-      console.log(error);
-      return Observable.throw(error);
-    }
-  }
+
   autoLogOut (jwtString:string) {
     const expDate = this.jwt.getTokenExpirationDate(jwtString) as Date;
     const expMs = expDate.getTime() - new Date().getTime();

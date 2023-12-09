@@ -20,6 +20,13 @@
       "nome": "Davide",
       "cognome": "D'Amario",
       "id": 3
+    },
+    {
+      "email": "riqu@mailinator.com",
+      "password": "$2a$10$x0Wf16faVdl5K0Vpk8E5WuPuo5DnCd2Ycfz0PAjaRBD.tOhOy34ay",
+      "nome": "Illum iure optio c",
+      "cognome": "Voluptas porro perfe",
+      "id": 4
     }
   ]
 }
