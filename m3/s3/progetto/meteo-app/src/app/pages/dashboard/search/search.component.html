@@ -1,0 +1,12 @@
+<p class="h1 text-center my-4">Inizia a cercare una città</p>
+
+<div class="d-flex justify-content-center align-content-center gap-1">
+  <form>
+    <input type="search" name="searchbar" [(ngModel)]="input">
+    <button></button><mat-icon>search</mat-icon>
+  </form>
+</div>
+
+<div *ngIf="!input" class="alert alert-warning text-center">
+Inserisci una città
+</div>
