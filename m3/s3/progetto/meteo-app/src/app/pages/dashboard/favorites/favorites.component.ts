@@ -11,10 +11,32 @@ import { IFavorites } from '../../../Models/i-favorites';
 export class FavoritesComponent {
 
 constructor(private meteo:MeteoService) {
-  this.searchByFav()
+
 }
 
 cityArr:IActualWeather[]=[]
+
+ngOnInit (){
+  this.meteo.getFavorites().subscribe(res => {
+    this.meteo.favArr = res
+    this.searchByFav()
+  })
+  this.meteo.city$.subscribe(city => {
+    this.meteo.getFavorites().subscribe(res => {
+      this.meteo.favArr = res
+      this.addOneFav(city)
+      localStorage.setItem('favorites', JSON.stringify(this.meteo.favArr))
+    })
+  })
+  this.meteo.cityRemove$.subscribe(city => {
+    this.meteo.getFavorites().subscribe(res => {
+      this.meteo.favArr = res
+      this.removeOneFav(city)
+      localStorage.setItem('favorites', JSON.stringify(this.meteo.favArr))
+    })
+  })
+
+}
 
 searchByFav() {
 this.meteo.favArr.forEach((fav) => {
@@ -24,39 +46,17 @@ this.meteo.favArr.forEach((fav) => {
 })
 }
 
-addFavorite(city: IActualWeather) {
-  let fav: IFavorites = {
-    city: city.name,
-    coord: {
-      lat: (city.coord.lat),
-      lon: (city.coord.lon),
-    },
-  };
-  this.meteo.addFavorite(fav);
-  console.log(this.meteo.favArr);
+addOneFav (city:IFavorites) {
+  this.meteo.getActual(city.coord, "it", "metric").subscribe((res) => {
+    this.cityArr.push(res)
+  })
 }
 
-removeFavorite(city: IActualWeather) {
-  let fav: IFavorites = {
-    city: city.name,
-    coord: {
-      lat: (city.coord.lat),
-      lon: (city.coord.lon),
-    },
-  };
-  this.meteo.removeFavorite(fav);
-  console.log(this.meteo.favArr);
+removeOneFav (city:IFavorites){
+let c =(this.cityArr.find(fav => fav.name === city.city && fav.coord.lat === city.coord.lat))
+if (c) {
+this.cityArr.splice(this.cityArr.indexOf(c), 1)
 }
 
-isFavorite(city: IActualWeather): boolean {
-  let fav: IFavorites = {
-    city: city.name,
-    coord: {
-      lat: (city.coord.lat),
-      lon: (city.coord.lon),
-    },
-  };
-  return this.meteo.isFavorite(fav);
 }
-
 }

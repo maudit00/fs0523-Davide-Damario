@@ -1,32 +1,31 @@
 {
   "users": [
     {
-      "email": "vofymaje@mailinator.com",
-      "password": "$2a$10$2rT5A.LMm4slnBeRtSXDm./bbUy19uWOjUxJJDpiGxAXsb0LwOfwS",
-      "nome": "Odio minima quod adi",
-      "cognome": "Corporis sapiente as",
+      "email": "davide1193@gmail.com",
+      "password": "$2a$10$2rP29JuFTLrZO6yKAixMselBDeC.c13So5.pJxVpSLrdSAWk7mxFO",
+      "nome": "Davide",
+      "cognome": "D'Amario",
+      "id": 1
+    }
+  ],
+  "favorites": [
+    {
+      "userdId": 1,
+      "city": "Milano",
+      "coord": {
+        "lon": 9.1896,
+        "lat": 45.4642
+      },
       "id": 1
     },
     {
-      "email": "kimorojon@mailinator.com",
-      "password": "$2a$10$iUuoSCNoOljk78BFptiVX.DfLxo2nLJGkvJbkYLihW6u3pdebQc5O",
-      "nome": "Sed voluptate eiusmo",
-      "cognome": "Excepteur sed veniam",
-      "id": 2
-    },
-    {
-      "email": "davide1193@gmail.com",
-      "password": "$2a$10$alSx.NgD/nSryr2DCGyzPuybSaRW4Xtm47OoUHW5pspPpl4uAK.Ey",
-      "nome": "Davide",
-      "cognome": "D'Amario",
+      "userdId": 1,
+      "city": "Lanciano",
+      "coord": {
+        "lon": 14.3908,
+        "lat": 42.2305
+      },
       "id": 3
-    },
-    {
-      "email": "riqu@mailinator.com",
-      "password": "$2a$10$x0Wf16faVdl5K0Vpk8E5WuPuo5DnCd2Ycfz0PAjaRBD.tOhOy34ay",
-      "nome": "Illum iure optio c",
-      "cognome": "Voluptas porro perfe",
-      "id": 4
     }
   ]
 }

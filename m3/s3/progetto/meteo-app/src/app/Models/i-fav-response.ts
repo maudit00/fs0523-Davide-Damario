@@ -1,6 +1,7 @@
 import { Coord } from "./i-geo";
 
-export interface IFavorites {
+export interface IFavResponse {
+  id: string;
   userdId:string;
   city:string;
   coord:Coord;

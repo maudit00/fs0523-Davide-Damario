@@ -5,8 +5,8 @@
           class="mx-2 flag-icon flag-icon-{{city.sys.country | lowercase}}"></span></mat-card-title>
       <mat-card-subtitle>{{city.weather[0].description}}
         <span><p>Aggiungi o rimuovi dai preferiti</p></span>
-       <span (click)="addFavorite(city)" *ngIf="!isFavorite(city)" class="text-danger"><mat-icon>favorite_border</mat-icon></span>
-       <span (click)="removeFavorite(city)" *ngIf="isFavorite(city)" class="text-danger"><mat-icon>favorite</mat-icon></span>
+       <span class="text-danger"  *ngIf="!checkFav(city)" (click)="add(city)" ><mat-icon>favorite_border</mat-icon></span>
+       <span  class="text-danger" *ngIf="checkFav(city)" (click)="remove(city)"><mat-icon>favorite</mat-icon></span>
       </mat-card-subtitle>
       <img mat-card-sm-image class="img-fluid" [srcset]="iconsUrl+city.weather[0].icon+'.png'">
     </mat-card-title-group>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">🌪 {{city.wind.speed}} Km/h</div>
+      <div class="col" (click)="checkFav(city)">🌪 {{city.wind.speed}} Km/h</div>
     </div>
   </mat-card-content>
 </mat-card>

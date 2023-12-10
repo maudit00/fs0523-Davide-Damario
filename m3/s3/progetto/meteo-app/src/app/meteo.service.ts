@@ -7,6 +7,8 @@ import { Observable } from 'rxjs/internal/Observable';
 import { IFavorites } from './Models/i-favorites';
 import { Subject, map } from 'rxjs';
 import { IFiveDaysWeather } from './Models/i-five-days-weather';
+import { AuthService } from './pages/auth/auth.service';
+import { IFavResponse } from './Models/i-fav-response';
 
 
 
@@ -19,17 +21,23 @@ export class MeteoService {
 
   limit:string="5"
   cityName:string=""
-  favSub = new Subject<IFavorites>
+  favSub = new Subject<IFavResponse>
   city$ = this.favSub.asObservable();
-  favArr:IFavorites[]=[];
+  favRemoveSub = new Subject<IFavResponse>
+  cityRemove$ = this.favRemoveSub.asObservable();
+  favArr:IFavResponse[]=[];
 
-  constructor(private http:HttpClient) {
-    this.restoreFavorite()
+  constructor(private http:HttpClient, private authSvc:AuthService) {
+    // this.restoreFavorite()
+    this.authSvc.user$.subscribe(user => {
+      if(user) this.id = user.user.id
+    })
    }
 
   london: string = `${environment.actual}lat=51.509865&lon=-0.118092${environment.key}`;
   geoUrl: string = `${environment.geoUrl}${this.cityName}${environment.key}`
-
+  favoritesUrl:string = `${environment.favoriteUrl}`
+  id:string = ""
 
   getLondon () {
     return this.http.get<IActualWeather>(this.london);
@@ -48,29 +56,29 @@ export class MeteoService {
   return this.http.get<IFiveDaysWeather>(`${environment.fiveday}lat=${coord.lat}&lon=${coord.lon}${environment.key}`);
  }
 
- addFavorite(fav:IFavorites) {
-  if(this.isFavorite(fav)) return;
-   this.favArr.push(fav);
-   this.favSub.next(fav);
-   localStorage.setItem('favorites', JSON.stringify(this.favArr));
+ addFavorite(fav:IFavResponse) {
+
+  return this.http.post<IFavorites>(this.favoritesUrl, fav);
 }
 
-removeFavorite(fav:IFavorites) {
-  if(!this.isFavorite(fav)) return;
-  this.favArr.splice(this.favArr.indexOf(fav), 1);
-  this.favSub.next(fav);
-  localStorage.setItem('favorites', JSON.stringify(this.favArr));
+removeFavorite(id:string) {
+  return this.http.delete<IFavorites>(`${this.favoritesUrl}/${id}`, );
 }
 
-isFavorite(fav:IFavorites):boolean {
-return this.favArr.some((f) => f.city === fav.city && f.coord.lat === fav.coord.lat && f.coord.lon === fav.coord.lon)
+getFavorites(){
+  return this.http.get<IFavResponse[]>(this.favoritesUrl);
 }
 
-restoreFavorite(){
-  const favoritesJson: string | null = localStorage.getItem('favorites');
-  if (!favoritesJson) return
-  this.favArr = JSON.parse(favoritesJson);
+isFavorite(city:IFavorites) {
+return this.http.get(`${this.favoritesUrl}`).pipe(map(res => console.log(res)))
 }
+
+
+// restoreFavorite(){
+//   const favoritesJson: string | null = localStorage.getItem('favorites');
+//   if (!favoritesJson) return
+//   this.favArr = JSON.parse(favoritesJson);
+// }
 
 
 }

@@ -31,7 +31,7 @@
 </div>
 
 <div class="row">
-  <div class="col-12 col-md-6 col-lg-4 p-4" (click)="goToInfo(city)" cdkDrag *ngFor="let city of cityArr">
+  <div class="col-12 col-md-6 col-lg-4 p-4"  *ngFor="let city of cityArr">
     <app-card [city]="city"></app-card>
   </div>
 </div>

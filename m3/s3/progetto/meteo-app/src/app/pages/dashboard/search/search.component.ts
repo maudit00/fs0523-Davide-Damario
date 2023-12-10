@@ -45,17 +45,7 @@ export class SearchComponent {
     });
   }
 
-  goToInfo(city: IActualWeather) {
-  let fav:IFavorites={
-    city: city.name,
-    coord: {
-      lat: (city.coord.lat),
-      lon: (city.coord.lon)
-    }
-  }
-  this.meteo.favSub.next(fav)
-  this.route.navigate(['/dashboard/info'])
-  }
+
 
   toggleFilter() {
     this.filteropened = !this.filteropened;
