@@ -28,8 +28,8 @@ addFavorite(city: IActualWeather) {
   let fav: IFavorites = {
     city: city.name,
     coord: {
-      lat: String(city.coord.lat),
-      lon: String(city.coord.lon),
+      lat: (city.coord.lat),
+      lon: (city.coord.lon),
     },
   };
   this.meteo.addFavorite(fav);
@@ -40,8 +40,8 @@ removeFavorite(city: IActualWeather) {
   let fav: IFavorites = {
     city: city.name,
     coord: {
-      lat: String(city.coord.lat),
-      lon: String(city.coord.lon),
+      lat: (city.coord.lat),
+      lon: (city.coord.lon),
     },
   };
   this.meteo.removeFavorite(fav);
@@ -52,8 +52,8 @@ isFavorite(city: IActualWeather): boolean {
   let fav: IFavorites = {
     city: city.name,
     coord: {
-      lat: String(city.coord.lat),
-      lon: String(city.coord.lon),
+      lat: (city.coord.lat),
+      lon: (city.coord.lon),
     },
   };
   return this.meteo.isFavorite(fav);

@@ -22,8 +22,8 @@ limit:string="5"
 rippleColor:string="rgb(255, 255, 255, 0.3)"
 
 coord:Coord={
-  lat:'',
-  lon:''
+  lat:0,
+  lon:0
 }
 
 
@@ -38,8 +38,8 @@ pushCity(){
 searchByCity(){
   this.pushCity()
   return this.meteoSvc.getCoord(this.meteoSvc.cityName, "5").subscribe(res => {
-    this.coord.lat=String(res[0].lat);
-    this.coord.lon=String(res[0].lon);
+    this.coord.lat=(res[0].lat);
+    this.coord.lon=(res[0].lon);
     this.meteoSvc.getActual(this.coord, "it", "metric").subscribe(res => { console.log(res) })
   })
 }

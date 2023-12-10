@@ -160,6 +160,6 @@ export interface IGeo {
 }
 
 export type Coord = {
-  lat:string;
-  lon:string;
+  lat:number;
+  lon:number;
 }

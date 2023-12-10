@@ -4,6 +4,7 @@ import { Coord } from '../../../Models/i-geo';
 import { MeteoService } from '../../../meteo.service';
 import { Subject } from 'rxjs';
 import { IFavorites } from '../../../Models/i-favorites';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -19,22 +20,22 @@ export class SearchComponent {
 
 
   coord: Coord = {
-    lat: '',
-    lon: '',
+    lat: 0,
+    lon: 0
   };
   coordArr: Coord[] = [];
 
   filteropened: boolean = false;
 
-  constructor(private meteo: MeteoService) {}
+  constructor(private meteo: MeteoService, private route:Router) {}
 
   search() {
     this.meteo.cityName = this.input;
     this.cityArr = [];
     this.meteo.getCoord(this.input, this.limit).subscribe((res) => {
       res.forEach((city) => {
-        this.coord.lat = String(city.lat);
-        this.coord.lon = String(city.lon);
+        this.coord.lat = (city.lat);
+        this.coord.lon = (city.lon);
         this.meteo
           .getActual(this.coord, this.lang, this.units)
           .subscribe((res) => {
@@ -44,40 +45,17 @@ export class SearchComponent {
     });
   }
 
-  // addFavorite(city: IActualWeather) {
-  //   let fav: IFavorites = {
-  //     city: city.name,
-  //     coord: {
-  //       lat: String(city.coord.lat),
-  //       lon: String(city.coord.lon),
-  //     },
-  //   };
-  //   this.meteo.addFavorite(fav);
-  //   console.log(this.meteo.favArr);
-  // }
-
-  // removeFavorite(city: IActualWeather) {
-  //   let fav: IFavorites = {
-  //     city: city.name,
-  //     coord: {
-  //       lat: String(city.coord.lat),
-  //       lon: String(city.coord.lon),
-  //     },
-  //   };
-  //   this.meteo.removeFavorite(fav);
-  //   console.log(this.meteo.favArr);
-  // }
-
-  // isFavorite(city: IActualWeather): boolean {
-  //   let fav: IFavorites = {
-  //     city: city.name,
-  //     coord: {
-  //       lat: String(city.coord.lat),
-  //       lon: String(city.coord.lon),
-  //     },
-  //   };
-  //   return this.meteo.isFavorite(fav);
-  // }
+  goToInfo(city: IActualWeather) {
+  let fav:IFavorites={
+    city: city.name,
+    coord: {
+      lat: (city.coord.lat),
+      lon: (city.coord.lon)
+    }
+  }
+  this.meteo.favSub.next(fav)
+  this.route.navigate(['/dashboard/info'])
+  }
 
   toggleFilter() {
     this.filteropened = !this.filteropened;

@@ -6,6 +6,7 @@ import { Coord, IGeo } from './Models/i-geo';
 import { Observable } from 'rxjs/internal/Observable';
 import { IFavorites } from './Models/i-favorites';
 import { Subject, map } from 'rxjs';
+import { IFiveDaysWeather } from './Models/i-five-days-weather';
 
 
 
@@ -20,7 +21,6 @@ export class MeteoService {
   cityName:string=""
   favSub = new Subject<IFavorites>
   city$ = this.favSub.asObservable();
-
   favArr:IFavorites[]=[];
 
   constructor(private http:HttpClient) {
@@ -42,6 +42,10 @@ export class MeteoService {
 
  getActual(coord:Coord, lang:string, units:string):Observable<IActualWeather> {
   return this.http.get<IActualWeather>(`${environment.actual}lat=${coord.lat}&lon=${coord.lon}&lang=${lang}&units=${units}${environment.key}`);
+ }
+
+ getFiveDays(coord:Coord):Observable<IFiveDaysWeather>{
+  return this.http.get<IFiveDaysWeather>(`${environment.fiveday}lat=${coord.lat}&lon=${coord.lon}${environment.key}`);
  }
 
  addFavorite(fav:IFavorites) {

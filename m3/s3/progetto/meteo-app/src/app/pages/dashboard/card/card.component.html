@@ -4,6 +4,7 @@
       <mat-card-title>{{city.name}} {{city.sys.country}}<span
           class="mx-2 flag-icon flag-icon-{{city.sys.country | lowercase}}"></span></mat-card-title>
       <mat-card-subtitle>{{city.weather[0].description}}
+        <span><p>Aggiungi o rimuovi dai preferiti</p></span>
        <span (click)="addFavorite(city)" *ngIf="!isFavorite(city)" class="text-danger"><mat-icon>favorite_border</mat-icon></span>
        <span (click)="removeFavorite(city)" *ngIf="isFavorite(city)" class="text-danger"><mat-icon>favorite</mat-icon></span>
       </mat-card-subtitle>
