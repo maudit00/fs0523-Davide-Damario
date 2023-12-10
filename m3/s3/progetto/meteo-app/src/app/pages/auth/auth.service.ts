@@ -55,7 +55,8 @@ export class AuthService {
   logout() {
     this.authSub.next(null);
     localStorage.removeItem('token');
-    this.route.navigate(['/login']);
+    this.restoreSession()
+    this.route.navigate(['/auth/login']);
   }
 
   restoreSession (){

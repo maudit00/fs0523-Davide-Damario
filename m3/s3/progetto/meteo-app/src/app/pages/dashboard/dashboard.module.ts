@@ -11,6 +11,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 
 
@@ -30,6 +31,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatCardModule,
     FormsModule,
+    CdkDrag
   ]
 })
 export class DashboardModule { }

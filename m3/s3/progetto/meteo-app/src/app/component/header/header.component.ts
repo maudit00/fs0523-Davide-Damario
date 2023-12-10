@@ -19,6 +19,7 @@ city:string=""
 logged:boolean=false;
 lang:string="it"
 limit:string="5"
+rippleColor:string="rgb(255, 255, 255, 0.3)"
 
 coord:Coord={
   lat:'',
@@ -49,7 +50,6 @@ return this.logged
 }
 
 logout () {
-  this.route.navigate(['/auth', 'login']);
   this.authSvc.logout()
 }
 

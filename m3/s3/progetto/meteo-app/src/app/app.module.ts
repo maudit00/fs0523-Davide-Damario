@@ -7,7 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import {MatRippleModule} from '@angular/material/core';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { FormsModule, NgModel } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    MatRippleModule
   ],
   providers: [
   ],
