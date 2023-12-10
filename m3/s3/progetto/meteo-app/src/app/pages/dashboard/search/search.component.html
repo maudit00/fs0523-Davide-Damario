@@ -10,10 +10,10 @@
   </button>
 </div>
 
-<div class="d-flex justify-content-center gap-3" *ngIf="filteropened">
+<div class="d-flex justify-content-center gap-3 py-3" *ngIf="filteropened">
       <label for="lang">Lingua</label>
       <select name="lang" [(ngModel)]="lang" id="lang">
-        <option value="it">Italiano</option>
+        <option value="it">Italiano<span class="flag-icon flag-icon-it"></span></option>
         <option value="en">Inglese</option>
       </select>
       <label for="limit">Limite risultati</label>
@@ -28,7 +28,6 @@
         <option value="metric">Metriche</option>
         <option value="imperial">Imperiali</option>
       </select>
-      {{lang}}{{limit}}
 </div>
 
 <div class="row">
@@ -36,7 +35,7 @@
     <mat-card class="example-card">
       <mat-card-header>
         <mat-card-title-group>
-          <mat-card-title>{{city.name}} {{city.sys.country}}</mat-card-title>
+          <mat-card-title>{{city.name}} {{city.sys.country}}<span class="mx-2 flag-icon flag-icon-{{city.sys.country | lowercase}}"></span></mat-card-title>
           <mat-card-subtitle>{{city.weather[0].description}}</mat-card-subtitle>
           <img mat-card-sm-image class="img-fluid" [srcset]="iconsUrl+city.weather[0].icon+'.png'">
         </mat-card-title-group>

@@ -3,6 +3,7 @@ import { IActualWeather } from '../../../Models/i-actual-weather';
 import { Coord } from '../../../Models/i-geo';
 import { MeteoService } from '../../../meteo.service';
 
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -43,4 +44,5 @@ search(){
     })
   })
 }
+
 }

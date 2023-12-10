@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -28,7 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTabsModule,
     MatButtonModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class DashboardModule { }
