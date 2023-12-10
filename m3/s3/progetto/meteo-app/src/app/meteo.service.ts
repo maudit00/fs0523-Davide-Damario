@@ -59,8 +59,6 @@ removeFavorite(fav:IFavorites) {
 }
 
 isFavorite(fav:IFavorites):boolean {
-console.log(fav, this.favArr.some((f) => f.city === fav.city && f.coord.lat === fav.coord.lat));
-
 return this.favArr.some((f) => f.city === fav.city && f.coord.lat === fav.coord.lat && f.coord.lon === fav.coord.lon)
 }
 

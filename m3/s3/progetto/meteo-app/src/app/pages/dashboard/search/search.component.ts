@@ -16,7 +16,7 @@ export class SearchComponent {
   lang: string = 'it';
   limit: string = '5';
   units: string = 'metric';
-  iconsUrl: string = 'https://openweathermap.org/img/wn/';
+
 
   coord: Coord = {
     lat: '',
@@ -44,40 +44,40 @@ export class SearchComponent {
     });
   }
 
-  addFavorite(city: IActualWeather) {
-    let fav: IFavorites = {
-      city: city.name,
-      coord: {
-        lat: String(city.coord.lat),
-        lon: String(city.coord.lon),
-      },
-    };
-    this.meteo.addFavorite(fav);
-    console.log(this.meteo.favArr);
-  }
+  // addFavorite(city: IActualWeather) {
+  //   let fav: IFavorites = {
+  //     city: city.name,
+  //     coord: {
+  //       lat: String(city.coord.lat),
+  //       lon: String(city.coord.lon),
+  //     },
+  //   };
+  //   this.meteo.addFavorite(fav);
+  //   console.log(this.meteo.favArr);
+  // }
 
-  removeFavorite(city: IActualWeather) {
-    let fav: IFavorites = {
-      city: city.name,
-      coord: {
-        lat: String(city.coord.lat),
-        lon: String(city.coord.lon),
-      },
-    };
-    this.meteo.removeFavorite(fav);
-    console.log(this.meteo.favArr);
-  }
+  // removeFavorite(city: IActualWeather) {
+  //   let fav: IFavorites = {
+  //     city: city.name,
+  //     coord: {
+  //       lat: String(city.coord.lat),
+  //       lon: String(city.coord.lon),
+  //     },
+  //   };
+  //   this.meteo.removeFavorite(fav);
+  //   console.log(this.meteo.favArr);
+  // }
 
-  isFavorite(city: IActualWeather): boolean {
-    let fav: IFavorites = {
-      city: city.name,
-      coord: {
-        lat: String(city.coord.lat),
-        lon: String(city.coord.lon),
-      },
-    };
-    return this.meteo.isFavorite(fav);
-  }
+  // isFavorite(city: IActualWeather): boolean {
+  //   let fav: IFavorites = {
+  //     city: city.name,
+  //     coord: {
+  //       lat: String(city.coord.lat),
+  //       lon: String(city.coord.lon),
+  //     },
+  //   };
+  //   return this.meteo.isFavorite(fav);
+  // }
 
   toggleFilter() {
     this.filteropened = !this.filteropened;

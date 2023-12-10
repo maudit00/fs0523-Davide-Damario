@@ -1,1 +1,7 @@
-<p>favorites works!</p>
+<p class="h1 text-center my-3">I tuoi preferiti</p>
+
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4 p-4" cdkDrag *ngFor="let city of cityArr">
+    <app-card [city]="city"></app-card>
+  </div>
+</div>
