@@ -17,6 +17,7 @@ export class MeteoService {
   limit:string="&limit=5"
   cityName:string=""
 
+
   constructor(private http:HttpClient) { }
 
   london: string = `${environment.actual}lat=51.509865&lon=-0.118092${environment.key}`;
@@ -32,8 +33,8 @@ export class MeteoService {
   return this.http.get<IGeo[]>(`${environment.geoUrl}${city}${this.limit}${environment.key}`);
  }
 
- getActual(coord:Coord):Observable<IActualWeather> {
-  return this.http.get<IActualWeather>(`${environment.actual}lat=${coord.lat}&lon=${coord.lon}${environment.key}`);
+ getActual(coord:Coord, lang:string, limit:string, units:string):Observable<IActualWeather> {
+  return this.http.get<IActualWeather>(`${environment.actual}lat=${coord.lat}&lon=${coord.lon}&lang=${lang}&limit=${limit}&units=${units}${environment.key}`);
  }
 
 

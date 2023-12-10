@@ -17,6 +17,8 @@ constructor(private meteoSvc:MeteoService, private authSvc:AuthService, private 
 
 city:string=""
 logged:boolean=false;
+lang:string="it"
+limit:string="5"
 
 coord:Coord={
   lat:'',
@@ -37,9 +39,8 @@ searchByCity(){
   return this.meteoSvc.getCoord(this.meteoSvc.cityName).subscribe(res => {
     this.coord.lat=String(res[0].lat);
     this.coord.lon=String(res[0].lon);
-
     console.log(this.coord)
-    this.meteoSvc.getActual(this.coord).subscribe(res => { console.log(res) })
+    this.meteoSvc.getActual(this.coord, "it", "5", "metric").subscribe(res => { console.log(res) })
   })
 }
 
@@ -52,4 +53,5 @@ logout () {
   this.route.navigate(['/auth', 'login']);
   this.authSvc.logout()
 }
+
 }

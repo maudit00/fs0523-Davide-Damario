@@ -1,12 +1,56 @@
 <p class="h1 text-center my-4">Inizia a cercare una città</p>
 
-<div class="d-flex justify-content-center align-content-center gap-1">
-  <form>
-    <input type="search" name="searchbar" [(ngModel)]="input">
-    <button></button><mat-icon>search</mat-icon>
-  </form>
+<div class="d-flex justify-content-center align-content-center gap-3 mb-3">
+  <input type="search" name="searchbar" [(ngModel)]="input" />
+  <button class="btn btn-transparent" (click)="search()">
+    <mat-icon>search</mat-icon>
+  </button>
+  <button mat-button color="primary" (click)="filteropened = !filteropened">
+    Filtri
+  </button>
 </div>
 
-<div *ngIf="!input" class="alert alert-warning text-center">
-Inserisci una città
+<div class="d-flex justify-content-center gap-3" *ngIf="filteropened">
+      <label for="lang">Lingua</label>
+      <select name="lang" [(ngModel)]="lang" id="lang">
+        <option value="it">Italiano</option>
+        <option value="en">Inglese</option>
+      </select>
+      <label for="limit">Limite risultati</label>
+      <select name="limit"  [(ngModel)]="limit" id="limit">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+      </select>
+      <label for="units">Unità di misura</label>
+      <select name="units"  [(ngModel)]="units" id="units">
+        <option value="metric">Metriche</option>
+        <option value="imperial">Imperiali</option>
+      </select>
+      {{lang}}{{limit}}
+</div>
+
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4" *ngFor="let city of cityArr">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{city.name}}</mat-card-title>
+          <mat-card-subtitle>{{city.weather[0].description}}</mat-card-subtitle>
+          <img mat-card-sm-image [srcset]="iconsUrl+city.weather[0].icon+'.png'">
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col"><p>Temp: {{city.main.temp}}</p></div>
+          <div class="col"><p>Max: {{city.main.temp_max}}</p></div>
+          <div class="col"><p>Min: {{city.main.temp_min}}</p></div>
+          <div class="col"><p>💧{{city.main.humidity}}</p></div>
+          <div class="col"><p>{{}}</p></div>
+          <div class="col"><p>{{}}</p></div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
