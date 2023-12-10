@@ -20,19 +20,26 @@ coord:Coord={
   lat:'',
   lon:''
 }
+coordArr:Coord[]=[];
+
 filteropened:boolean=false;
 
 constructor(private meteo:MeteoService){}
 
 search(){
   this.meteo.cityName=this.input
-  this.meteo.getCoord(this.input).subscribe(res => {
-    this.coord.lat=String(res[0].lat);
-    this.coord.lon=String(res[0].lon);
-    this.meteo.getActual(this.coord, this.lang, this.limit, this.units).subscribe(res => {
-      this.cityArr=[]
+  this.cityArr=[]
+  this.meteo.getCoord(this.input, this.limit).subscribe(res => {
+    console.log(res);
+
+    res.forEach(city => {
+    this.coord.lat=String(city.lat);
+    this.coord.lon=String(city.lon);
+    console.log(this.coord);
+    this.meteo.getActual(this.coord, this.lang, this.units).subscribe(res => {
       this.cityArr.push(res)
       console.log(this.cityArr)
+    })
     })
   })
 }

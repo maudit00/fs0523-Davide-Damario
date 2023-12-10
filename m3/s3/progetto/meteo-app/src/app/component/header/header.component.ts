@@ -36,16 +36,15 @@ pushCity(){
 
 searchByCity(){
   this.pushCity()
-  return this.meteoSvc.getCoord(this.meteoSvc.cityName).subscribe(res => {
+  return this.meteoSvc.getCoord(this.meteoSvc.cityName, "5").subscribe(res => {
     this.coord.lat=String(res[0].lat);
     this.coord.lon=String(res[0].lon);
-    console.log(this.coord)
-    this.meteoSvc.getActual(this.coord, "it", "5", "metric").subscribe(res => { console.log(res) })
+    this.meteoSvc.getActual(this.coord, "it", "metric").subscribe(res => { console.log(res) })
   })
 }
 
 isLogged () {
-this.authSvc.isLogged$.subscribe(res =>{console.log(res);this.logged=res})
+this.authSvc.isLogged$.subscribe(res =>this.logged=res)
 return this.logged
 }
 

@@ -14,7 +14,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class MeteoService {
 
 
-  limit:string="&limit=5"
+  limit:string="5"
   cityName:string=""
 
 
@@ -28,13 +28,13 @@ export class MeteoService {
     return this.http.get<IActualWeather>(this.london);
   }
 
- getCoord(city:string):Observable<IGeo[]> {
+ getCoord(city:string, limit:string):Observable<IGeo[]> {
   this.cityName=city;
-  return this.http.get<IGeo[]>(`${environment.geoUrl}${city}${this.limit}${environment.key}`);
+  return this.http.get<IGeo[]>(`${environment.geoUrl}${city}&limit=${limit}${environment.key}`);
  }
 
- getActual(coord:Coord, lang:string, limit:string, units:string):Observable<IActualWeather> {
-  return this.http.get<IActualWeather>(`${environment.actual}lat=${coord.lat}&lon=${coord.lon}&lang=${lang}&limit=${limit}&units=${units}${environment.key}`);
+ getActual(coord:Coord, lang:string, units:string):Observable<IActualWeather> {
+  return this.http.get<IActualWeather>(`${environment.actual}lat=${coord.lat}&lon=${coord.lon}&lang=${lang}&units=${units}${environment.key}`);
  }
 
 

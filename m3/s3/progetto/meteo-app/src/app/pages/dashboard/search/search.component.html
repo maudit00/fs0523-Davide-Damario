@@ -1,7 +1,7 @@
 <p class="h1 text-center my-4">Inizia a cercare una città</p>
 
 <div class="d-flex justify-content-center align-content-center gap-3 mb-3">
-  <input type="search" name="searchbar" [(ngModel)]="input" />
+  <input type="search" name="searchbar" [(ngModel)]="input" (keyup.enter)="search()"/>
   <button class="btn btn-transparent" (click)="search()">
     <mat-icon>search</mat-icon>
   </button>
@@ -36,19 +36,24 @@
     <mat-card class="example-card">
       <mat-card-header>
         <mat-card-title-group>
-          <mat-card-title>{{city.name}}</mat-card-title>
+          <mat-card-title>{{city.name}} {{city.sys.country}}</mat-card-title>
           <mat-card-subtitle>{{city.weather[0].description}}</mat-card-subtitle>
-          <img mat-card-sm-image [srcset]="iconsUrl+city.weather[0].icon+'.png'">
+          <img mat-card-sm-image class="img-fluid" [srcset]="iconsUrl+city.weather[0].icon+'.png'">
         </mat-card-title-group>
       </mat-card-header>
       <mat-card-content>
         <div class="row">
-          <div class="col"><p>Temp: {{city.main.temp}}</p></div>
-          <div class="col"><p>Max: {{city.main.temp_max}}</p></div>
-          <div class="col"><p>Min: {{city.main.temp_min}}</p></div>
-          <div class="col"><p>💧{{city.main.humidity}}</p></div>
-          <div class="col"><p>{{}}</p></div>
-          <div class="col"><p>{{}}</p></div>
+          <div class="col"><p>Temp: {{city.main.temp}}°</p></div>
+          <div class="col"><p>Max: {{city.main.temp_max}}°</p></div>
+          <div class="col"><p>Min: {{city.main.temp_min}}°</p></div>
+        </div>
+        <div class="row">
+          <div class="col"><p>💧 {{city.main.humidity}}%</p></div>
+          <div class="col"><p>Press: {{city.main.pressure}}</p></div>
+          <div class="col"><p>Percep: {{city.main.feels_like}}°</p></div>
+        </div>
+        <div class="row">
+          <div class="col">🌪 {{city.wind.speed}} Km/h</div>
         </div>
       </mat-card-content>
     </mat-card>
