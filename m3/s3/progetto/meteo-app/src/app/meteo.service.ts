@@ -25,9 +25,12 @@ export class MeteoService {
   city$ = this.favSub.asObservable();
   favRemoveSub = new Subject<IFavResponse>
   cityRemove$ = this.favRemoveSub.asObservable();
-  infoSub = new Subject<IActualWeather>
-  info$ = this.infoSub.asObservable();
   favArr:IFavResponse[]=[];
+
+  coord: Coord = {
+    lat: 0,
+    lon: 0
+  }
 
   constructor(private http:HttpClient, private authSvc:AuthService) {
     this.restoreFavorite()
@@ -55,7 +58,7 @@ export class MeteoService {
  }
 
  getFiveDays(coord:Coord):Observable<IFiveDaysWeather>{
-  return this.http.get<IFiveDaysWeather>(`${environment.fiveday}lat=${coord.lat}&lon=${coord.lon}${environment.key}`);
+  return this.http.get<IFiveDaysWeather>(`${environment.fiveday}lat=${coord.lat}&lon=${coord.lon}&lang=it${environment.key}`);
  }
 
  addFavorite(fav:IFavResponse) {

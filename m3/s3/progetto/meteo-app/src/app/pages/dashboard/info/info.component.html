@@ -2,24 +2,39 @@
   <div class="d-flex flex-column align-items-center">
 
     <p class="h1 text-center my-3">Le previsioni per i prossimi giorni</p>
-    <div *ngIf="city">
+    <div class="alert alert-warning text-center mt-5" *ngIf="!checkRes()">Qualcosa è andato storto, prova a tornare indietro</div>
+    <div *ngIf="checkRes()">
       <p>{{city.city.name}} {{city.city.country}}<span
         class="mx-2 flag-icon flag-icon-{{city.city.country | lowercase}}"></span></p>
-      <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
     </div>
   </div>
-  <table class="table">
+
+  <table class="table" *ngIf="checkRes()">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">#</th>
-        <th scope="col">#</th>
+        <th scope="col">Temp</th>
+        <th scope="col">Percep</th>
+        <th scope="col">Max</th>
+        <th scope="col">Min</th>
+        <th scope="col">Pressure</th>
+        <th scope="col">💧</th>
+        <th scope="col">🌪</th>
+        <th scope="col">weather/th>
       </tr>
     </thead>
+    <tbody>
+      <tr *ngFor="let day of days">
+        <th scope="row">{{day.dt_txt}}</th>
+        <td>{{day.main.temp}}°</td>
+        <td>{{day.main.feels_like}}°</td>
+        <td>{{day.main.temp_max}}°</td>
+        <td>{{day.main.temp_min}}°</td>
+        <td>{{day.main.pressure}}</td>
+        <td>{{day.main.humidity}}%</td>
+        <td>{{day.wind.speed}} Km/h</td>
+        <td>{{day.weather[0].description}},<img class="img-fluid" [srcset]="iconsUrl+day.weather[0].icon+'.png'"></td>
+      </tr>
+    </tbody>
   </table>
 </div>

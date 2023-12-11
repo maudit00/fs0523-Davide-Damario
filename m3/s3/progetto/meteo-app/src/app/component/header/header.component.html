@@ -45,16 +45,6 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link"
-            [routerLink]="'.'"
-            (click)="isMenuCollapsed = true"
-            matRipple
-            [matRippleColor]="rippleColor"
-            >Info</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
             class="nav-link bg-danger text-center text-white rounded-1"
             [routerLink]="'.'"
             *ngIf="isLogged()"
@@ -65,24 +55,6 @@
           >
         </li>
       </ul>
-      <div *ngIf="isLogged()">
-        <input
-          class="form.control mx-2"
-          type="text"
-          name="city"
-          [(ngModel)]="this.city"
-          placeholder="Inserisci una città"
-        />
-        <button
-          type="button"
-          class="btn btn-transparent mx-2"
-          (click)="searchByCity()"
-          matRipple
-          [matRippleColor]="rippleColor"
-        >
-          Cerca
-        </button>
-      </div>
     </div>
   </div>
 </nav>

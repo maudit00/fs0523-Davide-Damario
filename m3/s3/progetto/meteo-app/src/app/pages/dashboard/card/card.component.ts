@@ -52,7 +52,7 @@ export class CardComponent {
 
 
 goToInfo(city: IActualWeather) {
-  this.meteo.infoSub.next(city);
+  this.meteo.coord = city.coord
   this.route.navigate(['/dashboard/info'])
   }
 }

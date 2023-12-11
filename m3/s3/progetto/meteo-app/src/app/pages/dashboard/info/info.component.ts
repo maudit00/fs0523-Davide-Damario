@@ -4,7 +4,8 @@ import { MeteoService } from '../../../meteo.service';
 import { Coord } from '../../../Models/i-geo';
 import { IFavorites } from '../../../Models/i-favorites';
 import { IActualWeather } from '../../../Models/i-actual-weather';
-import { IFiveDaysWeather } from '../../../Models/i-five-days-weather';
+import { IFiveDaysWeather, List } from '../../../Models/i-five-days-weather';
+import { environment } from '../../../../environments/environment.development';
 
 
 @Component({
@@ -14,27 +15,31 @@ import { IFiveDaysWeather } from '../../../Models/i-five-days-weather';
 })
 export class InfoComponent {
 
-coord: Coord = {
-  lat: 0,
-  lon: 0
-}
 
-city:IFiveDaysWeather = {} as IFiveDaysWeather;
+iconsUrl:string= `${environment.iconsUrl}`;
+city!:IFiveDaysWeather;
+days: List[] = []
 
 constructor(private meteo:MeteoService){
-  this.meteo.infoSub.subscribe((res:IActualWeather)=>{
-    this.coord.lat = res.coord.lat;
-    this.coord.lon = res.coord.lon;
-    this.search();
-  })
+this.search(this.meteo.coord)
 }
 
-
-
-
-search(){
-return this.meteo.getFiveDays(this.coord).subscribe((res)=>{console.log(res), this.city = res, console.log(this.city)})
+ngOnInit (){
+  console.log(this.city)
 }
 
+search(coord: Coord){
+return this.meteo.getFiveDays(coord).subscribe((res)=> {
+  this.city = res
+  this.days = res.list
+})
+}
+
+checkRes (){
+  if (this.city.city.name == 'Globe') {
+    return false
+  }
+  return true
+}
 
 }
