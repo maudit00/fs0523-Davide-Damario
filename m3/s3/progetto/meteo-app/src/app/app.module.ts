@@ -9,6 +9,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatRippleModule} from '@angular/material/core';
+import { Page404Component } from './pages/page404/page404.component';
 
 
 
@@ -17,6 +18,7 @@ import {MatRippleModule} from '@angular/material/core';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    Page404Component,
   ],
   imports: [
     BrowserModule,

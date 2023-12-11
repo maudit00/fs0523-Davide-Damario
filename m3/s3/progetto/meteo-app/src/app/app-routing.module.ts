@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './pages/auth/auth.guard';
+import { Page404Component } from './pages/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) ,
     canActivate: [AuthGuard]
   },
+  {
+    path: '**',
+    component: Page404Component
+  }
 ];
 
 @NgModule({
