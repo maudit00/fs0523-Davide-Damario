@@ -5,6 +5,8 @@
   <button class="btn btn-transparent" (click)="search()">
     <mat-icon>search</mat-icon>
   </button>
+</div>
+<div class="d-flex justify-content-center">
   <button mat-button color="primary" (click)="toggleFilter()">
     Filtri
   </button>
@@ -31,7 +33,7 @@
 </div>
 
 <div class="row">
-  <div class="col-12 col-md-6 col-lg-4 p-4"  *ngFor="let city of cityArr">
+  <div class="col-12 col-md-6 col-lg-4 p-4" cdkDrag *ngFor="let city of cityArr">
     <app-card [city]="city"></app-card>
   </div>
 </div>
