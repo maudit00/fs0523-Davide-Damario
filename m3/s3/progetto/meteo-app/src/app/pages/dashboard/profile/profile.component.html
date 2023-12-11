@@ -1,1 +1,15 @@
-<p class="h1 text-center my-3">Il tuo profilo<mat-icon class="text-success mx-2">verified_user</mat-icon></p>
+<div class="container">
+
+  <p class="h1 text-center my-3">Il tuo profilo<mat-icon class="text-success mx-2">verified_user</mat-icon></p>
+
+  <div class="d-flex justify-content-center flex-column gap-3">
+    <p class="text-center border border-dark rounded-1 px-4 py-2"><span class="text-primary">Nome:</span>  {{user?.user?.nome}}</p>
+    <p class="text-center border border-dark rounded-1 px-4 py-2"><span class="text-primary">Cognome:</span>  {{user?.user?.cognome}}</p>
+    <p class="text-center border border-dark rounded-1 px-4 py-2"><span class="text-primary">E-mail:</span>  {{user?.user?.email}}</p>
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+
+
+</div>
+
+
