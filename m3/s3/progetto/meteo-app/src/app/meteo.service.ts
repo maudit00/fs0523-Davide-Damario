@@ -25,10 +25,12 @@ export class MeteoService {
   city$ = this.favSub.asObservable();
   favRemoveSub = new Subject<IFavResponse>
   cityRemove$ = this.favRemoveSub.asObservable();
+  infoSub = new Subject<IActualWeather>
+  info$ = this.infoSub.asObservable();
   favArr:IFavResponse[]=[];
 
   constructor(private http:HttpClient, private authSvc:AuthService) {
-    // this.restoreFavorite()
+    this.restoreFavorite()
     this.authSvc.user$.subscribe(user => {
       if(user) this.id = user.user.id
     })
@@ -74,11 +76,11 @@ return this.http.get(`${this.favoritesUrl}`).pipe(map(res => console.log(res)))
 }
 
 
-// restoreFavorite(){
-//   const favoritesJson: string | null = localStorage.getItem('favorites');
-//   if (!favoritesJson) return
-//   this.favArr = JSON.parse(favoritesJson);
-// }
+restoreFavorite(){
+  const favoritesJson: string | null = localStorage.getItem('favorites');
+  if (!favoritesJson) return
+  this.favArr = JSON.parse(favoritesJson);
+}
 
 
 }

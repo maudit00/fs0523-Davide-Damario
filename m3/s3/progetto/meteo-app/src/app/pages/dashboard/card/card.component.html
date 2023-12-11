@@ -1,7 +1,7 @@
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title-group>
-      <mat-card-title>{{city.name}} {{city.sys.country}}<span
+      <mat-card-title (click)="goToInfo(city)">{{city.name}} {{city.sys.country}}<span
           class="mx-2 flag-icon flag-icon-{{city.sys.country | lowercase}}"></span></mat-card-title>
       <mat-card-subtitle>{{city.weather[0].description}}
         <span><p>Aggiungi o rimuovi dai preferiti</p></span>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col" (click)="checkFav(city)">🌪 {{city.wind.speed}} Km/h</div>
+      <div class="col">🌪 {{city.wind.speed}} Km/h</div>
     </div>
   </mat-card-content>
 </mat-card>

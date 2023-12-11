@@ -14,7 +14,8 @@ import { MatCardModule } from '@angular/material/card';
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { CardComponent } from './card/card.component';
 import { InfoComponent } from './info/info.component';
-
+import { MatTableModule} from '@angular/material/table';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { InfoComponent } from './info/info.component';
     MatButtonModule,
     MatCardModule,
     FormsModule,
-    CdkDrag
+    CdkDrag,
+    MatTableModule,
   ]
 })
 export class DashboardModule { }

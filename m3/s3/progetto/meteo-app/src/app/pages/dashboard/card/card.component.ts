@@ -51,15 +51,8 @@ export class CardComponent {
   }
 
 
-// goToInfo(city: IActualWeather) {
-//   let fav:IFavorites={
-//     city: city.name,
-//     coord: {
-//       lat: (city.coord.lat),
-//       lon: (city.coord.lon)
-//     }
-//   }
-//   this.meteo.favSub.next(fav)
-//   this.route.navigate(['/dashboard/info'])
-//   }
+goToInfo(city: IActualWeather) {
+  this.meteo.infoSub.next(city);
+  this.route.navigate(['/dashboard/info'])
+  }
 }

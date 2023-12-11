@@ -11,21 +11,30 @@
   "favorites": [
     {
       "userdId": 1,
-      "city": "Milano",
-      "coord": {
-        "lon": 9.1896,
-        "lat": 45.4642
-      },
-      "id": 1
-    },
-    {
-      "userdId": 1,
       "city": "Lanciano",
       "coord": {
         "lon": 14.3908,
         "lat": 42.2305
       },
       "id": 3
+    },
+    {
+      "userdId": 1,
+      "city": "Vetto",
+      "coord": {
+        "lon": 10.3511,
+        "lat": 44.4542
+      },
+      "id": 4
+    },
+    {
+      "userdId": 1,
+      "city": "Nonio",
+      "coord": {
+        "lon": 8.3852,
+        "lat": 45.858
+      },
+      "id": 5
     }
   ]
 }

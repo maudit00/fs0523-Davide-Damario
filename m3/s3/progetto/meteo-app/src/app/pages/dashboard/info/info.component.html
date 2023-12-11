@@ -1,1 +1,25 @@
-<p>info works!</p>
+<div class="container">
+  <div class="d-flex flex-column align-items-center">
+
+    <p class="h1 text-center my-3">Le previsioni per i prossimi giorni</p>
+    <div *ngIf="city">
+      <p>{{city.city.name}} {{city.city.country}}<span
+        class="mx-2 flag-icon flag-icon-{{city.city.country | lowercase}}"></span></p>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+  </table>
+</div>
