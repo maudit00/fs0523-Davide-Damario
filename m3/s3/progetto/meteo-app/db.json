@@ -6,6 +6,13 @@
       "nome": "Davide",
       "cognome": "D'Amario",
       "id": 1
+    },
+    {
+      "email": "fracordano.13@gmail.com",
+      "password": "$2a$10$TtJ7XCYGRGswT6K3o95ZiOb4/qGhEZgaLBv.VYIuhZtjD1eMrjyuW",
+      "nome": "Francesca",
+      "cognome": "Cordano",
+      "id": 2
     }
   ],
   "favorites": [
@@ -20,30 +27,21 @@
     },
     {
       "userdId": 1,
-      "city": "Nonio",
+      "city": "London",
       "coord": {
-        "lon": 8.3852,
-        "lat": 45.858
+        "lon": -0.1276,
+        "lat": 51.5072
+      },
+      "id": 4
+    },
+    {
+      "userdId": 1,
+      "city": "Camden",
+      "coord": {
+        "lon": -0.1625,
+        "lat": 51.5428
       },
       "id": 5
-    },
-    {
-      "userdId": 1,
-      "city": "Palermo",
-      "coord": {
-        "lon": 13.3524,
-        "lat": 38.1112
-      },
-      "id": 6
-    },
-    {
-      "userdId": 1,
-      "city": "Palermo",
-      "coord": {
-        "lon": -121.538,
-        "lat": 39.4354
-      },
-      "id": 7
     }
   ]
 }
